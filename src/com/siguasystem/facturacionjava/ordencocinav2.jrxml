@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="288" pageHeight="792" columnWidth="288" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a82f7129-4268-4f55-861a-2362736fd706">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="99"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[53]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     detallefactura.`nrolinea` AS detallefactura_nrolinea,
+     detallefactura.`nomproducto` AS detallefactura_nomproducto,
+     detallefactura.`cantidad` AS detallefactura_cantidad,
+     detallefactura.`comentarios` AS detallefactura_comentarios,
+     detallefactura.`idFactura` AS detallefactura_idFactura,
+     detallefactura.`fecha` AS detallefactura_fecha,
+     detallefactura.`producto` AS detallefactura_producto,
+     detallefactura.`stadodet` AS detallefactura_stadodet,
+     factura.`idFactura` AS factura_idFactura,
+     factura.`fecha` AS factura_fecha,
+     factura.`notas` AS factura_notas,
+     factura.`tipofact` AS factura_tipofact,
+     factura.`idorden` AS factura_idorden,
+     factura.`empresa` AS factura_empresa,
+     factura.`usuario` AS factura_usuario,
+     factura.`estadofact` AS factura_estadofact,
+     factura.`cliente` AS factura_cliente,
+     factura.`totalfac` AS factura_totalfac,
+     tiporden.`idtiporden` AS tiporden_idtiporden,
+     tiporden.`descri` AS tiporden_descri,
+     cliente.`idCliente` AS cliente_idCliente,
+     cliente.`nombre` AS cliente_nombre,
+     cliente.`telefono` AS cliente_telefono,
+     cliente.`direccion` AS cliente_direccion,
+     cliente.`celular` AS cliente_celular,
+     cliente.`tipocliente` AS cliente_tipocliente,
+     cliente.`rtncli` AS cliente_rtncli,
+     producto.`idProducto` AS producto_idProducto,
+     producto.`nombre` AS producto_nombre,
+     producto.`descripcion` AS producto_descripcion,
+     producto.`precio` AS producto_precio,
+     producto.`costo` AS producto_costo,
+     producto.`categoria` AS producto_categoria,
+     producto.`cantidadexis` AS producto_cantidadexis,
+     producto.`imgruta` AS producto_imgruta,
+     producto.`impuesto` AS producto_impuesto,
+     categoriaproducto.`idCategoria` AS categoriaproducto_idCategoria,
+     categoriaproducto.`descrip` AS categoriaproducto_descrip
+FROM
+     `detallefactura` detallefactura INNER JOIN `factura` factura ON detallefactura.`idFactura` = factura.`idFactura`
+     INNER JOIN `tiporden` tiporden ON factura.`idorden` = tiporden.`idtiporden`
+     INNER JOIN `cliente` cliente ON factura.`cliente` = cliente.`idCliente`
+     INNER JOIN `producto` producto ON detallefactura.`producto` = producto.`idProducto`
+     INNER JOIN `categoriaproducto` categoriaproducto ON producto.`categoria` = categoriaproducto.`idCategoria`
+WHERE
+ detallefactura.`idFactura` = $P{id}]]>
+	</queryString>
+	<field name="detallefactura_nrolinea" class="java.lang.Integer"/>
+	<field name="detallefactura_nomproducto" class="java.lang.String"/>
+	<field name="detallefactura_cantidad" class="java.lang.Integer"/>
+	<field name="detallefactura_comentarios" class="java.lang.String"/>
+	<field name="detallefactura_idFactura" class="java.lang.Integer"/>
+	<field name="detallefactura_fecha" class="java.sql.Date"/>
+	<field name="detallefactura_producto" class="java.lang.String"/>
+	<field name="detallefactura_stadodet" class="java.lang.Long"/>
+	<field name="factura_idFactura" class="java.lang.Long"/>
+	<field name="factura_fecha" class="java.sql.Date"/>
+	<field name="factura_notas" class="java.lang.String"/>
+	<field name="factura_tipofact" class="java.lang.Integer"/>
+	<field name="factura_idorden" class="java.lang.Integer"/>
+	<field name="factura_empresa" class="java.lang.String"/>
+	<field name="factura_usuario" class="java.lang.String"/>
+	<field name="factura_estadofact" class="java.lang.Integer"/>
+	<field name="factura_cliente" class="java.lang.String"/>
+	<field name="factura_totalfac" class="java.math.BigDecimal"/>
+	<field name="tiporden_idtiporden" class="java.lang.Integer"/>
+	<field name="tiporden_descri" class="java.lang.String"/>
+	<field name="cliente_idCliente" class="java.lang.String"/>
+	<field name="cliente_nombre" class="java.lang.String"/>
+	<field name="cliente_telefono" class="java.lang.String"/>
+	<field name="cliente_direccion" class="java.lang.String"/>
+	<field name="cliente_celular" class="java.lang.String"/>
+	<field name="cliente_tipocliente" class="java.lang.Integer"/>
+	<field name="cliente_rtncli" class="java.lang.String"/>
+	<field name="producto_idProducto" class="java.lang.String"/>
+	<field name="producto_nombre" class="java.lang.String"/>
+	<field name="producto_descripcion" class="java.lang.String"/>
+	<field name="producto_precio" class="java.lang.Float"/>
+	<field name="producto_costo" class="java.lang.Float"/>
+	<field name="producto_categoria" class="java.lang.String"/>
+	<field name="producto_cantidadexis" class="java.lang.Integer"/>
+	<field name="producto_imgruta" class="java.lang.String"/>
+	<field name="producto_impuesto" class="java.math.BigDecimal"/>
+	<field name="categoriaproducto_idCategoria" class="java.lang.String"/>
+	<field name="categoriaproducto_descrip" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="117" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="74" width="237" height="13" uuid="f1c04583-46ac-4f9a-b33c-8afe92d0c87a"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cliente:"+$F{cliente_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="89" width="125" height="13" uuid="67240ed8-1030-4bc1-b3b4-4605afd3ca1c"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="44" width="137" height="13" uuid="71efccc7-2ed7-4a05-8102-aa16838abc0c"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tiporden_descri}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="6" y="57" width="100" height="13" uuid="517ddbf0-b154-450b-94ee-cf3a206d77e9"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new java.text.SimpleDateFormat("EEEEE dd MMMMM yyyy hh:mm aaa",new Locale("es", "ES"))).format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="89" width="112" height="13" uuid="09de8b1d-0f75-46b0-986b-7068097d8a8e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="44" width="44" height="13" uuid="cf48f10e-8416-479a-b6ab-7dd554a6722b"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orden :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="104" width="45" height="13" uuid="0f6fdb00-899d-4065-abb1-3d95829a0ab1"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="104" width="192" height="13" uuid="0f84d48f-1e7d-44d6-a5c4-38131d0a9733"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="0" width="154" height="24" uuid="6a588b95-d657-4fbc-b460-cc3f24a07418"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Orden de Cocina #]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="106" y="57" width="69" height="13" uuid="bd642e29-f67c-4da8-a55e-38414d4955e3"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="20" width="83" height="24" uuid="e35398b9-84df-4372-90bc-cb1fd8b7a940"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detallefactura_idFactura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="45" y="0" width="176" height="50" isPrintWhenDetailOverflows="true" uuid="4475780c-6a60-4e98-8eb8-2f0cf17d51a6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detallefactura_nomproducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="0" width="39" height="15" uuid="b9484e31-7f2f-4427-9489-b1537d923d69"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detallefactura_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="8" y="50" width="236" height="14" uuid="d90bb516-cecc-4605-8e18-ac434614b4d1"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{detallefactura_comentarios}.length()>0)?"Nota:"+$F{detallefactura_comentarios}:$F{detallefactura_comentarios}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

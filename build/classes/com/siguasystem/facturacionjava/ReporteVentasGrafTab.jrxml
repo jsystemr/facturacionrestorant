@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas" pageWidth="250" pageHeight="612" columnWidth="210" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6af89b1a-0099-46fd-8879-3ed036e0b3c3">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="60"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="f1" class="java.util.Date"/>
+	<parameter name="f2" class="java.util.Date"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["c:\\facturacionclinica\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     sum(factura.`totalfac`) AS factura_totalfac,
+     factura.`efectivo` AS factura_efectivo,
+     factura.`hora` AS factura_hora,
+     factura.`notas` AS factura_notas,
+     factura.`nrotarjeta` AS factura_nrotarjeta,
+     factura.`fecha` AS factura_fecha,
+     factura.`idFactura` AS factura_idFactura,
+     factura.`cliente` AS factura_cliente,
+     factura.`empresa` AS factura_tienda,
+     factura.`estadofact` AS factura_estadofact,
+     factura.`tipofact` AS factura_tipofact,
+     factura.`usuario` AS factura_usuario,
+     factura.`estadofact` AS factura_estado,
+     factura.`nombrefac` AS factura_nombrefac,
+     estadofact.`idestadofact` AS estadofact_idestadofact,
+     estadofact.`descrip` AS estadofact_descrip
+FROM
+     `factura` factura INNER JOIN `estadofact` estadofact ON factura.`estadofact` = estadofact.`idestadofact`
+WHERE
+     factura.`fecha` BETWEEN $P{f1} and $P{f2} 
+GROUP BY
+     factura.`fecha`]]>
+	</queryString>
+	<field name="factura_totalfac" class="java.math.BigDecimal"/>
+	<field name="factura_efectivo" class="java.math.BigDecimal"/>
+	<field name="factura_hora" class="java.sql.Time"/>
+	<field name="factura_notas" class="java.lang.String"/>
+	<field name="factura_nrotarjeta" class="java.lang.Integer"/>
+	<field name="factura_fecha" class="java.sql.Date"/>
+	<field name="factura_idFactura" class="java.lang.Integer"/>
+	<field name="factura_cliente" class="java.lang.String"/>
+	<field name="factura_tienda" class="java.lang.String"/>
+	<field name="factura_estadofact" class="java.lang.Integer"/>
+	<field name="factura_tipofact" class="java.lang.Integer"/>
+	<field name="factura_usuario" class="java.lang.String"/>
+	<field name="factura_estado" class="java.lang.Integer"/>
+	<field name="factura_nombrefac" class="java.lang.String"/>
+	<field name="estadofact_idestadofact" class="java.lang.Integer"/>
+	<field name="estadofact_descrip" class="java.lang.String"/>
+	<variable name="factura_idFactura_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{factura_idFactura}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="15">
+			<staticText>
+				<reportElement x="0" y="2" width="60" height="13" uuid="4e91a6d5-fb19-43ad-b1cc-b4052adfcf74"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="2" width="68" height="13" uuid="51c12705-45bf-497d-9b54-c6d698bf85cb"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total Venta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="60" height="13" uuid="14671047-73e8-49a1-8240-e0b823246de9"/>
+				<textFieldExpression><![CDATA[$F{factura_fecha}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="60" y="0" width="68" height="13" uuid="9493f7d7-fd26-4a57-92a9-23f4ed8eea7e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{factura_totalfac}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

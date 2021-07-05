@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac8936f0-39d6-48d9-8eff-ae4f1b691369">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="f1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[2018]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     historicaproductos.`fecha` AS historicaproductos_fecha,
+     historicaproductos.`producto` AS historicaproductos_producto,
+     historicaproductos.`cantidad` AS historicaproductos_cantidad,
+     historicaproductos.`descripcion` AS historicaproductos_descripcion,
+     historicaproductos.`estado` AS historicaproductos_estado,
+     historicaproductos.`tipo` AS historicaproductos_tipo,
+     historicaproductos.`id` AS historicaproductos_id,
+     producto.`idProducto` AS producto_idProducto,
+     producto.`nombre` AS producto_nombre,
+     producto.`descripcion` AS producto_descripcion,
+     producto.`precio` AS producto_precio,
+     producto.`costo` AS producto_costo,
+     producto.`categoria` AS producto_categoria,
+     producto.`cantidadexis` AS producto_cantidadexis,
+     producto.`imgruta` AS producto_imgruta,
+     producto.`impuesto` AS producto_impuesto,
+     categoriaproducto.`idCategoria` AS categoriaproducto_idCategoria,
+     categoriaproducto.`descrip` AS categoriaproducto_descrip
+FROM
+     `historicaproductos` historicaproductos INNER JOIN `producto` producto ON historicaproductos.`producto` = producto.`idProducto`
+     INNER JOIN `categoriaproducto` categoriaproducto ON producto.`categoria` = categoriaproducto.`idCategoria`
+WHERE
+     historicaproductos.`fecha`>= $P{f1} order by historicaproductos_producto DESC]]>
+	</queryString>
+	<field name="historicaproductos_fecha" class="java.sql.Date"/>
+	<field name="historicaproductos_producto" class="java.lang.String"/>
+	<field name="historicaproductos_cantidad" class="java.lang.Integer"/>
+	<field name="historicaproductos_descripcion" class="java.lang.String"/>
+	<field name="historicaproductos_estado" class="java.lang.Integer"/>
+	<field name="historicaproductos_tipo" class="java.lang.String"/>
+	<field name="historicaproductos_id" class="java.lang.Long"/>
+	<field name="producto_idProducto" class="java.lang.String"/>
+	<field name="producto_nombre" class="java.lang.String"/>
+	<field name="producto_descripcion" class="java.lang.String"/>
+	<field name="producto_precio" class="java.lang.Float"/>
+	<field name="producto_costo" class="java.lang.Float"/>
+	<field name="producto_categoria" class="java.lang.String"/>
+	<field name="producto_cantidadexis" class="java.lang.Integer"/>
+	<field name="producto_imgruta" class="java.lang.String"/>
+	<field name="producto_impuesto" class="java.math.BigDecimal"/>
+	<field name="categoriaproducto_idCategoria" class="java.lang.String"/>
+	<field name="categoriaproducto_descrip" class="java.lang.String"/>
+	<variable name="total" class="java.math.BigDecimal" resetType="Group" resetGroup="Producto" calculation="Sum">
+		<variableExpression><![CDATA[$F{historicaproductos_cantidad}]]></variableExpression>
+	</variable>
+	<group name="Producto">
+		<groupExpression><![CDATA[$F{historicaproductos_producto}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<staticText>
+					<reportElement x="352" y="0" width="111" height="20" uuid="12b8f51d-69a6-4cc5-8938-5bd0f4786f2f"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cantidad(UND)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="463" y="0" width="92" height="20" uuid="1a9f23dd-75ef-4a0f-9aaa-0e4428cbf31f"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="23" y="0" width="100" height="20" uuid="2b8c16da-79cc-4341-9002-a6fcc2b782fd"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Producto]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="24">
+				<staticText>
+					<reportElement x="244" y="0" width="119" height="21" uuid="a625af32-a1e7-4887-9cd4-08bb3372e63f"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Existencia:]]></text>
+				</staticText>
+				<textField pattern="###0.00;-###0.00">
+					<reportElement x="363" y="0" width="100" height="21" uuid="f64bfdbf-12ee-4bea-8261-c9b6510b2e6f"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="ca9a7c44-1f77-4664-83f2-0b692642378f"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de Movimientos de Productos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="48" height="20" uuid="02a7718b-dfff-4777-ab66-7117e2d63dda"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="48" y="25" width="100" height="20" uuid="7a2605e0-0499-4928-994f-eb4ca9bfc900"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{historicaproductos_fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="96" y="0" width="256" height="20" uuid="e13d1f0d-a045-4f2b-8517-484935d649ad"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="63" height="20" uuid="80573fd2-c1d5-4a44-86e6-dadd6742e771"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{historicaproductos_tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="0" width="100" height="20" uuid="ad76d4af-bb05-49c9-879b-18f7d8e3eede"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{historicaproductos_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="0" width="83" height="20" uuid="bc2955fd-4b09-448d-bf35-beeafdbd6890"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{historicaproductos_producto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="18" splitType="Stretch"/>
+	</summary>
+</jasperReport>

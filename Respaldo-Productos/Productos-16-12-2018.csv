@@ -1,0 +1,819 @@
+"codpro","nompro","preciopro","stockpro","fechulticompro","preulticompro","coduni","tamanopro","descripro","fotopro","idcatpro","idimp"
+"","",,-2,"2001-01-01",,2,"","","",1,3
+"000","CRISTIAN",,,"2001-01-01",,2,"","","",1,3
+"0000","CRISTIAN",,,"2001-01-01",,2,"","","",1,3
+"011F","pizza 4 estaciones familiar",370.0000,0,"2001-01-01",,4,"","","",2,0
+"01F","pizza familiar cantones",490.0000,0,"2001-01-01",,4,"","","",2,0
+"01G","pizza cantones grande",350.0000,0,"2001-01-01",,4,"","","",2,0
+"01P","pizza cantones personal",250.0000,0,"2001-01-01",,4,"","","",2,0
+"02F","pizza jamon familiar",325.0000,-1,"2001-01-01",,4,"","","",2,0
+"02G","pizza jamon grande",240.0000,-3,"2001-01-01",,4,"","","",2,0
+"02P","pizza jamon personal",150.0000,,"2001-01-01",,4,"","","",2,0
+"03F","pizza peperoni familiar",345.0000,0,"2001-01-01",,4,"","","",2,0
+"03FS","pizza peperoni supre familiar",345.0000,-1,"2001-01-01",,4,"","","",2,0
+"03G","pizza peperoni grande",260.0000,0,"2001-01-01",,4,"","","",2,0
+"03GS","pizza peperoni supre grande",260.0000,-1,"2001-01-01",,4,"","","",2,0
+"03P","pizza peperoni personal",160.0000,0,"2001-01-01",,4,"","","",2,0
+"03PS","pizza peperoni supre personal",160.0000,,"2001-01-01",,4,"","","",2,0
+"04F","pizza camaron familiar",525.0000,0,"2001-01-01",,4,"","","",2,0
+"04G","pizza camaron grande",375.0000,0,"2001-01-01",,4,"","","",2,0
+"04P","pizza camaron personal",250.0000,,"2001-01-01",,4,"","","",2,0
+"05F","pizza hawaiana familiar",345.0000,0,"2001-01-01",,4,"","","",2,0
+"05G","pizza hawaiana grande",260.0000,0,"2001-01-01",,4,"","","",2,0
+"05P","pizza hawaiana personal",170.0000,0,"2001-01-01",,4,"","","",2,0
+"06F","pizza pollo familiar",340.0000,-1,"2001-01-01",,4,"","","",2,0
+"06G","pizza pollo grande",255.0000,-1,"2001-01-01",,4,"","","",2,0
+"06P","pizza pollo personal",170.0000,,"2001-01-01",,4,"","","",2,0
+"07F","pizza vegetariana familiar",345.0000,,"2001-01-01",,4,"","","",2,0
+"07G","pizza vegetariana grande",260.0000,,"2001-01-01",,4,"","","",2,0
+"07P","pizza vegetariana personal",160.0000,0,"2001-01-01",,4,"","","",2,0
+"08F","pizza margarita familiar",295.0000,,"2001-01-01",,4,"","","",2,0
+"08G","pizza margarita grande",230.0000,0,"2001-01-01",,4,"","","",2,0
+"08P","pizza margarita personal",145.0000,0,"2001-01-01",,4,"","","",2,0
+"09F","pizza champiñon familiar",345.0000,,"2001-01-01",,4,"","","",2,0
+"09G","pizza champiñon grande",260.0000,,"2001-01-01",,4,"","","",2,0
+"09P","pizza champiñon personal",160.0000,0,"2001-01-01",,4,"","","",2,0
+"10","medio Camaron Empanizado",145.0000,-41,"2001-01-01",,2,"","","",2,3
+"10AM","medio camaron ajillo",145.0000,,"2001-01-01",,4,"","","",2,0
+"10F","pizza queso familiar",295.0000,0,"2001-01-01",,4,"","","",2,0
+"10G","pizza queso grande",230.0000,0,"2001-01-01",,4,"","","",2,0
+"10P","pizza queso personal",145.0000,0,"2001-01-01",,4,"","","",2,0
+"11","Sopa Palacio China ",170.0000,-14,"2001-01-01",,2,"","","",2,3
+"11M","Media Sopa Palacio China",110.0000,-25,"2001-01-01",,2,"","","",2,3
+"11N","caracol al ajillo normal",400.0000,,"2001-01-01",,2,"","","",2,0
+"11P","caracol al ajillo personal",255.0000,,"2001-01-01",,2,"","","",2,0
+"12","Sopa Palacio China (4unds de wantan)",195.0000,-2,"2001-01-01",,2,"","","",2,3
+"12M","media Sopa Palacio 2wtan)",145.0000,-4,"2001-01-01",,2,"","","",2,3
+"13","Sopa Pollo con Alga China",135.0000,0,"2001-01-01",,2,"","","",2,3
+"13M","media Sopa Pollo Alga china",90.0000,0,"2001-01-01",,2,"","","",2,3
+"14","Sopa Wantan Frito (8unid)",150.0000,-2,"2001-01-01",,2,"","","",2,3
+"14M","media Sopa Wtan frito(5uni)",90.0000,-1,"2001-01-01",,2,"","","",2,3
+"15","Sopa Wantan Cosido(8unid)",150.0000,-11,"2001-01-01",,2,"","","",2,3
+"15M","media Sopa wtan cocido(5uni)",90.0000,-19,"2001-01-01",,2,"","","",2,3
+"16","Sopa Res con Vegetales",235.0000,0,"2001-01-01",,2,"","","",2,3
+"16M","media Sopa Res Vegetal",135.0000,-3,"2001-01-01",,2,"","","",2,3
+"17","Sopa Pollo con Vegetales",135.0000,-2,"2001-01-01",,2,"","","",2,3
+"17M","media Sopa pollo vegetales",90.0000,-18,"2001-01-01",,2,"","","",2,3
+"18","Sopa Pollo con Crema Maiz",135.0000,-3,"2001-01-01",,2,"","","",2,3
+"18M","media Sopa Pollo Maiz",90.0000,0,"2001-01-01",,2,"","","",2,3
+"19","Sopa de Camaron",235.0000,0,"2001-01-01",,2,"","","",2,3
+"19M","media Sopa de Camaron",145.0000,-3,"2001-01-01",,2,"","","",2,3
+"1AN","plato veg. agridulce normal",240.0000,,"2001-01-01",,4,"","","",2,0
+"1AP","plato veg.agridulce personal",155.0000,,"2001-01-01",,4,"","","",2,0
+"1N","Plato Vegetal Cosido normal",200.0000,0,"2001-01-01",,2,"","","",2,3
+"1P","Plato Vegetal Cosido personal",135.0000,0,"2001-01-01",,2,"","","",2,3
+"20","Sopa de Caracol",235.0000,1,"2001-01-01",,2,"","","",2,3
+"20M","media Sopa de Caracol",145.0000,0,"2001-01-01",,2,"","","",2,3
+"21","Sopa de Pescado",235.0000,,"2001-01-01",,2,"","","",2,3
+"21M","media Sopa de Pescado",145.0000,0,"2001-01-01",,2,"","","",2,3
+"22","Sopa de Mariscos",235.0000,-3,"2001-01-01",,2,"","","",2,3
+"22M","media Sopa Mariscos",145.0000,-8,"2001-01-01",,2,"","","",2,3
+"23","Sopa Vegetal",135.0000,,"2001-01-01",,2,"","","",2,3
+"23M","media Sopa Vegetales",90.0000,0,"2001-01-01",,2,"","","",2,3
+"25C","ingrediente extra",25.0000,0,"2001-01-01",,2,"","","",2,3
+"2LC","2 LITROS COMBO",30.0000,0,"2001-01-01",,4,"","","",2,0
+"2N","Orden Papas fritas normal",200.0000,,"2001-01-01",,2,"","","",2,3
+"2P","Orden papas fritas personal",100.0000,0,"2001-01-01",,2,"","","",2,3
+"333","CRISTIAN",,,"2001-01-01",,2,"","","",1,3
+"3LC","3 LITROS COMBO",35.0000,0,"2001-01-01",,4,"","","",2,0
+"3N","Cerdo a la plancha normal",200.0000,0,"2001-01-01",,2,"","","",2,3
+"3P","Cerdo a la plancha personal",135.0000,-6,"2001-01-01",,2,"","","",2,3
+"4N","Res a la Plancha normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"4P","Res a la Plancha personal",235.0000,-2,"2001-01-01",,2,"","","",2,3
+"5E","cremora  extra",5.0000,-110,"2001-01-01",,2,"","","",2,0
+"5N","Pollo a la Plancha normal",200.0000,0,"2001-01-01",,2,"","","",2,3
+"5P","Pollo a la Plancha personal",130.0000,-2,"2001-01-01",,2,"","","",2,3
+"6N","Carne Pollo Empani normal",200.0000,,"2001-01-01",,2,"","","",2,3
+"6P","Carne Pollo Empani personal",130.0000,-2,"2001-01-01",,2,"","","",2,3
+"777","MARGARITA",,,"2001-01-01",,2,"","","",1,3
+"7N","Camaron Empanizado normal",350.0000,-1,"2001-01-01",,2,"","","",2,3
+"7P","Camaron Empanizado personal",235.0000,-10,"2001-01-01",,2,"","","",2,3
+"80E","extra camaron 5",80.0000,-2,"2001-01-01",,2,"","","",2,0
+"8M","sopa wantan cocido 5 und",90.0000,0,"2001-01-01",,2,"","","",2,0
+"8N","Camaron Alajillo normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"8P","Camaron Al ajillo personal",235.0000,-4,"2001-01-01",,2,"","","",2,3
+"8PQ","medio camaron al ajillo",145.0000,-1,"2001-01-01",,4,"","","",2,0
+"9M","medio camaron a la plancha",145.0000,0,"2001-01-01",,2,"","","",2,0
+"9N","Camaron a la Plancha normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"9P","Camaron a la Plancha personal",235.0000,0,"2001-01-01",,2,"","","",2,3
+"9PQ","medio camaron a la plancha",145.0000,0,"2001-01-01",,4,"","","",2,0
+"A1","Arroz palacio pequeño",115.0000,-28,"2001-01-01",,2,"","","",2,3
+"A10F","Arroz paella familiar",360.0000,0,"2001-01-01",,2,"","","",2,3
+"A10N","Arroz paella normal",245.0000,0,"2001-01-01",,2,"","","",2,3
+"A10P","arroz paella personal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"A10PQ","Arroz paella pequeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"A11F","arroz camaron familiar",495.0000,-4,"2001-01-01",,2,"","","",2,3
+"A11N","Arroz camaron normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"A11P","Arroz camaron personal",235.0000,0,"2001-01-01",,2,"","","",2,3
+"A11PQ","Arroz pequeño camaron",145.0000,0,"2001-01-01",,2,"","","",2,3
+"A12F","arroz caracol familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"A12N","arroz caracol normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"A12P","arroz caracol personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"A12PQ","arroz caracol pequeño",145.0000,,"2001-01-01",,2,"","","",2,3
+"A13F","arroz mariscos familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"A13N","arroz mariscos normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"A13P","arroz mariscos personal",235.0000,-1,"2001-01-01",,2,"","","",2,3
+"A13PQ","arroz mariscos pequeño",145.0000,0,"2001-01-01",,2,"","","",2,3
+"A1E","arroz pollo peqeño",100.0000,0,"2001-01-01",,2,"","","",2,0
+"A2","arroz palacio personal",175.0000,-4,"2001-01-01",,2,"","","",2,3
+"A2E","arroz personal especial",155.0000,-3,"2001-01-01",,2,"","","",2,0
+"A2N","",,,"2001-01-01",,2,"","","",1,3
+"A2S","arroz personal super",140.0000,-9,"2001-01-01",,2,"","","",2,0
+"A3","arroz palacio normal",255.0000,-2,"2001-01-01",,2,"","","",2,3
+"A3E","arroz normal especial",225.0000,-2,"2001-01-01",,2,"","","",2,0
+"A3S","arroz normal super",195.0000,-23,"2001-01-01",,2,"","","",2,0
+"A4","arroz palacio familiar  ",395.0000,-4,"2001-01-01",,2,"","","",2,3
+"A4E","arroz especial familiar",355.0000,0,"2001-01-01",,2,"","","",2,0
+"A4S","arroz familiar super",315.0000,-4,"2001-01-01",,2,"","","",2,0
+"A5","arroz palacio super familiar",780.0000,-17,"2001-01-01",,2,"","","",2,3
+"A5E","arroz especial super familiar",695.0000,-6,"2001-01-01",,2,"","","",2,0
+"A5S","arroz superfamil super",620.0000,-23,"2001-01-01",,2,"","","",2,0
+"A6F","arroz pollo familiar",300.0000,-1,"2001-01-01",,2,"","","",2,3
+"A6N","arroz pollo normal",185.0000,-11,"2001-01-01",,2,"","","",2,3
+"A6P","arroz pollo personal",130.0000,-3,"2001-01-01",,2,"","","",2,3
+"A6PQ","arroz pollo pequeño",100.0000,-1,"2001-01-01",,2,"","","",2,3
+"A6SF","arroz  pollo super familiar",590.0000,0,"2001-01-01",,4,"","","",2,0
+"A7F","arroz res familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"A7N","arroz res normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"A7P","arroz res personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"A7PQ","arroz res pequeño",145.0000,,"2001-01-01",,2,"","","",2,3
+"A8F","arroz cerdo familiar",320.0000,0,"2001-01-01",,2,"","","",2,3
+"A8N","Arroz normal cerdo",195.0000,,"2001-01-01",,2,"","","",2,3
+"A8P","Arroz cerdo personal",135.0000,,"2001-01-01",,2,"","","",2,3
+"A8PQ","Arroz cerdo pequeño",110.0000,-3,"2001-01-01",,2,"","","",2,3
+"A9F","Arroz yanchoy familiar",360.0000,0,"2001-01-01",,2,"","","",2,3
+"A9N","Arroz yanchoy normal",245.0000,,"2001-01-01",,2,"","","",2,3
+"A9P","arroz yanchoy personal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"A9PQ","Arroz yanchoy pequeño",120.0000,0,"2001-01-01",,2,"","","",2,3
+"AB","atendio banessa",,0,"2001-01-01",,2,"","","",2,0
+"AB12","alitas barbacoa 12 unid",190.0000,0,"2001-01-01",,4,"","","",2,0
+"AB6","alitas barbacoa 6 unid",125.0000,0,"2001-01-01",,4,"","","",2,0
+"AB9","alitas barbacoa 9 unid",150.0000,0,"2001-01-01",,4,"","","",2,0
+"ABONO","abono",0.0000,0,"1000-01-01",0,1,"","","",2,0
+"AC","arroz camaron super familiar",1.1000,,"2001-01-01",,2,"","","",2,0
+"ADA","ATENDIO ADA",,1,"2001-01-01",,1,"","","",2,0
+"ADML","adomi largo",35.0000,0,"1000-01-01",0,1,"","","",2,0
+"ADOMI","adomicilio",25.0000,0,"2001-01-01",,2,"","","",1,3
+"AE","ATENDIO ELIZA",,0,"2001-01-01",,2,"","","",2,0
+"AE12","alitas empaniz 12 unid",190.0000,,"2001-01-01",,4,"","","",2,0
+"AE6","alitas empaniz 6 unid",125.0000,0,"2001-01-01",,4,"","","",2,0
+"AE9","alitas empanizadas 9 unid",150.0000,,"2001-01-01",,4,"","","",2,0
+"AF12","alitas fritas 12 unid",190.0000,,"2001-01-01",,4,"","","",2,0
+"AF6","alitas fritas 6 unid",125.0000,,"2001-01-01",,4,"","","",2,0
+"AF9","alitas fritas 9 unid",150.0000,,"2001-01-01",,4,"","","",2,0
+"AFE","arroz famil especial",355.0000,0,"2001-01-01",,2,"","","",2,0
+"AFP","Arroz fami palacio",395.0000,,"2001-01-01",,2,"","","",2,0
+"AFS","Arroz famil super",315.0000,,"2001-01-01",,2,"","","",2,0
+"AGE","Arroz grande Especial",235.0000,,"2001-01-01",,2,"","","",2,0
+"AGP","Arroz grande Palacio",275.0000,,"2001-01-01",,2,"","","",2,0
+"AGS","Arroz grande super",195.0000,,"2001-01-01",,2,"","","",2,0
+"AJ","ATENDIO JESICA",,-1,"2001-01-01",,2,"","","",2,0
+"AK","atendio klelia",,0,"2001-01-01",,2,"","","",2,0
+"AM","atendio margarita",,0,"2001-01-01",,2,"","","",2,0
+"ANE","Arroz normal Especial",155.0000,,"2001-01-01",,2,"","","",2,0
+"ANP","Arroz normal Palacio",175.0000,,"2001-01-01",,2,"","","",2,0
+"ANS","Arroz normal super",195.0000,0,"2001-01-01",,2,"","","",2,0
+"AP","Arroz palacio Personal",120.0000,0,"2001-01-01",,2,"","","",2,0
+"APF","arroz primaveral familiar",435.0000,,"2001-01-01",,2,"","","",2,0
+"APN","Arroz primaveral normal",295.0000,0,"2001-01-01",,2,"","","",2,0
+"APP","Arroz primaveral personal",215.0000,,"2001-01-01",,2,"","","",2,3
+"APSF","arroz con pollo super familiar",590.0000,0,"2001-01-01",,4,"","","",2,0
+"AS","atendio sujey",,0,"2001-01-01",,2,"","","",2,0
+"ASFE","arroz superfam Especial",695.0000,0,"2001-01-01",,2,"","","",2,0
+"ASFP","arroz superfam Palacio",780.0000,,"2001-01-01",,2,"","","",2,0
+"ASFS","arroz superfam super",620.0000,,"2001-01-01",,2,"","","",2,0
+"ASP","arroz pollo pequeño",100.0000,-2,"2001-01-01",,2,"","","",2,0
+"AST","ATENDIO STHEFANY",,-1,"2001-01-01",,2,"","","",2,0
+"ATP","ATENDIO PAMELA",,1,"2001-01-01",,2,"","","",2,0
+"B05","Te Fuze",20.0000,-67,"2001-01-01",,2,"","","",2,3
+"B1.25C","banana 1.25 comer",35.0000,1,"2001-01-01",,2,"","","",2,3
+"B1.25G","banana 1.25g",,-1,"2001-01-01",,4,"","","",2,0
+"B1.25L","banana 1.25 llevar",27.0000,0,"2001-01-01",,2,"","","",2,3
+"B2L","Banana 2 Lts llevar",38.0000,0,"2001-01-01",,2,"","","",1,3
+"B2LC","banana 2lts comer",50.0000,1,"2001-01-01",,2,"","","",2,3
+"B2LL","banana 2lts llevar",38.0000,0,"2001-01-01",,2,"","","",2,3
+"BAG","bote agua grande",20.0000,-13,"2001-01-01",,2,"","","",2,3
+"BAN","bandeja desechable",5.0000,-12,"2001-01-01",,2,"","","",2,0
+"BAP","bote agua pequeño",15.0000,-37,"2001-01-01",,2,"","","",2,3
+"BB","barena botella",40.0000,-262,"2001-01-01",,2,"","","",2,3
+"BD","banana desechable",20.0000,-3,"2001-01-01",,4,"","","",2,0
+"BDH","bolsa de hielo",20.0000,0,"2001-01-01",,2,"","","",2,0
+"BDP","bolsa de pan",40.0000,-7,"2001-01-01",,2,"","","",2,3
+"BE","BELKIS",,,"2001-01-01",,2,"","","",1,3
+"BELKIS","BELKIS",,,"2001-01-01",,2,"","","",1,3
+"BJCG","bote jalapeño chino grande",300.0000,,"2001-01-01",,4,"","","",2,0
+"BJCM","bote jalapeño chile mediano",200.0000,,"2001-01-01",,4,"","","",2,0
+"BJCMD","bote jalapeño chino mediano",200.0000,,"2001-01-01",,4,"","","",2,0
+"BJCPC","bote jalapeño chiño pequeño",100.0000,0,"2001-01-01",,4,"","","",2,0
+"BJCPQ","bote jalapeño chino pq",100.0000,0,"2001-01-01",,4,"","","",2,0
+"BL","barena lata",42.0000,,"2001-01-01",,2,"","","",2,3
+"BPQ","bandeja pequeña",5.0000,0,"1000-01-01",0,1,"","","",2,0
+"BV","barena vidrio",40.0000,-30,"2001-01-01",,2,"","","",2,3
+"C","corona",60.0000,-129,"2001-01-01",,2,"","","",2,3
+"C01F","costilla cerdo verduras salsa ostra fami",450.0000,,"2001-01-01",,2,"","","",2,3
+"C1","chap palacio pequeño",115.0000,2,"2001-01-01",,2,"","","",2,3
+"C1.25","coca 1.25lts llevar",27.0000,0,"2001-01-01",,2,"","","",1,3
+"C1.25C","coca 1.25lts comer",35.0000,6,"2001-01-01",,2,"","","",2,3
+"C1.25G","coca 1.25 gratis",,-6,"2001-01-01",,4,"","","",2,0
+"C1.25L","coca 1.25 llevar",27.0000,-1,"2001-01-01",,2,"","","",2,3
+"C1.25LC","coca 1.25 lts comer",45.0000,0,"2001-01-01",,2,"","","",1,3
+"C10F","chap suy paella familiar",360.0000,,"2001-01-01",,2,"","","",2,3
+"C10N","chap suy paella normal",245.0000,0,"2001-01-01",,2,"","","",2,3
+"C10P","chapsuy paella personal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"C10PQ","chap suy paella pequeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"C11F","chapsuy familiar camaron",495.0000,,"2001-01-01",,2,"","","",2,3
+"C11N","chapsuy normal camaron",350.0000,0,"2001-01-01",,2,"","","",2,3
+"C11P","chapsuy personal camaron",235.0000,0,"2001-01-01",,2,"","","",2,3
+"C11PQ","chapsuy pequeño camaron",145.0000,0,"2001-01-01",,2,"","","",2,3
+"C12F","chapsuy con caracol familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"C12N","chapsuy con caracol normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"C12P","chapsuy con caracol personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"C12PQ","chapsuy caracol pequeño",145.0000,,"2001-01-01",,2,"","","",2,3
+"C13F","chapsuy mariscos familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"C13N","chapsuy  mariscos normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"C13P","chapsuy mariscos personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"C13PQ","chapsuy mariscos pequeño",145.0000,,"2001-01-01",,2,"","","",2,3
+"C1E","chap pollo pequeño",100.0000,0,"2001-01-01",,2,"","","",2,0
+"C2","chap palacio personal",175.0000,-2,"2001-01-01",,2,"","","",2,3
+"C2.25LC","coca 1.25 lts comer",45.0000,,"2001-01-01",,2,"","","",1,3
+"C2E","chap personal especial",155.0000,-2,"2001-01-01",,2,"","","",2,0
+"C2L","coca 2 lts llevar",38.0000,0,"2001-01-01",,2,"","","",1,3
+"C2LC","coca 2 lts comer",50.0000,0,"2001-01-01",,2,"","","",2,3
+"C2LL","coca 2 lrt llevar",38.0000,0,"2001-01-01",,4,"","","",2,0
+"C2S","chap personal super",140.0000,-4,"2001-01-01",,2,"","","",2,0
+"C3","chap palacio normal",255.0000,-1,"2001-01-01",,2,"","","",2,3
+"C3E","chap especial normal",225.0000,-1,"2001-01-01",,2,"","","",2,0
+"C3LC","coca 3 lts comer",65.0000,-10,"2001-01-01",,2,"","","",2,3
+"C3LCE","coca 3lts empleado",52.0000,,"2001-01-01",,2,"","","",2,3
+"C3LL","coca 3 lts llevar",52.0000,-8,"2001-01-01",,2,"","","",2,3
+"C3LLE","coca 3lts empleado",52.0000,,"2001-01-01",,2,"","","",2,3
+"C3S","chap normal super",195.0000,-8,"2001-01-01",,2,"","","",2,0
+"C4","chap palacio familiar",395.0000,-7,"2001-01-01",,2,"","","",2,3
+"C4E","chap especial familiar",355.0000,0,"2001-01-01",,2,"","","",2,0
+"C4S","chap familiar super",315.0000,-2,"2001-01-01",,2,"","","",2,0
+"C5","chap palacio super familiar",780.0000,0,"2001-01-01",,2,"","","",2,3
+"C5E","chap especial super familiar",695.0000,0,"2001-01-01",,2,"","","",2,0
+"C5S","chap superfam super",620.0000,-3,"2001-01-01",,2,"","","",2,0
+"C6","chap suy palacio pequeño",125.0000,,"2001-01-01",,2,"","","",2,3
+"C6F","chap suy con pollo familiar",300.0000,0,"2001-01-01",,2,"","","",2,3
+"C6N","chap suy con pollo normal",185.0000,0,"2001-01-01",,2,"","","",2,3
+"C6P","chap personal pollo",130.0000,1,"2001-01-01",,2,"","","",2,3
+"C6PQ","chap pequeño pollo",100.0000,-3,"2001-01-01",,2,"","","",2,3
+"C6SF","chap pollo super familiar",590.0000,,"2001-01-01",,4,"","","",2,0
+"C7F","chap suy con carne de res familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"C7N","chap suy con carne de res normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"C7P","chapsuy con carne de res personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"C7PQ","chapsuy pequeño res",145.0000,0,"2001-01-01",,2,"","","",2,3
+"C8F","chapsuy con cerdo familiar",320.0000,,"2001-01-01",,2,"","","",2,3
+"C8N","chapsuy con cerdo normal",195.0000,,"2001-01-01",,2,"","","",2,3
+"C8P","chapsuy con cerdo personal",135.0000,,"2001-01-01",,2,"","","",2,3
+"C8PQ","chap suy con cerdo pequeño",110.0000,0,"2001-01-01",,2,"","","",2,3
+"C9F","chap suy yanchoy familiar",360.0000,0,"2001-01-01",,2,"","","",2,3
+"C9N","chap suey yanchoy normal",245.0000,0,"2001-01-01",,2,"","","",2,3
+"C9P","chap yanchoy personal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"C9PQ","chap yanchoy pequeño",120.0000,0,"2001-01-01",,2,"","","",2,3
+"CAD","canadry desechables",20.0000,-13,"2001-01-01",,4,"","","",2,0
+"CAM10F","Camaron familiar hongo chino",695.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM10N","Camaron normal hongo chino",500.0000,,"2001-01-01",,2,"","","",2,3
+"CAM10P","Camaron personal hongo chino",350.0000,,"2001-01-01",,2,"","","",2,3
+"CAM10PQ","Camaron pequeño hongo chino",245.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM11F","Camaron familiar vegetal chino",695.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM11N","Camaron normal vegetal chino",500.0000,,"2001-01-01",,2,"","","",2,3
+"CAM11P","Camaron personal vegetal chino",350.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM11PQ","Camaron pequeño vegetal chino",245.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM12F","camaron con chamìñon familiar",695.0000,,"2001-01-01",,2,"","","",2,0
+"CAM12N","camaron con champiñon normal",500.0000,,"2001-01-01",,2,"","","",2,0
+"CAM12P","camaron champiñon personal",350.0000,,"2001-01-01",,2,"","","",2,0
+"CAM12PQ","camaron con champiñon pequeño",245.0000,0,"2001-01-01",,2,"","","",2,0
+"CAM13F","",,,"2001-01-01",,2,"","","",2,0
+"CAM13N","",,,"2001-01-01",,2,"","","",2,0
+"CAM13P","",,,"2001-01-01",,2,"","","",2,0
+"CAM13PQ","",,,"2001-01-01",,2,"","","",2,0
+"CAM1F","camaron vegetal familiar",495.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM1N","camaron normal vegetal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM1P","camaron personal vegetal",235.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM1PQ","Camaron Vegetal pequeño",145.0000,-2,"2001-01-01",,2,"","","",2,3
+"CAM2F","camaron familiar cebolla",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM2N","camaron normal cebolla",350.0000,,"2001-01-01",,2,"","","",2,3
+"CAM2P","camaron personal cebolla",235.0000,,"2001-01-01",,2,"","","",2,3
+"CAM2PQ","camaron pequeño cebolla",145.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM3F","camaron con brocoli familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM3N","camaron con brocoli normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM3P","camaron con brocoli personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"CAM3PQ","camaron pequeño brocoli",145.0000,-1,"2001-01-01",,2,"","","",2,3
+"CAM4F","camaron familiar curry",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM4N","camaron normal curry",350.0000,,"2001-01-01",,2,"","","",2,3
+"CAM4P","camaron personal curry",235.0000,,"2001-01-01",,2,"","","",2,3
+"CAM4PQ","camaron pequeño curry",145.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM5F","camaron familiar tomate",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM5N","camaron normal tomate",350.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM5P","camaron personal tomate",235.0000,,"2001-01-01",,2,"","","",2,3
+"CAM5PQ","camaron pequeño tomate",145.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM6F","camaron familiar chile verde",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM6N","camaron normal chile verde",350.0000,,"2001-01-01",,2,"","","",2,3
+"CAM6P","camaron personal chile verde",235.0000,,"2001-01-01",,2,"","","",2,3
+"CAM6PQ","camaron pequeño chile verde",145.0000,,"2001-01-01",,2,"","","",2,3
+"CAM7F","Camaron familiar jalapeño",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM7N","Camaron normal jalapeño",350.0000,,"2001-01-01",,2,"","","",2,3
+"CAM7P","Camaron personal jalapeño",235.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM7PQ","Camaron pequeño jalapeño",145.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM8F","Camaron con Salsa Agridulce familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"CAM8N","Camaron agridulce normal",350.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM8P","Camaron agridulce personal",235.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM8PQ","Camaron pequeño agridulce",145.0000,0,"2001-01-01",,2,"","","",2,3
+"CAM9F","Camaron familiar marañon",695.0000,,"2001-01-01",,2,"","","",2,3
+"CAM9N","Camaron normal marañon",500.0000,,"2001-01-01",,2,"","","",2,3
+"CAM9P","Camaron personal marañon",350.0000,,"2001-01-01",,2,"","","",2,3
+"CAM9PQ","Camaron pequeño marañon",245.0000,0,"2001-01-01",,2,"","","",2,3
+"CB","corona botella",65.0000,0,"2001-01-01",,2,"","","",2,3
+"CC","cafe cremora",20.0000,-1,"2001-01-01",,2,"","","",2,3
+"CCC","copa de chile chino",15.0000,0,"2001-01-01",,2,"","","",2,3
+"CCJ","copa de chile jalapeño",15.0000,0,"2001-01-01",,2,"","","",2,0
+"CD","coca desechable",20.0000,-32,"2001-01-01",,4,"","","",2,0
+"CDA","copa de aderezo",15.0000,0,"2001-01-01",,2,"","","",2,0
+"CDP","COMBO PEPERONI",175.0000,0,"2001-01-01",,4,"","","",2,0
+"CE10F","Cerdo familiar hongo chino",695.0000,,"2001-01-01",,2,"","","",2,3
+"CE10N","Cerdo normal hongo chino",450.0000,,"2001-01-01",,2,"","","",2,3
+"CE10P","Cerdo personal hongo chino",285.0000,0,"2001-01-01",,2,"","","",2,3
+"CE10PQ","Cerdo pequeño hongo chino",210.0000,,"2001-01-01",,2,"","","",2,3
+"CE11F","Cerdo familiar vegetal",695.0000,,"2001-01-01",,2,"","","",2,3
+"CE11N","Cerdo normal vegetal chino",450.0000,,"2001-01-01",,2,"","","",2,3
+"CE11P","Cerdo personal vegetal chino",285.0000,0,"2001-01-01",,2,"","","",2,3
+"CE11PQ","Cerdo pequeño vegetal chino",210.0000,,"2001-01-01",,2,"","","",2,3
+"CE12F","cerdo asado champiñon familiar",695.0000,,"2001-01-01",,2,"","","",2,0
+"CE12N","cerdo asado champiñon normal",450.0000,,"2001-01-01",,2,"","","",2,0
+"CE12P","cerdo asado champiñon personal",285.0000,,"2001-01-01",,2,"","","",2,0
+"CE12PQ","cerdo asado champiñon pequeño",210.0000,,"2001-01-01",,2,"","","",2,0
+"CE1F","Cerdo familiar vegetal",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE1N","Cerdo normal vegetal",300.0000,0,"2001-01-01",,2,"","","",2,3
+"CE1P","Cerdo personal vegetal",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE1PQ","cerdo pequeño vegetal",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CE2F","Cerdo familiar cebolla",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE2N","Cerdo normal cebolla",300.0000,,"2001-01-01",,2,"","","",2,3
+"CE2P","Cerdo personal cebolla",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE2PQ","Cerdo pequeño cebolla",135.0000,,"2001-01-01",,2,"","","",2,3
+"CE3F","Cerdo familiar brocoli",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE3N","Cerdo normal brocoli",300.0000,,"2001-01-01",,2,"","","",2,3
+"CE3P","Cerdo personal brocoli",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE3PQ","Cerdo pequeño brocoli",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CE4F","Cerdo familiar curry",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE4N","Cerdo normal curry",300.0000,,"2001-01-01",,2,"","","",2,3
+"CE4P","Cerdo personal curry",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE4PQ","Cerdo pequeño curry",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CE5F","Cerdo familiar tomate",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE5N","Cerdo normal tomate",300.0000,,"2001-01-01",,2,"","","",2,3
+"CE5P","Cerdo personal tomate",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE5PQ","Cerdo pequeño tomate",135.0000,,"2001-01-01",,2,"","","",2,3
+"CE6F","Cerdo familiar chile verde",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE6N","Cerdo normal chile verde",300.0000,,"2001-01-01",,2,"","","",2,3
+"CE6P","Cerdo personal chile verde",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE6PQ","Cerdo pequeño chile verde",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CE7F","Cerdo familiar jalapeño",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE7N","cerdo normal jalapeño",300.0000,,"2001-01-01",,2,"","","",2,3
+"CE7P","Cerdo personal jalapeño",185.0000,,"2001-01-01",,2,"","","",2,3
+"CE7PQ","Cerdo pequeño jalapeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CE8F","Cerdo familiar jalapeño",395.0000,,"2001-01-01",,2,"","","",2,3
+"CE8N","Cerdo normal agridulce",300.0000,0,"2001-01-01",,2,"","","",2,3
+"CE8P","Cerdo personal agridulce",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CE8PQ","Cerdo pequeño agridulce",135.0000,-1,"2001-01-01",,2,"","","",2,3
+"CE9F","Cerdo familiar marañon",695.0000,,"2001-01-01",,2,"","","",2,3
+"CE9N","Cerdo normal marañon",450.0000,,"2001-01-01",,2,"","","",2,3
+"CE9P","Cerdo personal marañon",285.0000,0,"2001-01-01",,2,"","","",2,3
+"CE9PQ","Cerdo pequeño marañon",210.0000,0,"2001-01-01",,2,"","","",2,3
+"CFE","chap familiar especial",355.0000,,"2001-01-01",,2,"","","",2,0
+"CFP","chap famil palacio",395.0000,,"2001-01-01",,2,"","","",2,0
+"CFS","chap famil super",315.0000,0,"2001-01-01",,2,"","","",2,0
+"CGE","Chap grande especial",235.0000,,"2001-01-01",,2,"","","",2,0
+"CGP","Chap grande palacio",275.0000,,"2001-01-01",,2,"","","",2,0
+"CGS","Chap grande super",195.0000,,"2001-01-01",,2,"","","",2,0
+"CH1","chuleta ahuma frita",185.0000,-1,"2001-01-01",,2,"","","",2,3
+"CH10","chuleta granja cebolla y tomate",165.0000,-4,"2001-01-01",,2,"","","",2,3
+"CH2","chuleta ahuma empanizada",185.0000,-2,"2001-01-01",,2,"","","",2,3
+"CH3","chuleta ahuma encebollada",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CH4","chuleta ahuma entomatada ",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CH5","chuleta ahuma cebolla y tmate",185.0000,-4,"2001-01-01",,2,"","","",2,3
+"CH6","chuleta granja frita",165.0000,-1,"2001-01-01",,2,"","","",2,3
+"CH7","chuleta granja empanizada",165.0000,0,"2001-01-01",,2,"","","",2,3
+"CH8","chuleta granja encebollada",165.0000,-3,"2001-01-01",,2,"","","",2,3
+"CH9","chuleta granja entomatada",165.0000,0,"2001-01-01",,2,"","","",2,3
+"CHILEG","chile chino gratis",,1,"2001-01-01",,2,"","","",2,3
+"CJ","COMBO JAMON",175.0000,0,"2001-01-01",,4,"","","",2,0
+"CJALP","copa jalapeño",25.0000,0,"1000-01-01",0,1,"","","",2,0
+"CJCC","copa jalapeño chino comer",15.0000,0,"2001-01-01",,4,"","","",2,0
+"CJCL","copa jalapeño chino llevar",30.0000,-1,"2001-01-01",,4,"","","",2,0
+"CL","cafe leche",20.0000,0,"2001-01-01",,2,"","","",2,3
+"CLD","coca light desechable",20.0000,-8,"2001-01-01",,4,"","","",2,0
+"CM1F","chaumin familiar palacio",400.0000,0,"2001-01-01",,2,"","","",2,3
+"CM1N","chaumin normal palacio",250.0000,0,"2001-01-01",,2,"","","",2,3
+"CM1P","chaumin personal palacio",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CM1PQ","chaumin pequeño palacio",125.0000,0,"2001-01-01",,2,"","","",2,3
+"CM2F","chaumin familiar pollo",320.0000,,"2001-01-01",,2,"","","",2,3
+"CM2N","chaumin normal pollo",200.0000,0,"2001-01-01",,2,"","","",2,3
+"CM2P","chaumin personal pollo",140.0000,,"2001-01-01",,2,"","","",2,3
+"CM2PQ","chaumin pequeño pollo",110.0000,0,"2001-01-01",,2,"","","",2,3
+"CM3F","chaumin familiar res",400.0000,0,"2001-01-01",,2,"","","",2,3
+"CM3N","chaumin normal res",375.0000,,"2001-01-01",,2,"","","",2,3
+"CM3P","chaumin personal res",250.0000,,"2001-01-01",,2,"","","",2,3
+"CM3PQ","chaumin pequeño res",155.0000,0,"2001-01-01",,2,"","","",2,3
+"CM4F","chaumin familiar cerdo",345.0000,,"2001-01-01",,2,"","","",2,3
+"CM4N","chaumin normal cerdo",220.0000,,"2001-01-01",,2,"","","",2,3
+"CM4P","chaumin personal cerdo",150.0000,,"2001-01-01",,2,"","","",2,3
+"CM4PQ","chaumin pequeño cerdo",125.0000,0,"2001-01-01",,2,"","","",2,3
+"CM5F","chaumin familiar camaron",495.0000,,"2001-01-01",,2,"","","",2,3
+"CM5N","chaumin normal camaron",375.0000,,"2001-01-01",,2,"","","",2,3
+"CM5P","chaumin personal camaron",250.0000,,"2001-01-01",,2,"","","",2,3
+"CM5PQ","chaumin pequeño camaron",155.0000,0,"2001-01-01",,2,"","","",2,3
+"CN","cafe negro",15.0000,-6,"2001-01-01",,2,"","","",2,3
+"CNE","Chap normal especial",155.0000,,"2001-01-01",,2,"","","",2,0
+"CNP","Chap normal palacio",175.0000,,"2001-01-01",,2,"","","",2,0
+"CNS","Chap normal super",140.0000,,"2001-01-01",,2,"","","",2,0
+"CO1F","Costilla Vegetal Familiar",395.0000,0,"2001-01-01",,2,"","","",2,3
+"CO1N","Costilla Vegetal normal",300.0000,0,"2001-01-01",,2,"","","",2,3
+"CO1P","costilla Vegetal personal",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO1PQ","Costilla Vegetal pequeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CO2F","costilla familiar cebolla",395.0000,0,"2001-01-01",,2,"","","",2,3
+"CO2N","costilla normal cebolla",300.0000,,"2001-01-01",,2,"","","",2,3
+"CO2P","costilla personal cebolla",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO2PQ","costilla pequeño cebolla",135.0000,-2,"2001-01-01",,2,"","","",2,3
+"CO3F","costilla brocoli familiar",395.0000,0,"2001-01-01",,2,"","","",2,3
+"CO3N","costilla brocoli normal",300.0000,0,"2001-01-01",,2,"","","",2,3
+"CO3P","costilla personal brocoli",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO3PQ","costilla pequeño brocoli",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CO4F","costilla curry familiar",395.0000,,"2001-01-01",,2,"","","",2,3
+"CO4N","costilla curry normal",300.0000,,"2001-01-01",,2,"","","",2,3
+"CO4P","costilla curry personal",185.0000,,"2001-01-01",,2,"","","",2,3
+"CO4PQ","costilla curry pequeño",135.0000,,"2001-01-01",,2,"","","",2,3
+"CO5F","costilla tomate familiar",395.0000,0,"2001-01-01",,2,"","","",2,3
+"CO5N","costilla tomate normal",300.0000,,"2001-01-01",,2,"","","",2,3
+"CO5P","costilla tomate personal",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO5PQ","costilla tomate pequeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CO6F","costilla chile verde familiar",395.0000,,"2001-01-01",,2,"","","",2,3
+"CO6N","costilla chile verde normal",300.0000,,"2001-01-01",,2,"","","",2,3
+"CO6P","costilla chile verde personal",185.0000,,"2001-01-01",,2,"","","",2,3
+"CO6PQ","costilla chile verde pequeño",135.0000,,"2001-01-01",,2,"","","",2,3
+"CO7F","costilla jalapeño familiar",395.0000,,"2001-01-01",,2,"","","",2,3
+"CO7N","costilla jalapeño normal",300.0000,,"2001-01-01",,2,"","","",2,3
+"CO7P","costilla jalapeño personal ",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO7PQ","costilla jalapeño pequeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CO8F","costilla agridulce familiar",395.0000,-1,"2001-01-01",,2,"","","",2,3
+"CO8N","costilla agridulce normal",300.0000,0,"2001-01-01",,2,"","","",2,3
+"CO8P","costilla agridulce personal",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO8PQ","costilla agridulce pequeño",135.0000,0,"2001-01-01",,2,"","","",2,3
+"CO9F","costilla barbacoa familiar",395.0000,,"2001-01-01",,2,"","","",2,0
+"CO9N","costilla barbacoa normal",300.0000,0,"2001-01-01",,2,"","","",2,0
+"CO9P","costilla barbacoa personal",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CO9PQ","costilla barbacoa pequeño",135.0000,0,"2001-01-01",,2,"","","",2,0
+"COMIENZO","comienzo",,0,"2001-01-01",,1,"","","",1,0
+"CP","Chap palacio Personal",120.0000,0,"2001-01-01",,2,"","","",2,0
+"CPF","combinado palacio familiar",550.0000,-4,"2001-01-01",,2,"","","",2,3
+"CPN","combinado palacio normal",395.0000,0,"2001-01-01",,2,"","","",2,3
+"CPP","combinado palacio personal",255.0000,0,"2001-01-01",,2,"","","",2,3
+"CPPO","COMBO PIZZA POLLO",175.0000,-8,"2001-01-01",,4,"","","",2,0
+"CPPQ","combinado palacio pequeño ",150.0000,-2,"2001-01-01",,2,"","","",2,3
+"CRI","CRISTIAN",,,"2001-01-01",,2,"","","",1,3
+"CRIS","CRISTIAN",,,"2001-01-01",,2,"","","",1,3
+"CS1F","chapsuy seco familiar palacio ",400.0000,-1,"2001-01-01",,2,"","","",2,3
+"CS1N","chapsuy seco  normal palacio",250.0000,0,"2001-01-01",,2,"","","",2,3
+"CS1P","chapsuy seco personal palacio",185.0000,0,"2001-01-01",,2,"","","",2,3
+"CS1PQ","chapsuy seco pequeño palacio",125.0000,-7,"2001-01-01",,2,"","","",2,3
+"CS2F","chapsuy seco familiar pollo",350.0000,,"2001-01-01",,2,"","","",2,3
+"CS2N","chapsuy seco normal pollo",200.0000,,"2001-01-01",,2,"","","",2,3
+"CS2P","chapsuy seco personal pollo",140.0000,,"2001-01-01",,2,"","","",2,3
+"CS2PQ","chapsuy seco  pequeño pollo",110.0000,-7,"2001-01-01",,2,"","","",2,3
+"CS3F","chapsuy seco familiar res",400.0000,,"2001-01-01",,2,"","","",2,3
+"CS3N","chapsuy seco normal res",375.0000,,"2001-01-01",,2,"","","",2,3
+"CS3P","chapsuy seco personal res",250.0000,,"2001-01-01",,2,"","","",2,3
+"CS3PQ","chapsuy seco pequeño res",155.0000,,"2001-01-01",,2,"","","",2,3
+"CS4F","chapsuy seco familiar cerdo",345.0000,,"2001-01-01",,2,"","","",2,3
+"CS4N","chapsuy seco normal cerdo",220.0000,,"2001-01-01",,2,"","","",2,3
+"CS4P","chapsuy seco  personal cerdo",150.0000,,"2001-01-01",,2,"","","",2,3
+"CS4PQ","chapsuy seco pequeño cerdo",125.0000,,"2001-01-01",,2,"","","",2,3
+"CS5F","chapsuy seco familiar camaron",495.0000,,"2001-01-01",,2,"","","",2,3
+"CS5N","chapsuy seco normal camaron",375.0000,0,"2001-01-01",,2,"","","",2,3
+"CS5P","chapsuy seco  personal camaron",250.0000,0,"2001-01-01",,2,"","","",2,3
+"CS5PQ","chapsuy seco pequeño camaron",155.0000,0,"2001-01-01",,2,"","","",2,3
+"CSA","copa salsa agridulce",15.0000,-1,"2001-01-01",,2,"","","",2,3
+"CSFE","chap superfam especial",695.0000,,"2001-01-01",,2,"","","",2,0
+"CSFP","chap superfam palacio",780.0000,,"2001-01-01",,2,"","","",2,0
+"CSFS","chap superfam super",620.0000,,"2001-01-01",,2,"","","",2,0
+"CSO","copa de salsa ostra",60.0000,0,"2001-01-01",,4,"","","",2,0
+"CSP","chap suey pollo pequeño",100.0000,1,"2001-01-01",,2,"","","",2,0
+"CU","cuchara",1.0000,-5,"2001-01-01",,4,"","","",2,0
+"D01","adomicilio",20.0000,1,"2001-01-01",,2,"","","",2,3
+"D02","domiclio gratis",,1,"2001-01-01",,2,"","","",2,3
+"D03","ADOMI LARGO",35.0000,0,"2001-01-01",,2,"","","",2,0
+"D04","adomicilio largo",40.0000,0,"2001-01-01",,2,"","","",2,0
+"D05","adomicilio",25.0000,0,"2001-01-01",,4,"","","",2,0
+"D06","adomi el porvenir",75.0000,0,"2001-01-01",,4,"","","",2,0
+"EA","exta aceituna 4",40.0000,,"2001-01-01",,4,"","","",2,0
+"EC","extra caracol 5",80.0000,,"2001-01-01",,2,"","","",2,0
+"ECC","extra carne de cerdo 5",80.0000,,"2001-01-01",,2,"","","",2,0
+"ECH","extra carne hamburguesa",50.0000,,"2001-01-01",,4,"","","",2,0
+"ECHA","extra champiñon 4",40.0000,0,"2001-01-01",,4,"","","",2,0
+"ECM","EXTRA CREMA DE MAIZ",35.0000,0,"2001-01-01",,4,"","","",2,0
+"ECO","extra costilla de cerdo",80.0000,,"2001-01-01",,2,"","","",2,0
+"ECP","extra carne de pollo 5",80.0000,0,"2001-01-01",,2,"","","",2,0
+"ECR","extra carne de res 5",80.0000,0,"2001-01-01",,2,"","","",2,0
+"EF","extra fideo",40.0000,0,"2001-01-01",,2,"","","",2,0
+"EFDA","extra fideo de arroz",35.0000,0,"2001-01-01",,2,"","","",2,0
+"EHC","extra hongo chino 8",80.0000,0,"2001-01-01",,4,"","","",2,0
+"EJA","extra jamon pizza",40.0000,0,"2001-01-01",,4,"","","",2,0
+"EJAL","extra jalapeño pizza",10.0000,0,"2001-01-01",,4,"","","",2,0
+"EM","EXTRA MOZARELA 4",40.0000,,"2001-01-01",,4,"","","",2,0
+"EMPAQUE","empaque",5.0000,-2,"2001-01-01",,2,"","","",1,3
+"ENVASE","envase de vidrio",5.0000,-4,"2001-01-01",,4,"","","",2,0
+"EPE","extra peperoni ",40.0000,0,"2001-01-01",,4,"","","",2,0
+"EPI","extra piña 4",40.0000,0,"2001-01-01",,4,"","","",2,0
+"EPO","extra pollo pizza",40.0000,0,"2001-01-01",,4,"","","",2,0
+"EQ","extra queso 4 ",40.0000,-1,"2001-01-01",,4,"","","",2,0
+"ESM","extra semilla de marañon5",80.0000,,"2001-01-01",,2,"","","",2,0
+"ESM5","extra semilla de marañon5",80.0000,,"2001-01-01",,4,"","","",2,0
+"ETC","extra taco chino 1 und",40.0000,0,"2001-01-01",,2,"","","",2,0
+"EV12","EXTRA VEGETAL 12",30.0000,-1,"2001-01-01",,2,"","","",2,0
+"EV4","extra veget pizza 4",40.0000,0,"2001-01-01",,4,"","","",2,0
+"EV6","EXTRA VEGETAL 6",15.0000,0,"2001-01-01",,2,"","","",2,0
+"EVC","extra vegetal chino 10 onz",80.0000,0,"2001-01-01",,2,"","","",2,0
+"F","FREDY",,0,"2001-01-01",,2,"","","",1,3
+"F1.25C","fanta 1.25lts comer",35.0000,9,"2001-01-01",,2,"","","",2,3
+"F1.25CE","Fresco 1.25lts empleado",27.0000,,"2001-01-01",,2,"","","",1,3
+"F1.25G","fanta 1.25 gratis",,0,"2001-01-01",,4,"","","",2,0
+"F1.25L","Fresco 1.25lts Llevar",27.0000,-3,"2001-01-01",,2,"","","",2,3
+"F1.25LE","fresco 1.25lts empelado",27.0000,,"2001-01-01",,2,"","","",2,3
+"F11F","fideo familiar palacio",400.0000,-5,"2001-01-01",,2,"","","",2,3
+"F11N","fideo normal palacio ",250.0000,0,"2001-01-01",,2,"","","",2,3
+"F11P","fideo personal palacio ",185.0000,0,"2001-01-01",,2,"","","",2,3
+"F11PQ","fideo pequeño palacio ",135.0000,-4,"2001-01-01",,2,"","","",2,3
+"F12F","fideo  familiar pollo",320.0000,-2,"2001-01-01",,2,"","","",2,3
+"F12N","fideo normal pollo",200.0000,0,"2001-01-01",,2,"","","",2,3
+"F12P","fideo personal pollo",140.0000,0,"2001-01-01",,2,"","","",2,3
+"F12PQ","fideo pequeño pollo",110.0000,0,"2001-01-01",,2,"","","",2,3
+"F13F","fideo familiar res",400.0000,,"2001-01-01",,2,"","","",2,3
+"F13N","fideo normal res",375.0000,,"2001-01-01",,2,"","","",2,3
+"F13P","fideo personal res",250.0000,0,"2001-01-01",,2,"","","",2,3
+"F13PQ","fideo pequeño res ",155.0000,0,"2001-01-01",,2,"","","",2,3
+"F14F","fideo familiar cerdo",345.0000,,"2001-01-01",,2,"","","",2,3
+"F14N","fideo normal cerdo",220.0000,,"2001-01-01",,2,"","","",2,3
+"F14P","fideo personal cerdo",150.0000,,"2001-01-01",,2,"","","",2,3
+"F14PQ","fideo pequeño cerdo",125.0000,0,"2001-01-01",,2,"","","",2,3
+"F15F","fideo familiar camaron",495.0000,,"2001-01-01",,2,"","","",2,3
+"F15N","fideo normal camaron",375.0000,0,"2001-01-01",,2,"","","",2,3
+"F15P","fideo personal camaron",250.0000,0,"2001-01-01",,2,"","","",2,3
+"F15PQ","fideo pequeño camaron ",155.0000,-1,"2001-01-01",,2,"","","",2,3
+"F2LC","fanta 2 lts comer",50.0000,3,"2001-01-01",,2,"","","",2,3
+"F2LL","fresco 2lts llevar",38.0000,-2,"2001-01-01",,2,"","","",2,3
+"F3LC","Fresco 3lts comer",65.0000,-25,"2001-01-01",,2,"","","",2,3
+"F3LL","fresco 3lts llevar",52.0000,-33,"2001-01-01",,2,"","","",2,3
+"FA1.25C","fanta 1.25 comer",35.0000,0,"2001-01-01",,4,"","","",2,0
+"FA1.25G","fanta 1.25 gratis",,0,"2001-01-01",,4,"","","",2,0
+"FA1.25L","fanta 1.25l",27.0000,0,"2001-01-01",,4,"","","",2,0
+"FA2LC","fanta 2 lts comer",50.0000,0,"2001-01-01",,4,"","","",2,0
+"FA2LL","fanta 2 lts llevat",38.0000,0,"2001-01-01",,4,"","","",2,0
+"FAD","fanta desechable",20.0000,-3,"2001-01-01",,4,"","","",2,0
+"FD","fresco desechable personal",20.0000,-708,"2001-01-01",,2,"","","",2,3
+"FDE","frescos desecha empleados",16.0000,-19,"2001-01-01",,2,"","","",2,3
+"FE1.25L","fresco empleados ",27.0000,0,"2001-01-01",,2,"","","",1,3
+"FN","fresco natural",25.0000,-753,"2001-01-01",,2,"","","",2,3
+"FNE","fresco natural empleado",18.0000,-5,"2001-01-01",,4,"","","",2,0
+"FP1","filete pesca plancha personal",175.0000,-1,"2001-01-01",,2,"","","",2,3
+"FP2","filete pesc al ajillo personal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"FP3","filete pesc verduras personal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"FP4","filete pesc empaniza personal",175.0000,-2,"2001-01-01",,2,"","","",2,3
+"FP5","filete pescado agridulce",175.0000,0,"2001-01-01",,2,"","","",2,3
+"FR1.25C","fresca 1.25 comer",35.0000,2,"2001-01-01",,4,"","","",2,0
+"FR1.25G","fresca 1.25 gratis",,0,"2001-01-01",,4,"","","",2,0
+"FR1.25L","fresca 1.25 llevar",27.0000,0,"2001-01-01",,4,"","","",2,0
+"FR2L","fresca 2 lts llevar",38.0000,0,"2001-01-01",,2,"","","",1,3
+"FR2LC","fresca 2lts comer",50.0000,0,"2001-01-01",,2,"","","",2,3
+"FR2LL","fresca 2lts llevar",38.0000,0,"2001-01-01",,2,"","","",2,3
+"FRD","fresca desechable",20.0000,-3,"2001-01-01",,4,"","","",2,0
+"GV","gallina al vapor con genjibre",600.0000,,"2001-01-01",,4,"","","",2,0
+"H","hamburguesa pollo papas",75.0000,-94,"2001-01-01",,4,"","","",2,0
+"HORA","hora",0.0000,-4,"1000-01-01",0,1,"","","",2,0
+"IB","imperial botella",35.0000,-23,"2001-01-01",,2,"","","",2,3
+"IE","ingrediente extra",10.0000,-1,"2001-01-01",,2,"","","",2,3
+"IEP","ingrediente extra",40.0000,0,"2001-01-01",,2,"","","",2,0
+"IL","imperial lata",37.0000,,"2001-01-01",,2,"","","",2,3
+"IV","imperial vidrio",35.0000,-36,"2001-01-01",,2,"","","",2,3
+"J","JESICA",,,"2001-01-01",,2,"","","",1,3
+"JA","JAYRON",,,"2001-01-01",,2,"","","",1,3
+"JAYRON","JAYRON",,,"2001-01-01",,2,"","","",1,3
+"JDP","juego de palillos chinos",80.0000,0,"2001-01-01",,2,"","","",2,0
+"JDV","jarra de vidrio",80.0000,,"2001-01-01",,4,"","","",1,0
+"JE","JESICA",,,"2001-01-01",,2,"","","",2,0
+"JESICA","JESICA",,0,"2001-01-01",,2,"","","",2,0
+"JG","jugo grande",18.0000,-6,"2001-01-01",,2,"","","",2,3
+"JP","jugo pequeño",10.0000,-25,"2001-01-01",,2,"","","",2,3
+"JV","juego de pla,va,te",3.0000,-1221,"2001-01-01",,2,"","","",2,3
+"K","KARLA",,,"2001-01-01",,2,"","","",1,3
+"KA","KARLA",,,"2001-01-01",,2,"","","",1,3
+"KAR","KARLA",,,"2001-01-01",,2,"","","",1,3
+"KARLA","KARLA",,,"2001-01-01",,2,"","","",1,3
+"LLAMAR","llamar al cliente",0.0000,0,"1000-01-01",0,1,"","","",2,0
+"M","margarita",,,"2001-01-01",,2,"","","",1,3
+"M10A12P","mixto arroz y chap 10a12 personas",630.0000,-10,"2001-01-01",,4,"","","",2,0
+"M1F","caracol vegetal fam",495.0000,,"2001-01-01",,2,"","","",2,3
+"M1N","caracol vegetal normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"M1P","caracol veg personal",235.0000,0,"2001-01-01",,2,"","","",2,3
+"M1PQ","caracol vegetal peq",145.0000,0,"2001-01-01",,2,"","","",2,3
+"M20","mesa #20",,,"2001-01-01",,2,"","","",1,3
+"M2A3P","mixto 2a3 personas",230.0000,-1,"2001-01-01",,4,"","","",2,0
+"M2F","marisco vegetal familiar",495.0000,,"2001-01-01",,2,"","","",2,3
+"M2N","marisco vegetal normal",350.0000,,"2001-01-01",,2,"","","",2,3
+"M2P","Marisco vegetal personal",235.0000,,"2001-01-01",,2,"","","",2,3
+"M2PQ","marisco vegetal pequeño",145.0000,0,"2001-01-01",,2,"","","",2,3
+"M3A4P","mixto arroz y chap 3a4 personas",230.0000,-3,"2001-01-01",,4,"","","",2,0
+"M5A6P","mixto arroz y chap 5a6 personas",290.0000,-8,"2001-01-01",,4,"","","",2,0
+"MA","margarita",,,"2001-01-01",,2,"","","",1,3
+"MD","miller Draft",60.0000,,"2001-01-01",,2,"","","",2,3
+"ME","marañon extra",100.0000,0,"2001-01-01",,2,"","","",2,3
+"MI","miguel",,,"2001-01-01",,2,"","","",1,3
+"ML","miller light",60.0000,,"2001-01-01",,2,"","","",2,3
+"MM","manda menu ",0.0000,0,"1000-01-01",0,1,"","","",2,0
+"OA1","orden alitas fritas",165.0000,0,"2001-01-01",,2,"","","",2,3
+"OA2","orden alitas empanizada",165.0000,-1,"2001-01-01",,2,"","","",2,3
+"OA3","orden alitas barbacoa",185.0000,-7,"2001-01-01",,2,"","","",2,3
+"P","plato",1.0000,-660,"2001-01-01",,2,"","","",2,3
+"P2","orden 2 pan ajo",35.0000,0,"2001-01-01",,4,"","","",2,0
+"P2G","orden 2 pan ajo gratis",,0,"2001-01-01",,4,"","","",2,0
+"P4","orden pan ajo 4 und",60.0000,-2,"2001-01-01",,4,"","","",2,0
+"P4G","pan ajo 4 gratis",,0,"2001-01-01",,4,"","","",2,0
+"P6","pan ajo 6",70.0000,-14,"2001-01-01",,4,"","","",2,0
+"P6G","Pan con ajo 6 gratis",,0,"2001-01-01",,4,"","","",2,0
+"PAJONAL","adomi el pajonal",65.0000,,"2001-01-01",,4,"","","",2,0
+"PALMEROLA","adomi palmerola",65.0000,0,"1000-01-01",0,1,"","","",2,0
+"PAN","pan extra",2.0000,-898,"2001-01-01",,2,"","","",2,3
+"PB","portroyal botella",40.0000,-11,"2001-01-01",,2,"","","",2,3
+"PE","PEDRO",,,"2001-01-01",,2,"","","",1,3
+"PE1","pescado entero frito",175.0000,-7,"2001-01-01",,2,"","","",2,3
+"PE2","pescado entero al vapor ",175.0000,-1,"2001-01-01",,2,"","","",2,3
+"PE3","pescado entero empanizado",175.0000,-2,"2001-01-01",,2,"","","",2,3
+"PE4","pescado entero salsa Agridulce",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PG","pato entero gisado",850.0000,,"2001-01-01",,4,"","","",2,0
+"PGPM","medio pato gisado con papa",500.0000,-1,"2001-01-01",,4,"","","",2,0
+"PHDW","paquete de hojas de wtan 100 unds",90.0000,-3,"2001-01-01",,4,"","","",2,0
+"PJP","pizza jamon promocion",99.0000,-7,"2001-01-01",,4,"","","",2,0
+"PL","portroyal lata",42.0000,,"2001-01-01",,2,"","","",2,3
+"PO10F","Pollo familiar hongo chino",585.0000,,"2001-01-01",,2,"","","",2,3
+"PO10N","Pollo normal hongo chino",450.0000,0,"2001-01-01",,2,"","","",2,3
+"PO10P","Pollo personal hongo chino",275.0000,0,"2001-01-01",,2,"","","",2,3
+"PO10PQ","Pollo pequeño hongo chino",200.0000,0,"2001-01-01",,2,"","","",2,3
+"PO11F","Pollo familiar vegetal chino",585.0000,,"2001-01-01",,2,"","","",2,3
+"PO11N","Pollo normal vegetal chino",450.0000,,"2001-01-01",,2,"","","",2,3
+"PO11P","pollo personal vegetal chino",275.0000,0,"2001-01-01",,2,"","","",2,3
+"PO11PQ","Pollo pequeño vegetal chino",200.0000,0,"2001-01-01",,2,"","","",2,3
+"PO12F","pollo con champiñon familiar",585.0000,,"2001-01-01",,2,"","","",2,0
+"PO12N","pollo con champiñon normal",450.0000,,"2001-01-01",,2,"","","",2,0
+"PO12P","pollo personal con champiñon",275.0000,0,"2001-01-01",,2,"","","",2,0
+"PO12PQ","pollo champiñon pequeño",200.0000,,"2001-01-01",,2,"","","",2,0
+"PO1F","pollo familiar vegetal",385.0000,-2,"2001-01-01",,2,"","","",2,3
+"PO1N","pollo normal vegetal",285.0000,0,"2001-01-01",,2,"","","",2,3
+"PO1P","Pollo personal vegetal",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO1PQ","Pollo pequeño veg",130.0000,-1,"2001-01-01",,2,"","","",2,3
+"PO2F","pollo familiar cebolla",385.0000,,"2001-01-01",,2,"","","",2,3
+"PO2N","pollo normal cebolla",285.0000,,"2001-01-01",,2,"","","",2,3
+"PO2P","pollo personal cebolla",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO2PQ","pollo pequeño cebolla",130.0000,0,"2001-01-01",,2,"","","",2,3
+"PO3F","pollo familiar brocoli",385.0000,0,"2001-01-01",,2,"","","",2,3
+"PO3N","pollo normal brocoli",285.0000,0,"2001-01-01",,2,"","","",2,3
+"PO3P","pollo personal brocoli",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO3PQ","pollo pequeño brocoli",130.0000,-1,"2001-01-01",,2,"","","",2,3
+"PO4F","pollo familiar curry",385.0000,,"2001-01-01",,2,"","","",2,3
+"PO4N","pollo normal curry",285.0000,0,"2001-01-01",,2,"","","",2,3
+"PO4P","pollo personal curry",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO4PQ","pollo pequeño curry",130.0000,0,"2001-01-01",,2,"","","",2,3
+"PO5F","pollo familiar tomate",385.0000,,"2001-01-01",,2,"","","",2,3
+"PO5N","pollo normal tomate",285.0000,0,"2001-01-01",,2,"","","",2,3
+"PO5P","pollo personal tomate",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO5PQ","pollo pequeño tomate",130.0000,0,"2001-01-01",,2,"","","",2,3
+"PO6F","pollo familiar chile verde",385.0000,,"2001-01-01",,2,"","","",2,3
+"PO6N","pollo normal chile verde",285.0000,,"2001-01-01",,2,"","","",2,3
+"PO6P","pollo personal chile verde",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO6PQ","pollo pequeño chile verde",130.0000,0,"2001-01-01",,2,"","","",2,3
+"PO7F","pollo familiar jalapeño",385.0000,0,"2001-01-01",,2,"","","",2,3
+"PO7N","pollo normal jalapeño",285.0000,0,"2001-01-01",,2,"","","",2,3
+"PO7P","pollo personal jalapeño",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO7PQ","pollo pequeño jalapeño",130.0000,0,"2001-01-01",,2,"","","",2,3
+"PO8F","pollo familiar agridulce",385.0000,0,"2001-01-01",,2,"","","",2,3
+"PO8N","pollo normal agridulce",285.0000,0,"2001-01-01",,2,"","","",2,3
+"PO8P","pollo personal agridulce",175.0000,0,"2001-01-01",,2,"","","",2,3
+"PO8PQ","pollo pequeño agridulce",130.0000,0,"2001-01-01",,2,"","","",2,3
+"PO9F","Pollo familiar marañon",585.0000,0,"2001-01-01",,2,"","","",2,3
+"PO9N","Pollo normal marañon",450.0000,0,"2001-01-01",,2,"","","",2,3
+"PO9P","Pollo personal marañon",275.0000,0,"2001-01-01",,2,"","","",2,3
+"PO9PQ","Pollo pequeño marañon",200.0000,-1,"2001-01-01",,2,"","","",2,3
+"PPOP","pizza pollo promocion",99.0000,-6,"2001-01-01",,4,"","","",2,0
+"PPP","pizza peperoni promocion",99.0000,-13,"2001-01-01",,4,"","","",2,0
+"PPROP","pizza pollo promocion",99.0000,0,"2001-01-01",,4,"","","",2,0
+"PR12","pechu ricas 12 unid",190.0000,,"2001-01-01",,4,"","","",2,0
+"PR6","pechu ricas 6 unid",125.0000,,"2001-01-01",,4,"","","",2,0
+"PR9","pechu ricas 9 unid",150.0000,,"2001-01-01",,4,"","","",2,0
+"PRUEBA","prueba",0.0000,0,"1000-01-01",0,1,"","","",2,0
+"PTTF","plato tallarin tostado familiar",200.0000,,"2001-01-01",,2,"","","",2,0
+"PTTN","plato tallarin tostado normal",140.0000,0,"2001-01-01",,2,"","","",2,0
+"PTTP","plato tallarin tostado personal",80.0000,0,"2001-01-01",,2,"","","",2,0
+"PTTPQ","plato tallarin tostado pequeño",60.0000,0,"2001-01-01",,2,"","","",2,0
+"PV","portroyal vidrio",40.0000,-71,"2001-01-01",,2,"","","",2,3
+"PYT","platos y tenedores",2.0000,-564,"2001-01-01",,2,"","","",2,3
+"PYV","platos y vasos",2.0000,-33,"1000-01-01",0,1,"","","",2,0
+"RE10F","Res familiar hongo chino",735.0000,,"2001-01-01",,2,"","","",2,3
+"RE10N","Res normal hongo chino",530.0000,,"2001-01-01",,2,"","","",2,3
+"RE10P","Res personal hongo chino",370.0000,,"2001-01-01",,2,"","","",2,3
+"RE10PQ","Res pequeño hongo chino",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE11F","Res familiar vegetal chino",735.0000,,"2001-01-01",,2,"","","",2,3
+"RE11N","Res normal vegetal chino",530.0000,,"2001-01-01",,2,"","","",2,3
+"RE11P","Res personal vegetal chino",370.0000,,"2001-01-01",,2,"","","",2,3
+"RE11PQ","Res pequeño vegetal chino",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE12F","res con champiñon familiar",735.0000,,"2001-01-01",,2,"","","",2,0
+"RE12N","Res con champiñon normal",530.0000,,"2001-01-01",,2,"","","",2,0
+"RE12P","res con champiñon personal",370.0000,,"2001-01-01",,2,"","","",2,0
+"RE12PQ","res con champiñon pequeño",255.0000,,"2001-01-01",,2,"","","",2,0
+"RE1F","res vege famil salsa ostra",535.0000,0,"2001-01-01",,2,"","","",2,3
+"RE1N","Res normal vegetal",380.0000,0,"2001-01-01",,2,"","","",2,3
+"RE1P","Res Personal vegetal",255.0000,0,"2001-01-01",,2,"","","",2,3
+"RE1PQ","Res  vegetal pequeño",155.0000,-1,"2001-01-01",,2,"","","",2,3
+"RE2F","Res familiar cebolla",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE2N","Res normal cebolla",380.0000,,"2001-01-01",,2,"","","",2,3
+"RE2P","Res personal cebolla",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE2PQ","res pequeño cebolla",155.0000,0,"2001-01-01",,2,"","","",2,3
+"RE3F","Res familiar brocoli",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE3N","Res normal brocoli",380.0000,0,"2001-01-01",,2,"","","",2,3
+"RE3P","Res personal brocoli",255.0000,0,"2001-01-01",,2,"","","",2,3
+"RE3PQ","Res pequeño brocoli",155.0000,0,"2001-01-01",,2,"","","",2,3
+"RE4F","Res familiar curry",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE4N","Res normal curry",380.0000,0,"2001-01-01",,2,"","","",2,3
+"RE4P","Res personal curry",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE4PQ","Res pequeño curry",155.0000,,"2001-01-01",,2,"","","",2,3
+"RE5F","Res familiar tomate",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE5N","Res normal tomate",380.0000,,"2001-01-01",,2,"","","",2,3
+"RE5P","Res personal tomate",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE5PQ","Res pequeño tomate",155.0000,,"2001-01-01",,2,"","","",2,3
+"RE6F","Res familiar chile verde",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE6N","Res normal chile verde",380.0000,,"2001-01-01",,2,"","","",2,3
+"RE6P","Res personal chile verde",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE6PQ","Res pequeño chile verde",155.0000,,"2001-01-01",,2,"","","",2,3
+"RE7F","Res familiar jalapeño",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE7N","Res normal jalapeño",380.0000,,"2001-01-01",,2,"","","",2,3
+"RE7P","Res personal jalapeño",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE7PQ","Res pequeño jalapeño",155.0000,,"2001-01-01",,2,"","","",2,3
+"RE8F","Res familiar agridulce",535.0000,,"2001-01-01",,2,"","","",2,3
+"RE8N","Res normal agridulce",380.0000,,"2001-01-01",,2,"","","",2,3
+"RE8P","Res personal agridulce",255.0000,,"2001-01-01",,2,"","","",2,3
+"RE8PQ","Res pequeño agridulce",155.0000,1,"2001-01-01",,2,"","","",2,3
+"RE9F","Res familiar marañon",735.0000,,"2001-01-01",,2,"","","",2,3
+"RE9N","Res normal marañon",530.0000,,"2001-01-01",,2,"","","",2,3
+"RE9P","Res personal marañon",370.0000,,"2001-01-01",,2,"","","",2,3
+"RE9PQ","Res pequeño marañon",255.0000,0,"2001-01-01",,2,"","","",2,3
+"S1.25C","sprite 1.25 comer",35.0000,0,"2001-01-01",,1,"","","",2,0
+"S1.25G","sprite 1.25 gratis",,-1,"2001-01-01",,4,"","","",2,0
+"S1.25L","sprite 1.25 llevar",27.0000,0,"2001-01-01",,4,"","","",2,0
+"S2LC","sprite 2lts comer",50.0000,1,"2001-01-01",,2,"","","",2,3
+"S2LL","sprite 2lts llevar",38.0000,0,"2001-01-01",,2,"","","",2,3
+"S3LC","sprite 3 lts comer",65.0000,0,"2001-01-01",,4,"","","",2,0
+"S3LL","sprite 3lts llevar",52.0000,0,"2001-01-01",,4,"","","",2,0
+"SALDO","saldo",0.0000,0,"1000-01-01",0,1,"","","",2,0
+"SD","sprite desechable",20.0000,0,"2001-01-01",,4,"","","",2,0
+"SE","SOLO ENTREGAR",0.0000,0,"1000-01-01",0,1,"","","",2,0
+"SL","salvavida lata",37.0000,,"2001-01-01",,2,"","","",1,3
+"SS","salsas",0.0000,0,"1000-01-01",0,1,"","","",1,0
+"SV","salvavida botella",35.0000,-300,"2001-01-01",,2,"","","",2,3
+"SVL","salvavida lata",37.0000,,"2001-01-01",,2,"","","",2,3
+"SWC","salsa para wantan cocido",30.0000,0,"2001-01-01",,2,"","","",2,0
+"T","tenedor",1.0000,-676,"2001-01-01",,2,"","","",2,3
+"T2","Orden de Tacos (2 Unids)",80.0000,-1,"2001-01-01",,2,"","","",2,3
+"T4","Orden de Tacos (4 Unids)",145.0000,-19,"2001-01-01",,2,"","","",2,3
+"TAB","taza arroz blanco",20.0000,-8,"2001-01-01",,1,"","","",2,0
+"TAF","taza arroz frito",45.0000,-3,"2001-01-01",,1,"","","",2,0
+"TC","te chino",20.0000,-5,"2001-01-01",,2,"","","",2,3
+"TCL","te chino bolsita",15.0000,-1,"2001-01-01",,2,"","","",2,0
+"TDE","taza de ensalada",45.0000,-2,"2001-01-01",,1,"","","",2,0
+"TDTTN","taza tallarin tostado",140.0000,,"2001-01-01",,2,"","","",2,0
+"TE","tiempo espera",,-7,"2001-01-01",,2,"","","",2,3
+"TEST","test",100.0000,95,"2001-01-01",,1,"","","",2,1
+"TEST2","test2",120.0000,-2,"2001-01-01",,2,"","","",2,3
+"TEST2018","pruaba 2018",100.0000,,"2001-01-01",,2,"","","",2,0
+"TPF","Taza de papas fritas",45.0000,0,"2001-01-01",,2,"","","",2,3
+"TSA","",15.0000,,"2001-01-01",,2,"","","",2,0
+"TSO","taza juguito chapsuy",50.0000,0,"2001-01-01",,1,"","","",2,0
+"TT","taza tallarin",20.0000,0,"2001-01-01",,2,"","","",2,3
+"TTTN","taza tallarin tostado normal",140.0000,,"2001-01-01",,1,"","","",2,0
+"U1.25C","uva 1.25 comer ",35.0000,0,"2001-01-01",,4,"","","",2,0
+"U1.25G","uva 1.25 gratis",,-1,"2001-01-01",,4,"","","",2,0
+"U1.25L","uva 11.25 llevar",27.0000,0,"2001-01-01",,1,"","","",2,0
+"U2L","uva 2lts llevar",38.0000,1,"2001-01-01",,2,"","","",1,3
+"U2LC","uva 2lts comer",50.0000,-1,"2001-01-01",,2,"","","",2,3
+"U2LL","uva 2lts llevar",38.0000,0,"2001-01-01",,2,"","","",2,3
+"UD","uva desechable",20.0000,-2,"2001-01-01",,4,"","","",2,0
+"VASOS","vasos",1.0000,-268,"2001-01-01",,2,"","","",2,0
+"VYT","VASOS Y TENEDORES",2.0000,-8,"2001-01-01",,4,"","","",2,0
+"W17","Orden de Wantan (17 Unids)",145.0000,-26,"2001-01-01",,2,"","","",2,3
+"W17C","orden wtan cocido 17 und",195.0000,0,"2001-01-01",,2,"","","",2,0
+"W9","Orden de wantan (9 Unids)",80.0000,-3,"2001-01-01",,2,"","","",2,3
+"W9C","orden de wantan cocido 9 unidades",130.0000,0,"2001-01-01",,2,"","","",2,0
+"WC13","wtan cocido 13uni",205.0000,0,"2001-01-01",,2,"","","",2,0
+"WC17","wtan camaron 17uni",295.0000,0,"1000-01-01",0,1,"","","",2,0
+"WC9","wtan camaron 9uni",165.0000,0,"1000-01-01",0,1,"","","",2,0
+"WE","wantan extra",10.0000,-66,"2001-01-01",,2,"","","",2,0
+"WP","orden wantan pollo (9unid)",80.0000,0,"2001-01-01",,2,"","","",2,0
+"WP17","orden wtan pollo 17 unds",145.0000,,"2001-01-01",,2,"","","",2,0
+"WP9","orden wantan pollo 9 und",80.0000,,"2001-01-01",,4,"","","",2,0
+"Z12N","chapsuy palacio con caracol normal ",400.0000,,"2001-01-01",,2,"","","",2,3

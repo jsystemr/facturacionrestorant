@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="252" pageHeight="792" whenNoDataType="BlankPage" columnWidth="252" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="37cc697e-5c46-4618-a4e9-a142e09997ed">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="d0b2e30d-933d-47c5-8ea4-fcfb501c6575"/>
+	<subDataset name="Table Dataset 2" uuid="009fba96-d003-44dd-9488-a1760e93cefa">
+		<parameter name="id" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+     factura.`idFactura` AS factura_idFactura,
+     factura.`fecha` AS factura_fecha,
+     factura.`hora` AS factura_hora,
+     factura.`efectivo` AS factura_efectivo,
+     factura.`notas` AS factura_notas,
+     factura.`nrotarjeta` AS factura_nrotarjeta,
+     factura.`tipofact` AS factura_tipofact,
+     factura.`idorden` AS factura_idorden,
+     factura.`empresa` AS factura_empresa,
+     factura.`usuario` AS factura_usuario,
+     factura.`estadofact` AS factura_estadofact,
+     factura.`cliente` AS factura_cliente,
+     empresa.`idEmpresa` AS empresa_idEmpresa,
+     empresa.`nombre` AS empresa_nombre,
+     empresa.`eslogan` AS empresa_eslogan,
+     empresa.`telefono` AS empresa_telefono,
+     empresa.`fax` AS empresa_fax,
+     empresa.`web` AS empresa_web,
+     empresa.`correo` AS empresa_correo,
+     empresa.`rtn` AS empresa_rtn,
+     empresa.`direccion` AS empresa_direccion,
+     empresa.`estado` AS empresa_estado,
+     correlativossar.`id` AS correlativossar_id,
+     correlativossar.`fechacreacion` AS correlativossar_fechacreacion,
+     correlativossar.`fechaini` AS correlativossar_fechaini,
+     correlativossar.`fechafin` AS correlativossar_fechafin,
+     correlativossar.`rangoini` AS correlativossar_rangoini,
+     correlativossar.`rangofin` AS correlativossar_rangofin,
+     correlativossar.`formatonumero` AS correlativossar_formatonumero,
+     correlativossar.`cai` AS correlativossar_cai,
+     correlativossar.`estado` AS correlativossar_estado,
+     cliente.`idCliente` AS cliente_idCliente,
+     cliente.`nombre` AS cliente_nombre,
+     cliente.`telefono` AS cliente_telefono,
+     cliente.`direccion` AS cliente_direccion,
+     cliente.`celular` AS cliente_celular,
+     cliente.`rtncli` AS cliente_rtncli
+FROM
+     `empresa` empresa INNER JOIN `factura` factura ON empresa.`idEmpresa` = factura.`empresa`
+     AND factura.`empresa` = empresa.`idEmpresa`
+     INNER JOIN `cliente` cliente ON factura.`cliente` = cliente.`idCliente`,
+     `correlativossar` correlativossar
+WHERE
+     factura.`idFactura` = $P{id}
+ AND correlativossar.`estado` = 1
+ AND empresa.`estado` = 1
+ AND factura.`cliente` = cliente.`idcliente`]]>
+		</queryString>
+		<field name="factura_idFactura" class="java.lang.Long"/>
+		<field name="factura_fecha" class="java.sql.Date"/>
+		<field name="factura_hora" class="java.sql.Time"/>
+		<field name="factura_efectivo" class="java.math.BigDecimal"/>
+		<field name="factura_notas" class="java.lang.String"/>
+		<field name="factura_nrotarjeta" class="java.lang.Integer"/>
+		<field name="factura_tipofact" class="java.lang.Integer"/>
+		<field name="factura_idorden" class="java.lang.Integer"/>
+		<field name="factura_empresa" class="java.lang.String"/>
+		<field name="factura_usuario" class="java.lang.String"/>
+		<field name="factura_estadofact" class="java.lang.Integer"/>
+		<field name="factura_cliente" class="java.lang.String"/>
+		<field name="empresa_idEmpresa" class="java.lang.String"/>
+		<field name="empresa_nombre" class="java.lang.String"/>
+		<field name="empresa_eslogan" class="java.lang.String"/>
+		<field name="empresa_telefono" class="java.lang.String"/>
+		<field name="empresa_fax" class="java.lang.String"/>
+		<field name="empresa_web" class="java.lang.String"/>
+		<field name="empresa_correo" class="java.lang.String"/>
+		<field name="empresa_rtn" class="java.lang.String"/>
+		<field name="empresa_direccion" class="java.lang.String"/>
+		<field name="empresa_estado" class="java.lang.Integer"/>
+		<field name="correlativossar_id" class="java.lang.Long"/>
+		<field name="correlativossar_fechacreacion" class="java.sql.Timestamp"/>
+		<field name="correlativossar_fechaini" class="java.sql.Date"/>
+		<field name="correlativossar_fechafin" class="java.sql.Date"/>
+		<field name="correlativossar_rangoini" class="java.lang.Long"/>
+		<field name="correlativossar_rangofin" class="java.lang.Long"/>
+		<field name="correlativossar_formatonumero" class="java.lang.String"/>
+		<field name="correlativossar_cai" class="java.lang.String"/>
+		<field name="correlativossar_estado" class="java.lang.Boolean"/>
+		<field name="cliente_idCliente" class="java.lang.String"/>
+		<field name="cliente_nombre" class="java.lang.String"/>
+		<field name="cliente_telefono" class="java.lang.String"/>
+		<field name="cliente_direccion" class="java.lang.String"/>
+		<field name="cliente_celular" class="java.lang.String"/>
+		<field name="cliente_rtncli" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\facturacionjava\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tot" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     factura.`idFactura` AS factura_idFactura,
+     factura.`fecha` AS factura_fecha,
+     factura.`hora` AS factura_hora,
+     factura.`efectivo` AS factura_efectivo,
+     factura.`notas` AS factura_notas,
+     factura.`nrotarjeta` AS factura_nrotarjeta,
+     factura.`tipofact` AS factura_tipofact,
+     factura.`idorden` AS factura_idorden,
+     factura.`empresa` AS factura_empresa,
+     factura.`usuario` AS factura_usuario,
+     factura.`estadofact` AS factura_estadofact,
+     factura.`cliente` AS factura_cliente,
+     factura.`totalfac` AS factura_totalfac,
+     empresa.`idEmpresa` AS empresa_idEmpresa,
+     empresa.`nombre` AS empresa_nombre,
+     empresa.`eslogan` AS empresa_eslogan,
+     empresa.`telefono` AS empresa_telefono,
+     empresa.`fax` AS empresa_fax,
+     empresa.`web` AS empresa_web,
+     empresa.`correo` AS empresa_correo,
+     empresa.`rtn` AS empresa_rtn,
+     empresa.`direccion` AS empresa_direccion,
+     empresa.`estado` AS empresa_estado,
+     correlativossar.`id` AS correlativossar_id,
+     correlativossar.`fechacreacion` AS correlativossar_fechacreacion,
+     correlativossar.`fechaini` AS correlativossar_fechaini,
+     correlativossar.`fechafin` AS correlativossar_fechafin,
+     correlativossar.`rangoini` AS correlativossar_rangoini,
+     correlativossar.`rangofin` AS correlativossar_rangofin,
+     correlativossar.`formatonumero` AS correlativossar_formatonumero,
+     correlativossar.`cai` AS correlativossar_cai,
+     correlativossar.`estado` AS correlativossar_estado,
+     cliente.`idCliente` AS cliente_idCliente,
+     cliente.`nombre` AS cliente_nombre,
+     cliente.`telefono` AS cliente_telefono,
+     cliente.`direccion` AS cliente_direccion,
+     cliente.`celular` AS cliente_celular,
+     cliente.`rtncli` AS cliente_rtncli,
+     tiporden.`idtiporden` AS tiporden_idtiporden,
+     tiporden.`descri` AS tiporden_descri
+FROM
+     `empresa` empresa INNER JOIN `factura` factura ON empresa.`idEmpresa` = factura.`empresa`
+     AND factura.`empresa` = empresa.`idEmpresa`
+     INNER JOIN `cliente` cliente ON factura.`cliente` = cliente.`idCliente`
+     INNER JOIN `tiporden` tiporden ON factura.`idorden` = tiporden.`idtiporden`
+     inner join `correlativossar` correlativossar on factura.`idcorrelativo`=correlativossar.`id`	
+WHERE
+     factura.`idFactura` = $P{id}
+ AND correlativossar.`estado` = 1
+ AND empresa.`estado` = 1]]>
+	</queryString>
+	<field name="factura_idFactura" class="java.lang.Long"/>
+	<field name="factura_fecha" class="java.sql.Date"/>
+	<field name="factura_hora" class="java.sql.Time"/>
+	<field name="factura_efectivo" class="java.math.BigDecimal"/>
+	<field name="factura_notas" class="java.lang.String"/>
+	<field name="factura_nrotarjeta" class="java.lang.Integer"/>
+	<field name="factura_tipofact" class="java.lang.Integer"/>
+	<field name="factura_idorden" class="java.lang.Integer"/>
+	<field name="factura_empresa" class="java.lang.String"/>
+	<field name="factura_usuario" class="java.lang.String"/>
+	<field name="factura_estadofact" class="java.lang.Integer"/>
+	<field name="factura_cliente" class="java.lang.String"/>
+	<field name="factura_totalfac" class="java.math.BigDecimal"/>
+	<field name="empresa_idEmpresa" class="java.lang.String"/>
+	<field name="empresa_nombre" class="java.lang.String"/>
+	<field name="empresa_eslogan" class="java.lang.String"/>
+	<field name="empresa_telefono" class="java.lang.String"/>
+	<field name="empresa_fax" class="java.lang.String"/>
+	<field name="empresa_web" class="java.lang.String"/>
+	<field name="empresa_correo" class="java.lang.String"/>
+	<field name="empresa_rtn" class="java.lang.String"/>
+	<field name="empresa_direccion" class="java.lang.String"/>
+	<field name="empresa_estado" class="java.lang.Integer"/>
+	<field name="correlativossar_id" class="java.lang.Long"/>
+	<field name="correlativossar_fechacreacion" class="java.sql.Timestamp"/>
+	<field name="correlativossar_fechaini" class="java.sql.Date"/>
+	<field name="correlativossar_fechafin" class="java.sql.Date"/>
+	<field name="correlativossar_rangoini" class="java.lang.Long"/>
+	<field name="correlativossar_rangofin" class="java.lang.Long"/>
+	<field name="correlativossar_formatonumero" class="java.lang.String"/>
+	<field name="correlativossar_cai" class="java.lang.String"/>
+	<field name="correlativossar_estado" class="java.lang.Boolean"/>
+	<field name="cliente_idCliente" class="java.lang.String"/>
+	<field name="cliente_nombre" class="java.lang.String"/>
+	<field name="cliente_telefono" class="java.lang.String"/>
+	<field name="cliente_direccion" class="java.lang.String"/>
+	<field name="cliente_celular" class="java.lang.String"/>
+	<field name="cliente_rtncli" class="java.lang.String"/>
+	<field name="tiporden_idtiporden" class="java.lang.Integer"/>
+	<field name="tiporden_descri" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="175" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="0" width="224" height="21" uuid="157aad01-9c18-457e-92a8-e47b052d4125"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="19" width="224" height="19" isPrintWhenDetailOverflows="true" uuid="a2acfd11-e85f-4342-8766-acf161733bfb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false" isItalic="true"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_eslogan}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement isPrintRepeatedValues="false" x="1" y="38" width="224" height="16" uuid="5e3aae2b-e046-4259-a964-ac3ade612a1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sitio Web:"+$F{empresa_web}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="55" width="222" height="16" uuid="979226a4-c24a-4ae6-87d7-c400602f8184"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Email:"+$F{empresa_correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="87" width="222" height="16" uuid="a92f7b9e-dca8-4283-82e1-72bb58e73248"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tel:"+$F{empresa_telefono}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="3" y="70" width="222" height="16" uuid="4d29d281-7569-4d94-9875-dfdbd57b6001"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dirección:"+$F{empresa_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="100" width="143" height="14" uuid="fccf3497-5b92-424c-ac25-c7c5eff59716"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["RTN:"+$F{empresa_rtn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="112" width="53" height="14" uuid="edc8183e-4ce5-4862-8be9-05c7d45f33fa"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nro. Factura:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="112" width="165" height="14" uuid="15c34b6d-b7a0-4a37-89f3-c792f82820b1"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{correlativossar_formatonumero}+"-"+String.format("%08d", $F{factura_idFactura})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="125" width="28" height="14" uuid="043db9ad-f795-4d73-b74c-50d5a775ae02"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="40" y="125" width="55" height="14" uuid="4c253e7a-2017-4cc7-a7c2-462019cc05dc"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_fecha}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="10" y="137" width="218" height="14" uuid="b7eaca7e-9fbf-47b6-9cf0-3d2cf12a258f"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cliente: "+$F{cliente_nombre}+":"+(($F{cliente_telefono}.length()>0)?$F{cliente_telefono}:"")]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="92" y="125" width="45" height="14" uuid="8f758afb-4a9a-421f-b050-4ba5e4f5db0b"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="125" width="93" height="14" uuid="b7917444-7091-4ddc-8552-71cde23f46f4"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Orden:"+$F{tiporden_descri}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="151" width="49" height="12" uuid="efa2d340-44d2-44d0-878a-bcf2b6d63e89"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[  RTN:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="59" y="148" width="169" height="14" isRemoveLineWhenBlank="true" uuid="985c4d98-5822-4618-a471-741126b01de9"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cliente_rtncli}.length()>0)?$F{cliente_rtncli}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="10" y="161" width="218" height="12" isRemoveLineWhenBlank="true" uuid="da535a15-711f-42da-8c54-b722554a0e54"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement x="8" y="0" width="218" height="66" uuid="b10920dc-7749-4a17-aa38-03ecc7127a4e"/>
+				<subreportParameter name="idfactura">
+					<subreportParameterExpression><![CDATA[$F{factura_idFactura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "factura_detalle.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="28">
+			<staticText>
+				<reportElement x="1" y="13" width="115" height="13" uuid="fdf035a2-cc15-41c4-b955-38f09646c7c0"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cambio:]]></text>
+			</staticText>
+			<textField pattern="L #,##0.00">
+				<reportElement x="116" y="13" width="93" height="13" uuid="81a1a9dd-046e-4fd4-a8d1-f68aae410b65"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_efectivo}.doubleValue()-$F{factura_totalfac}.doubleValue()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="115" height="13" uuid="e90caeef-d72b-4ab4-99f9-3bf579031147"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Efectivo:]]></text>
+			</staticText>
+			<textField pattern="L #,##0.00">
+				<reportElement x="116" y="0" width="93" height="13" uuid="239d131e-88b3-4e13-bdeb-cbffb5d0d211"/>
+				<textElement>
+					<font isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_efectivo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="45">
+			<textField>
+				<reportElement x="11" y="13" width="198" height="32" uuid="690986b5-06f2-44fe-954e-462fa0507f2a"/>
+				<textElement>
+					<font isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tot}+" con 00/100 ctvos."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="0" width="197" height="13" uuid="c3fd1153-7270-4c55-9a8f-837d9df7f87d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor en Letras:]]></text>
+			</staticText>
+		</band>
+		<band height="21">
+			<staticText>
+				<reportElement x="-15" y="0" width="224" height="20" uuid="fc0eaca7-2164-4967-8d5d-53ff5304aa8d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[¡Gracias por Preferirnos!]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

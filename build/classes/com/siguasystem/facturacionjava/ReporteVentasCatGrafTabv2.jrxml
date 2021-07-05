@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas" pageWidth="560" pageHeight="612" columnWidth="520" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6af89b1a-0099-46fd-8879-3ed036e0b3c3">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="238"/>
+	<parameter name="f1" class="java.util.Date"/>
+	<parameter name="f2" class="java.util.Date"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["c:\\facturacionclinica\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     estadofact.`idestadofact` AS estadofact_idestadofact,
+     estadofact.`descrip` AS estadofact_descrip,
+     detallefactura.`cantidad` AS detallefactura_cantidad,
+     detallefactura.`comentarios` AS detallefactura_comentarios,
+     detallefactura.`descuento` AS detallefactura_descuento,
+     detallefactura.`isv` AS detallefactura_isv,
+     detallefactura.`nomproducto` AS detallefactura_nomproducto,
+     detallefactura.`pedindi` AS detallefactura_pedindi,
+     detallefactura.`precio` AS detallefactura_precio,
+     detallefactura.`producto` AS detallefactura_producto,
+     detallefactura.`stadodet` AS detallefactura_stadodet,
+     detallefactura.`fecha` AS detallefactura_fecha,
+     detallefactura.`nrolinea` AS detallefactura_nrolinea,
+     detallefactura.`idFactura` AS detallefactura_idFactura,
+     producto.`categoria` AS producto_categoria,
+     producto.`costo` AS producto_costo,
+     producto.`descripcion` AS producto_descripcion,
+     producto.`existencia` AS producto_existencia,
+     producto.`existencia_maxima` AS producto_existencia_maxima,
+     producto.`existencia_minima` AS producto_existencia_minima,
+     producto.`fechacreacion` AS producto_fechacreacion,
+     producto.`imgruta` AS producto_imgruta,
+     producto.`isv` AS producto_isv,
+     producto.`isval` AS producto_isval,
+     producto.`marcadescrip` AS producto_marcadescrip,
+     producto.`nombre2` AS producto_nombre2,
+     producto.`observaciones` AS producto_observaciones,
+     producto.`pieza_equivalente` AS producto_pieza_equivalente,
+     producto.`precio` AS producto_precio,
+     producto.`referencia` AS producto_referencia,
+     producto.`ubicacion` AS producto_ubicacion,
+     producto.`unidad` AS producto_unidad,
+     producto.`idProducto` AS producto_idProducto,
+     producto.`bodega` AS producto_bodega,
+     producto.`marca` AS producto_marca,
+     producto.`modelo` AS producto_modelo,
+     producto.`proveedor` AS producto_proveedor,
+     producto.`descuento` AS producto_descuento,
+     producto.`vence` AS producto_vence,
+     producto.`clinica` AS producto_clinica,
+     producto.`medicogeneral` AS producto_medicogeneral,
+     producto.`tipocosto` AS producto_tipocosto,
+     producto.`margen` AS producto_margen,
+     linea_producto.`idCategoria` AS linea_producto_idCategoria,
+     linea_producto.`descrip` AS linea_producto_descrip,
+     linea_producto.`fechacreacion` AS linea_producto_fechacreacion,
+     factura.`efectivo` AS factura_efectivo,
+     factura.`hora` AS factura_hora,
+     factura.`notas` AS factura_notas,
+     factura.`nrotarjeta` AS factura_nrotarjeta,
+     factura.`totalfac` AS factura_totalfac,
+     factura.`fecha` AS factura_fecha,
+     factura.`idFactura` AS factura_idFactura,
+     factura.`cliente` AS factura_cliente,
+     factura.`tienda` AS factura_tienda,
+     factura.`estadofact` AS factura_estadofact,
+     factura.`tipofact` AS factura_tipofact,
+     factura.`usuario` AS factura_usuario,
+     factura.`estado` AS factura_estado,
+     factura.`nombrefac` AS factura_nombrefac,
+     linea_producto_A.`idCategoria` AS linea_producto_A_idCategoria,
+     linea_producto_A.`descrip` AS linea_producto_A_descrip,
+     linea_producto_A.`fechacreacion` AS linea_producto_A_fechacreacion,
+     producto_A.`categoria` AS producto_A_categoria,
+     producto_A.`costo` AS producto_A_costo,
+     producto_A.`descripcion` AS producto_A_descripcion,
+     producto_A.`existencia` AS producto_A_existencia,
+     producto_A.`existencia_maxima` AS producto_A_existencia_maxima,
+     producto_A.`existencia_minima` AS producto_A_existencia_minima,
+     producto_A.`fechacreacion` AS producto_A_fechacreacion,
+     producto_A.`imgruta` AS producto_A_imgruta,
+     producto_A.`isv` AS producto_A_isv,
+     producto_A.`isval` AS producto_A_isval,
+     producto_A.`marcadescrip` AS producto_A_marcadescrip,
+     producto_A.`nombre2` AS producto_A_nombre2,
+     producto_A.`observaciones` AS producto_A_observaciones,
+     producto_A.`pieza_equivalente` AS producto_A_pieza_equivalente,
+     producto_A.`precio` AS producto_A_precio,
+     producto_A.`referencia` AS producto_A_referencia,
+     producto_A.`ubicacion` AS producto_A_ubicacion,
+     producto_A.`unidad` AS producto_A_unidad,
+     producto_A.`idProducto` AS producto_A_idProducto,
+     producto_A.`bodega` AS producto_A_bodega,
+     producto_A.`marca` AS producto_A_marca,
+     producto_A.`modelo` AS producto_A_modelo,
+     producto_A.`proveedor` AS producto_A_proveedor,
+     producto_A.`descuento` AS producto_A_descuento,
+     producto_A.`vence` AS producto_A_vence,
+     producto_A.`clinica` AS producto_A_clinica,
+     producto_A.`medicogeneral` AS producto_A_medicogeneral,
+     producto_A.`tipocosto` AS producto_A_tipocosto,
+     producto_A.`margen` AS producto_A_margen
+FROM
+     `detallefactura` detallefactura left JOIN `producto` producto ON detallefactura.`producto` = producto.`idProducto`
+     INNER JOIN `linea_producto` linea_producto ON producto.`categoria` = linea_producto.`idCategoria`
+     INNER JOIN `factura` factura ON detallefactura.`idFactura` = factura.`idFactura`
+     AND factura.`fecha` = detallefactura.`fecha`
+     INNER JOIN `producto` producto_A ON detallefactura.`producto` = producto_A.`idProducto`
+     INNER JOIN `linea_producto` linea_producto_A ON producto_A.`categoria` = linea_producto_A.`idCategoria`
+     INNER JOIN `estadofact` estadofact ON factura.`estadofact` = estadofact.`idestadofact`
+WHERE
+     factura.`fecha` BETWEEN $P{f1} and $P{f2}
+     and factura.`estadofact` = 2 order by linea_producto_A.`idCategoria` DESC]]>
+	</queryString>
+	<field name="estadofact_idestadofact" class="java.lang.Integer"/>
+	<field name="estadofact_descrip" class="java.lang.String"/>
+	<field name="detallefactura_cantidad" class="java.lang.Integer"/>
+	<field name="detallefactura_comentarios" class="java.lang.String"/>
+	<field name="detallefactura_descuento" class="java.math.BigDecimal"/>
+	<field name="detallefactura_isv" class="java.math.BigDecimal"/>
+	<field name="detallefactura_nomproducto" class="java.lang.String"/>
+	<field name="detallefactura_pedindi" class="java.lang.String"/>
+	<field name="detallefactura_precio" class="java.math.BigDecimal"/>
+	<field name="detallefactura_producto" class="java.lang.String"/>
+	<field name="detallefactura_stadodet" class="java.lang.Integer"/>
+	<field name="detallefactura_fecha" class="java.sql.Date"/>
+	<field name="detallefactura_nrolinea" class="java.lang.Integer"/>
+	<field name="detallefactura_idFactura" class="java.lang.Integer"/>
+	<field name="producto_categoria" class="java.lang.String"/>
+	<field name="producto_costo" class="java.lang.Double"/>
+	<field name="producto_descripcion" class="java.lang.String"/>
+	<field name="producto_existencia" class="java.math.BigDecimal"/>
+	<field name="producto_existencia_maxima" class="java.lang.Integer"/>
+	<field name="producto_existencia_minima" class="java.lang.Integer"/>
+	<field name="producto_fechacreacion" class="java.sql.Timestamp"/>
+	<field name="producto_imgruta" class="java.lang.String"/>
+	<field name="producto_isv" class="java.lang.Boolean"/>
+	<field name="producto_isval" class="java.math.BigDecimal"/>
+	<field name="producto_marcadescrip" class="java.lang.String"/>
+	<field name="producto_nombre2" class="java.lang.String"/>
+	<field name="producto_observaciones" class="java.lang.String"/>
+	<field name="producto_pieza_equivalente" class="java.lang.String"/>
+	<field name="producto_precio" class="java.lang.Double"/>
+	<field name="producto_referencia" class="java.lang.String"/>
+	<field name="producto_ubicacion" class="java.lang.String"/>
+	<field name="producto_unidad" class="java.lang.String"/>
+	<field name="producto_idProducto" class="java.lang.String"/>
+	<field name="producto_bodega" class="java.lang.String"/>
+	<field name="producto_marca" class="java.lang.Integer"/>
+	<field name="producto_modelo" class="java.lang.String"/>
+	<field name="producto_proveedor" class="java.lang.Integer"/>
+	<field name="producto_descuento" class="java.lang.Integer"/>
+	<field name="producto_vence" class="java.lang.Boolean"/>
+	<field name="producto_clinica" class="java.math.BigDecimal"/>
+	<field name="producto_medicogeneral" class="java.math.BigDecimal"/>
+	<field name="producto_tipocosto" class="java.lang.Integer"/>
+	<field name="producto_margen" class="java.math.BigDecimal"/>
+	<field name="linea_producto_idCategoria" class="java.lang.String"/>
+	<field name="linea_producto_descrip" class="java.lang.String"/>
+	<field name="linea_producto_fechacreacion" class="java.sql.Timestamp"/>
+	<field name="factura_efectivo" class="java.math.BigDecimal"/>
+	<field name="factura_hora" class="java.sql.Time"/>
+	<field name="factura_notas" class="java.lang.String"/>
+	<field name="factura_nrotarjeta" class="java.lang.Integer"/>
+	<field name="factura_totalfac" class="java.math.BigDecimal"/>
+	<field name="factura_fecha" class="java.sql.Date"/>
+	<field name="factura_idFactura" class="java.lang.Integer"/>
+	<field name="factura_cliente" class="java.lang.String"/>
+	<field name="factura_tienda" class="java.lang.String"/>
+	<field name="factura_estadofact" class="java.lang.Integer"/>
+	<field name="factura_tipofact" class="java.lang.Integer"/>
+	<field name="factura_usuario" class="java.lang.String"/>
+	<field name="factura_estado" class="java.lang.Integer"/>
+	<field name="factura_nombrefac" class="java.lang.String"/>
+	<field name="linea_producto_A_idCategoria" class="java.lang.String"/>
+	<field name="linea_producto_A_descrip" class="java.lang.String"/>
+	<field name="linea_producto_A_fechacreacion" class="java.sql.Timestamp"/>
+	<field name="producto_A_categoria" class="java.lang.String"/>
+	<field name="producto_A_costo" class="java.lang.Double"/>
+	<field name="producto_A_descripcion" class="java.lang.String"/>
+	<field name="producto_A_existencia" class="java.math.BigDecimal"/>
+	<field name="producto_A_existencia_maxima" class="java.lang.Integer"/>
+	<field name="producto_A_existencia_minima" class="java.lang.Integer"/>
+	<field name="producto_A_fechacreacion" class="java.sql.Timestamp"/>
+	<field name="producto_A_imgruta" class="java.lang.String"/>
+	<field name="producto_A_isv" class="java.lang.Boolean"/>
+	<field name="producto_A_isval" class="java.math.BigDecimal"/>
+	<field name="producto_A_marcadescrip" class="java.lang.String"/>
+	<field name="producto_A_nombre2" class="java.lang.String"/>
+	<field name="producto_A_observaciones" class="java.lang.String"/>
+	<field name="producto_A_pieza_equivalente" class="java.lang.String"/>
+	<field name="producto_A_precio" class="java.lang.Double"/>
+	<field name="producto_A_referencia" class="java.lang.String"/>
+	<field name="producto_A_ubicacion" class="java.lang.String"/>
+	<field name="producto_A_unidad" class="java.lang.String"/>
+	<field name="producto_A_idProducto" class="java.lang.String"/>
+	<field name="producto_A_bodega" class="java.lang.String"/>
+	<field name="producto_A_marca" class="java.lang.Integer"/>
+	<field name="producto_A_modelo" class="java.lang.String"/>
+	<field name="producto_A_proveedor" class="java.lang.Integer"/>
+	<field name="producto_A_descuento" class="java.lang.Integer"/>
+	<field name="producto_A_vence" class="java.lang.Boolean"/>
+	<field name="producto_A_clinica" class="java.math.BigDecimal"/>
+	<field name="producto_A_medicogeneral" class="java.math.BigDecimal"/>
+	<field name="producto_A_tipocosto" class="java.lang.Integer"/>
+	<field name="producto_A_margen" class="java.math.BigDecimal"/>
+	<variable name="factura_idFactura_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{factura_idFactura}]]></variableExpression>
+	</variable>
+	<variable name="subtotal" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{detallefactura_cantidad}.doubleValue()*($F{detallefactura_precio}.doubleValue()-($F{detallefactura_descuento}.doubleValue()+$F{detallefactura_isv}.doubleValue()))]]></variableExpression>
+	</variable>
+	<variable name="totcat" class="java.lang.Double" resetType="Group" resetGroup="Categoria" calculation="Sum">
+		<variableExpression><![CDATA[$V{subtotal}]]></variableExpression>
+	</variable>
+	<group name="Categoria">
+		<groupExpression><![CDATA[$F{linea_producto_descrip}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="16">
+				<textField pattern="#,##0.00">
+					<reportElement x="128" y="0" width="68" height="15" uuid="a6268cad-6858-42ca-b3b7-a1e5fcc4cfcd"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{totcat}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="0" width="128" height="13" uuid="3d634d5b-6313-4dae-a620-69f07b607d7d"/>
+					<textFieldExpression><![CDATA[$F{producto_categoria}+"-"+$F{linea_producto_descrip}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="14" width="196" height="1" uuid="b80738d3-85ab-49b9-a11d-c0791a68d13c"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="29">
+			<staticText>
+				<reportElement x="0" y="0" width="520" height="29" uuid="cd6fa92f-8b1a-4ff5-a862-c5a06387ded6"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Facturacion por Categoria/Linea]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="13">
+			<staticText>
+				<reportElement x="128" y="0" width="68" height="13" uuid="51c12705-45bf-497d-9b54-c6d698bf85cb"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="128" height="13" uuid="bf4392b3-efc4-48a8-b075-2a4b4718abbe"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="12" width="196" height="1" uuid="609b0610-5fe9-482c-9fa6-6afb367cbfd8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="248">
+			<barChart>
+				<chart>
+					<reportElement x="0" y="0" width="520" height="248" uuid="f45bfe1f-c93c-4f33-8531-939def858f74"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{linea_producto_A_descrip}.toUpperCase()]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{linea_producto_A_descrip}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{totcat}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

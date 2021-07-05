@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factura_detalle" pageWidth="251" pageHeight="752" columnWidth="251" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c02d30f0-d6c8-4e12-8841-5c8cf9d454ea">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="411379a1-4d5b-48ae-b7fd-82e6e17a3f2a"/>
+	<parameter name="idfactura" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     detallefactura.`nomproducto` AS detallefactura_nomproducto,
+     detallefactura.`nrolinea` AS detallefactura_nrolinea,
+     detallefactura.`cantidad` AS detallefactura_cantidad,
+     detallefactura.`precio` AS detallefactura_precio,
+     detallefactura.`comentarios` AS detallefactura_comentarios,
+     detallefactura.`idFactura` AS detallefactura_idFactura,
+     detallefactura.`fecha` AS detallefactura_fecha,
+     detallefactura.`producto` AS detallefactura_producto,
+     detallefactura.`stadodet` AS detallefactura_stadodet,
+     detallefactura.`descuento` AS detallefactura_descuento,
+     detallefactura.`isv` AS detallefactura_isv,
+     producto.`idProducto` AS producto_idProducto,
+     producto.`nombre` AS producto_nombre,
+     producto.`descripcion` AS producto_descripcion,
+     producto.`precio` AS producto_precio,
+     producto.`costo` AS producto_costo,
+     producto.`categoria` AS producto_categoria,
+     producto.`cantidadexis` AS producto_cantidadexis,
+     producto.`imgruta` AS producto_imgruta,
+     producto.`impuesto` AS producto_impuesto
+FROM
+     `detallefactura` detallefactura INNER JOIN `producto` producto ON detallefactura.`producto` = producto.`idProducto`
+WHERE
+     detallefactura.`idFactura` = $P{idfactura}]]>
+	</queryString>
+	<field name="detallefactura_nomproducto" class="java.lang.String"/>
+	<field name="detallefactura_nrolinea" class="java.lang.Integer"/>
+	<field name="detallefactura_cantidad" class="java.lang.Integer"/>
+	<field name="detallefactura_precio" class="java.lang.Float"/>
+	<field name="detallefactura_comentarios" class="java.lang.String"/>
+	<field name="detallefactura_idFactura" class="java.lang.Integer"/>
+	<field name="detallefactura_fecha" class="java.sql.Date"/>
+	<field name="detallefactura_producto" class="java.lang.String"/>
+	<field name="detallefactura_stadodet" class="java.lang.Long"/>
+	<field name="detallefactura_descuento" class="java.math.BigDecimal"/>
+	<field name="detallefactura_isv" class="java.math.BigDecimal"/>
+	<field name="producto_idProducto" class="java.lang.String"/>
+	<field name="producto_nombre" class="java.lang.String"/>
+	<field name="producto_descripcion" class="java.lang.String"/>
+	<field name="producto_precio" class="java.lang.Float"/>
+	<field name="producto_costo" class="java.lang.Float"/>
+	<field name="producto_categoria" class="java.lang.String"/>
+	<field name="producto_cantidadexis" class="java.lang.Long"/>
+	<field name="producto_imgruta" class="java.lang.String"/>
+	<field name="producto_impuesto" class="java.math.BigDecimal"/>
+	<variable name="detallefactura_isv_1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{detallefactura_isv}.doubleValue()*$F{detallefactura_cantidad}]]></variableExpression>
+	</variable>
+	<variable name="Subtotal" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{detallefactura_cantidad}.doubleValue()*($F{detallefactura_precio}.doubleValue())]]></variableExpression>
+	</variable>
+	<variable name="totdescu" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{detallefactura_descuento}]]></variableExpression>
+	</variable>
+	<variable name="totalisv18" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[($F{producto_impuesto}.doubleValue()>0.15)?$F{detallefactura_isv}:0]]></variableExpression>
+	</variable>
+	<variable name="totexo" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[0]]></variableExpression>
+	</variable>
+	<variable name="totgravado" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[($F{producto_impuesto}.doubleValue()>0.00)?$F{detallefactura_cantidad}.doubleValue()*($F{detallefactura_precio}.doubleValue()-$F{detallefactura_isv}.doubleValue()):0]]></variableExpression>
+	</variable>
+	<variable name="totexcento" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[($F{producto_impuesto}.doubleValue()==0.00)?$F{detallefactura_cantidad}.doubleValue()*($F{detallefactura_precio}.doubleValue()-$F{detallefactura_isv}.doubleValue()):0]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="0" width="110" height="13" uuid="5fbd8833-378d-48af-bd35-25d1d3ab3bae"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="0" width="25" height="13" uuid="2dea66cd-b613-4fb5-9a22-092a90246eb3"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="1" width="34" height="13" uuid="8cc93d99-1a15-413c-9be7-dde2181303bd"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="0" width="0" height="0" uuid="a573f1e7-1bf0-46cf-a18f-7f18c895b35b"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[G/E]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="25" height="13" uuid="204b35ea-790a-4a97-99ac-d38a02215bb1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detallefactura_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement x="2" y="27" width="187" height="13" isRemoveLineWhenBlank="true" uuid="85880a62-f86d-4576-9104-fe3dac2b6c3c">
+					<printWhenExpression><![CDATA[!$F{detallefactura_comentarios}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nota: "+$F{detallefactura_comentarios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="0" width="0" height="0" uuid="391c8c88-fc9d-40b9-af3e-48146807ddb1"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{detallefactura_isv}.doubleValue()>0)?"G":"E"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="0" width="109" height="27" isPrintWhenDetailOverflows="true" uuid="877f5129-039e-48bc-8abe-00494b18d95c"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detallefactura_nomproducto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="136" y="0" width="34" height="13" uuid="bf6d083e-64b8-472d-b690-654ca028d2e6"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{detallefactura_precio}.doubleValue())*$F{detallefactura_cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement x="21" y="16" width="172" height="1" uuid="ba3f6ea8-dca7-4a1b-8e7e-b6d29adc66d8"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="17" width="91" height="16" uuid="d4878ba1-b2c8-4d6d-9e00-6204d9e01765"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total a Pagar:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="L #,##0.00">
+				<reportElement x="98" y="18" width="60" height="16" isPrintWhenDetailOverflows="true" uuid="40859462-719b-4fa6-bc7a-b2d0efee55f0"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Subtotal}.subtract($V{totdescu})]]></textFieldExpression>
+			</textField>
+			<textField pattern="L #,##0.00">
+				<reportElement x="99" y="2" width="59" height="13" isPrintWhenDetailOverflows="true" uuid="fcacf0be-25fb-4a5c-a8fb-f68485bed836"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Subtotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="2" width="93" height="13" uuid="fa2d51de-c9fb-486e-930a-4a244d01243e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Subtotal:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

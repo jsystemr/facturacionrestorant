@@ -1,0 +1,4 @@
+Erorres-Facturacion-Cantones:
+-Esta Perdiendo las facturas, esto debido a la concurrencia.
+-Esta lento al momento de consultar el listado de facturas del
+dia por lo cual se requiere agilizar.

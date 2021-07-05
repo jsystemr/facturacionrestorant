@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ventas" pageWidth="612" pageHeight="750" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6af89b1a-0099-46fd-8879-3ed036e0b3c3">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="f1" class="java.util.Date"/>
+	<parameter name="f2" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     sum(factura.`totalfac`) AS factura_totalfac,
+     factura.`efectivo` AS factura_efectivo,
+     factura.`hora` AS factura_hora,
+     factura.`notas` AS factura_notas,
+     factura.`nrotarjeta` AS factura_nrotarjeta,
+     factura.`fecha` AS factura_fecha,
+     factura.`idFactura` AS factura_idFactura,
+     factura.`cliente` AS factura_cliente,
+     factura.`empresa` AS factura_tienda,
+     factura.`estadofact` AS factura_estadofact,
+     factura.`tipofact` AS factura_tipofact,
+     factura.`usuario` AS factura_usuario,
+     factura.`estadofact` AS factura_estado,
+     factura.`nombrefac` AS factura_nombrefac,
+     estadofact.`idestadofact` AS estadofact_idestadofact,
+     estadofact.`descrip` AS estadofact_descrip
+FROM
+     `factura` factura INNER JOIN `estadofact` estadofact ON factura.`estadofact` = estadofact.`idestadofact`
+WHERE
+     factura.`fecha` BETWEEN $P{f1} and $P{f2} 
+GROUP BY
+     factura.`fecha`]]>
+	</queryString>
+	<field name="factura_totalfac" class="java.math.BigDecimal"/>
+	<field name="factura_efectivo" class="java.math.BigDecimal"/>
+	<field name="factura_hora" class="java.sql.Time"/>
+	<field name="factura_notas" class="java.lang.String"/>
+	<field name="factura_nrotarjeta" class="java.lang.Integer"/>
+	<field name="factura_fecha" class="java.sql.Date"/>
+	<field name="factura_idFactura" class="java.lang.Integer"/>
+	<field name="factura_cliente" class="java.lang.String"/>
+	<field name="factura_tienda" class="java.lang.String"/>
+	<field name="factura_estadofact" class="java.lang.Integer"/>
+	<field name="factura_tipofact" class="java.lang.Integer"/>
+	<field name="factura_usuario" class="java.lang.String"/>
+	<field name="factura_estado" class="java.lang.Integer"/>
+	<field name="factura_nombrefac" class="java.lang.String"/>
+	<field name="estadofact_idestadofact" class="java.lang.Integer"/>
+	<field name="estadofact_descrip" class="java.lang.String"/>
+	<variable name="factura_idFactura_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{factura_idFactura}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="14"/>
+	</pageHeader>
+	<columnFooter>
+		<band height="241">
+			<lineChart>
+				<chart>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="532" height="241" uuid="c4e3b12a-962b-4ac7-b551-aca45017f325"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Ventas"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{factura_fecha}.toString()]]></categoryExpression>
+						<valueExpression><![CDATA[$F{factura_totalfac}]]></valueExpression>
+						<labelExpression><![CDATA[$F{factura_totalfac}.toString()]]></labelExpression>
+						<itemHyperlink>
+							<hyperlinkTooltipExpression><![CDATA[$F{factura_totalfac}.toString()]]></hyperlinkTooltipExpression>
+						</itemHyperlink>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot labelRotation="90.0"/>
+					<categoryAxisFormat labelRotation="90.0">
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</columnFooter>
+</jasperReport>

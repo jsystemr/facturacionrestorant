@@ -1,0 +1,27 @@
+﻿SELECT * FROM producto p;
+SELECT idfactura,cantidad,precio,descuento,isv FROM detallefactura d ;
+
+SELECT * FROM factura  where idfactura=7328;
+SELECT * FROM detallefactura d where idfactura=7187;
+
+
+SELECT idfactura,producto,precio,cantidad,isv,(precio+isv)*cantidad as Total,(precio+isv)/1.15 as preciosinISV,(((precio+isv)*cantidad)/1.15)*0.15 as isvnuevo FROM detallefactura d where idfactura=7187;
+
+/*Actualiza los precios de los productos con impuesto*/
+update detallefactura set precio=(precio+isv);/*where isv>0 and idfactura>7408*/;
+/*Actualiza el impuesto, solo ejecutar una vez*/
+update detallefactura set isv=(((precio)/1.15)*0.15); /*where idfactura=7408*/
+
+update factura set efectivo=totalfac;
+
+update producto set impuesto=0.15;
+
+SELECT * FROM producto p where impuesto=0;
+
+
+
+update factura f set f.totalfac=(SELECT sum(d.precio*d.cantidad)
+FROM detallefactura d where d.idfactura=f.idfactura),f.efectivo=f.totalfac ;/*where f.fecha between '20190313' and '20190317';*/
+
+SELECT * FROM factura f;
+

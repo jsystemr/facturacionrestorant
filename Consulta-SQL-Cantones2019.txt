@@ -1,0 +1,42 @@
+SELECT * FROM bdrestaurante.empresa e;
+SELECT * FROM bdrestaurante.factura f;
+SELECT * FROM bdrestaurante.detallefactura d;
+
+/*Busca todas las Facturas sin RTN*/
+SELECT nrolinea,d.nomproducto,d.precio,d.cantidad,d.comentarios,d.idfactura,d.fecha,d.producto,d.stadodet,d.descuento,d.isv,f.cliente,c.rtncli FROM detallefactura d
+inner join factura f on d.idfactura=f.idfactura
+inner join cliente c on c.idcliente=f.cliente
+where d.fecha between '2019-06-02' and '2019-06-02' and precio>0 and nrolinea>2 and LENGTH(c.rtncli)=0 or c.rtncli is null order by d.idfactura;
+
+/*Busca todas las Facturas con RTN*/
+SELECT nrolinea,d.nomproducto,d.precio,d.cantidad,d.comentarios,d.idfactura,d.fecha,d.producto,d.stadodet,d.descuento,d.isv,f.cliente,c.rtncli FROM detallefactura d
+inner join factura f on d.idfactura=f.idfactura
+inner join cliente c on c.idcliente=f.cliente
+where d.fecha between '2019-06-02' and '2019-06-02' and precio>0 and nrolinea>2 and LENGTH(c.rtncli)>0  order by d.idfactura;
+
+
+/*Facturas Con RTN*/
+SELECT f.idfactura,f.fecha,c.rtncli FROM bdrestaurante.factura f inner join cliente c on c.idcliente=f.cliente where LENGTH(c.rtncli)=0 or c.rtncli is null order by idfactura desc;
+
+
+
+/*
+delete from detallefactura where fecha between '2019-05-01' and '2019-05-31' and precio>0 and nrolinea>1;/*
+
+No hay mucho producto, en la Tienda de Ocotepeque.
+Varios, 
+
+
+/*Busca todas las Facturas sin RTN*/
+SELECT nrolinea,d.nomproducto,d.precio,d.cantidad,d.comentarios,d.idfactura,d.fecha,d.producto,d.stadodet,d.descuento,d.isv,f.cliente,c.rtncli FROM detallefactura d
+inner join factura f on d.idfactura=f.idfactura
+inner join cliente c on c.idcliente=f.cliente
+where d.fecha between '2019-05-01' and '2019-05-31' and precio>0 and nrolinea>2 and LENGTH(c.rtncli)=0 or c.rtncli is null order by d.idfactura;
+SELECT idfactura,efectivo,totalfac,cliente FROM factura f;
+
+/*Busca todas las Facturas sin RTN*/
+SELECT nrolinea,d.nomproducto,d.precio,d.cantidad,d.comentarios,d.idfactura,d.fecha,d.producto,d.stadodet,d.descuento,d.isv,f.cliente,c.rtncli FROM detallefactura d
+inner join factura f on d.idfactura=f.idfactura
+inner join cliente c on c.idcliente=f.cliente
+where d.fecha between '2019-05-01' and '2019-05-31' and precio>0 and nrolinea>2 and LENGTH(c.rtncli)>0 order by d.idfactura;
+SELECT idfactura,efectivo,totalfac,cliente FROM factura f;
