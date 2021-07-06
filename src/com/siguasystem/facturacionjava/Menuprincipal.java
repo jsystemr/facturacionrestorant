@@ -75,11 +75,7 @@ public class Menuprincipal extends javax.swing.JFrame {
      */
     EntityManagerFactory emFac = Persistence.createEntityManagerFactory("Restorant");
     EntityManagerFactory emConfigLocal = Persistence.createEntityManagerFactory("RestorantLocal");
-    frmFacturav2 frmfac = null; //= new frmFacturav2();
-    frmFacturav3 frmfac3 = null;//= new frmFacturav3();
-    frmVentas frmventa = null;// new frmVentas();
-    frmFacturav6 frmfac6 = null;//= new frmFacturav6();
-    frmFacturav61 frmfac61 = null;
+  
     frmListadoFacturas frmlistf = null; //= new frmListadoFacturas();
     //Formularios de Busqueda
     frmFacturaORM frmfaO = null;
@@ -520,48 +516,8 @@ public class Menuprincipal extends javax.swing.JFrame {
         abrirFacturaOrm();
        //abrirFacturav61();
     }//GEN-LAST:event_itfacturaActionPerformed
-
-    public void abrirFactura() {
-        // TODO add your handling code here:
-        frmfac = new frmFacturav2();
-        frmfac.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        frmfac.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac.setVisible(true);
-    }
-
-    public void abrirFacturav2() {
-        frmFacturav3 frmfac3 = new frmFacturav3();
-        frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.desktopPane.add(frmfac3);
-        this.desktopPane.selectFrame(true);
-        frmfac3.setVisible(true);
-        frmfac3.setFocusable(true);
-        frmfac3.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac3.pack();
-        frmfac3.show();
-    }
-
-    public void abrirFacturav6() {
-        frmfac6 = new frmFacturav6();
-        //frmFacturav6 frmfac6 = new frmFacturav6();
-        frmfac6.setClosable(true);
-        frmfac6.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac6.pack();
-        this.desktopPane.add(frmfac6);
-        frmfac6.setVisible(true);
-    }
-    
-     public void abrirFacturav61() {
-        frmfac61 = new frmFacturav61();
-        //frmFacturav6 frmfac6 = new frmFacturav6();
-        frmfac61.setClosable(true);
-        //frmfac61.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac61.pack();
-        this.desktopPane.add(frmfac61);
-        frmfac61.setVisible(true);
-    }
-
-    public void abrirFacturaOrm() {
+ 
+      public void abrirFacturaOrm() {
         frmfaO = new frmFacturaORM();
         //frmFacturav6 frmfac6 = new frmFacturav6();
         frmfaO.setClosable(true);
@@ -570,57 +526,7 @@ public class Menuprincipal extends javax.swing.JFrame {
         this.desktopPane.add(frmfaO);
         frmfaO.setVisible(true);
     }
-
-    public void abrirFacturav2c() {
-        frmFacturav3 frmfac3 = new frmFacturav3();
-        //frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.desktopPane.add(frmfac3);
-        //this.desktopPane.setSelectedFrame(frmfac3);
-        //frmfac3.setFocusable(true);
-        frmfac3.setClosable(true);
-        frmfac3.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac3.pack();
-        frmfac3.setVisible(true);
-        frmfac3.toFront();
-        frmfac3.show();
-        frmfac3.cerrarForm();
-    }
-
-    public void abrirFacturaJD() {
-        new Runnable() {
-            @Override
-            public void run() {
-                JDialog jdet = new JDialog();
-                jdet.setContentPane(new jpfacturacion1());
-                //jdet.setLocation(200, 200);
-                jdet.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-                jdet.pack();
-                jdet.setFocusableWindowState(true);
-                jdet.setModal(true);
-                jdet.setVisible(true);
-                /* if (((jpfacturacion1) jdet.getContentPane()).closefrm == 1) {
-            new Runnable() {
-                @Override
-                public void run() {
-                    imprimirOrden(((jpfacturacion1) jdet.getContentPane()).nuevafac.toString());
-                }
-            }.run();
-            if (((jpfacturacion1) jdet.getContentPane()).g) {
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        imprimirFactura(((jpfacturacion1) jdet.getContentPane()).nuevafac.toString());//Descomentar si quiere imprimir Factura.
-                    }
-                }.run();
-            }
-        }*/
-                //jdet.dispose();
-            }
-        }.run();
-
-        //******************************//
-    }
-
+      
     public void imprimirOrden(String nf) {
         // TODO add your handling code here:
         try {
@@ -654,21 +560,7 @@ public class Menuprincipal extends javax.swing.JFrame {
         }
     }
 
-    public void abrirVenta() {
-        if (!buscarFrm2(frmventa)) {
-            frmventa = new frmVentas();
-        }
-        frmventa.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.desktopPane.add(frmventa);
-        frmventa.setVisible(true);
-        this.desktopPane.selectFrame(true);
-        frmventa.setFocusable(true);
-        frmventa.setClosable(true);
-        frmventa.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmventa.pack();
-        frmventa.show();
-    }
-
+  
     private void itprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itprodActionPerformed
         JDialog jdet = new JDialog();
         jdet.setContentPane(new panelDetV3());
@@ -752,7 +644,7 @@ public class Menuprincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         switch (evt.getKeyCode()) {
             case KeyEvent.VK_F3:
-                abrirFacturav2();
+               abrirFacturaOrm();
                 break;
             case KeyEvent.VK_ESCAPE:
                 this.dispose();
@@ -793,18 +685,6 @@ public class Menuprincipal extends javax.swing.JFrame {
         frmlistf.show();
     }
     
-    public void listadoFacturas2() {
-        frmListadoFacturasv2 frmlistf2 = new frmListadoFacturasv2();
-        //frmlistf.setVisible(true);
-        this.desktopPane.add(frmlistf2);
-        frmlistf2.setLocation(10, 0);
-        frmlistf2.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        //frmlistf2.setClosable(true);
-        frmlistf2.setVisible(true);
-        frmlistf2.pack();
-        frmlistf.show();
-    }
-
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed

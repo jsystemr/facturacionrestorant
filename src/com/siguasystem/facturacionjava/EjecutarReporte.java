@@ -365,7 +365,6 @@ public class EjecutarReporte {
 
     public void startOrdenCocinatotpre(String id) {
         try {
-
             ruta = new File(Global.rutaActual() + "/Reportes/ordencocinav2.jasper");
             URL ubicacion = ruta.toURI().toURL();
             JasperReport reporte = null;

@@ -138,6 +138,7 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
     Thread h1;//=new Thread();
     boolean ejecuta = true;
     String coordenadascli="";
+    private Integer facturaid=0;
 
     public frmFacturaORMonline() {
         try {
@@ -1052,7 +1053,7 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
         try {
            
             Date date = formatfac.parse(txtfecha.getText());
-            Factura f1 = jpfac.findFactura(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
+            Factura f1 = jpfac.findFactura(facturaid);
             if (btnsavefac.getText().equals("Guardar") && f1 != null) {
                 txtnfact.setValue(ultimaFact() + 1);
             }
@@ -1156,15 +1157,17 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
         }
         factura.setTotalfac(new BigDecimal(dtf.totalarticulos()));
         if (nuevafac == 0) {
-            factura.setFacturaPK(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
+            factura.setIdFactura(Integer.parseInt(txtnfact.getValue().toString()));
+            factura.setFecha(date);
             System.out.println(factura);
-            Factura f1 = jpfac.findFactura(new FacturaPK(factura.getFacturaPK().getIdFactura(),date));
+            Factura f1 = jpfac.findFactura(facturaid);
             if (f1 == null) {
                 //Cuando es una factura Nueva
                 jpfac.create(factura);
             } else {
                 txtnfact.setValue(ultimaFact() + 1);
-                factura.setFacturaPK(new FacturaPK(factura.getFacturaPK().getIdFactura(), date));
+                factura.setIdFactura(factura.getIdFactura());
+                factura.setFecha(date);
                 System.out.println(factura);
                 jpfac.create(factura);
             }
@@ -1173,7 +1176,7 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
         //JOptionPane.showMessageDialog(rootPane, "Factura Almacenada! ->" + date);
         for (articulo dtfac : dtf.getLParticulos()) {
             Detallefactura dtftmp = new Detallefactura();
-            dtftmp.setDetallefacturaPK(new DetallefacturaPK(dtfac.getId(), factura.getFacturaPK().getIdFactura(), factura.getFacturaPK().getFecha()));
+            dtftmp.setDetallefacturaPK(new DetallefacturaPK(dtfac.getId(), factura.getIdFactura(), factura.getFecha()));
             dtftmp.setProducto(dtfac.getCodigo());
             dtftmp.setNomproducto(dtfac.getNombre());
             dtftmp.setCantidad((int) dtfac.getCantidad());
@@ -1208,7 +1211,9 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
     public void updateFactura(Date date, BigDecimal efe, Factura f1) throws NumberFormatException, Exception {
         //En caso de ser modificada la factura y agregar un producto el total se calcula mejor al final
         //pkfact = new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date);
-        factura.setFacturaPK(pkfact);
+        //factura.setFacturaPK(pkfact);
+        factura.setIdFactura(pkfact.getIdFactura());
+        factura.setFecha(pkfact.getFecha());
         factura.setEfectivo(efe);
         Tipofactura seltpf = ((Tipofactura) cbotipofac.getSelectedItem());
         Empresa selemp = (Empresa) cbotienda.getSelectedItem();
@@ -1267,8 +1272,8 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
             if (btnsavefac.getText().equals("Guardar")) {
                 txtnfact.setValue(ultimaFact() + 1);
             } else {
-                pkfact = new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date);
-                f1 = jpfac.findFactura(pkfact);
+                pkfact = new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date,0);
+                f1 = jpfac.findFactura(facturaid);
             }
             //jpfac.findFactura(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
             if (dtf.totalarticulos() == 0) {
@@ -1569,7 +1574,7 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
                 txtnfact.setValue(nuevafac);
                 txtnfact.setEnabled(false);
                 //Carga la factura existente
-                factura = jpfac.findFactura(pkfact);
+                factura = jpfac.findFactura(facturaid);
                 //Carga el detalle existente
                 lsdetfac = jpdfac.findDetallefacturaEntities2(new DetallefacturaPK(pkfact.getIdFactura(), pkfact.getFecha()));
                 cbotienda.setSelectedItem(factura.getEmpresa());
@@ -1669,10 +1674,10 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
             /// que llegaron al limite de numeracion.
             Query qsql2 = jpfac.getEntityManager().createNativeQuery("SELECT * FROM correlativossar c where c.estado=1 order by fechacreacion", Correlativossar.class);
             Correlativossar cor = (Correlativossar) qsql2.getResultList().get(0);
-            if (f2.getFacturaPK().getIdFactura() < cor.getRangoini()) {
+            if (f2.getIdFactura() < cor.getRangoini()) {
                 x = cor.getRangoini();
             } else {
-                x = f2.getFacturaPK().getIdFactura();
+                x = f2.getIdFactura();
             }
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
@@ -1723,10 +1728,10 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
             /// que llegaron al limite de numeracion.
             Query qsql2 = fincli.getEntityManager().createNativeQuery("SELECT * FROM correlativossar c where c.estado=1 order by fechacreacion", Correlativossar.class);
             Correlativossar cor = (Correlativossar) qsql2.getSingleResult();
-            if (f2.getFacturaPK().getIdFactura() <= cor.getRangoini()) {
+            if (f2.getIdFactura() <= cor.getRangoini()) {
                 x = cor.getRangoini();
             } else {
-                x = f2.getFacturaPK().getIdFactura();
+                x = f2.getIdFactura();
             }
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
@@ -2124,13 +2129,7 @@ public class frmFacturaORMonline extends javax.swing.JInternalFrame implements A
     public void imprimirFactura() {
         // TODO add your handling code here:
         try {
-            Factura f1;
-            if (nuevafac == 0) {
-                Date date = formatfac.parse(txtfecha.getText());
-                f1 = jpfac.findFactura(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
-            } else {
-                f1 = jpfac.findFactura(pkfact);
-            }
+            Factura f1 = jpfac.findFactura(facturaid);
             if (f1 != null) {
                 if (f1.getEfectivo() != null) {
                     Integer id = Integer.parseInt(txtnfact.getValue().toString());

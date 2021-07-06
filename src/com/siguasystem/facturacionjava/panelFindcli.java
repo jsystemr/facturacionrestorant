@@ -855,19 +855,19 @@ public class panelFindcli extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
           if (1 == Global.admin) {
-            if (JOptionPane.showInternalConfirmDialog(this, "Esata seguro Eliminar el cliente", "El Cliente sera elimnado!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-              try {
-                  fincli.destroy(txtcod.getText().toString());
-              } catch (IllegalOrphanException ex) {
-                  Logger.getLogger(panelFindcli.class.getName()).log(Level.SEVERE, null, ex);
-              } catch (NonexistentEntityException ex) {
-                  Logger.getLogger(panelFindcli.class.getName()).log(Level.SEVERE, null, ex);
-              }
-          }
-          }else {
-                    JOptionPane.showMessageDialog(this, "No tiene permisos para quitar el cliente, consulte al administrador!", "Error!", JOptionPane.WARNING_MESSAGE);
+            if (JOptionPane.showInternalConfirmDialog(this, "Esata seguro Eliminar el cliente", "El Cliente sera elimnado!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) 
+            {       
+                try {      
+                    fincli.destroy(txtcod.getText().toString());
+                } catch (com.siguasystem.modelo.exceptions.IllegalOrphanException ex) {
+                    Logger.getLogger(panelFindcli.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (com.siguasystem.modelo.exceptions.NonexistentEntityException ex) {
+                    Logger.getLogger(panelFindcli.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        
+            }else {
+               JOptionPane.showMessageDialog(this, "No tiene permisos para quitar el cliente, consulte al administrador!", "Error!", JOptionPane.WARNING_MESSAGE);
+                }   
+          }
     }//GEN-LAST:event_jButton3ActionPerformed
     public void cerrarDialogo() {
         // TODO add your handling code here:

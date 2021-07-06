@@ -52,11 +52,7 @@ public class MenuprincipalPedidosOnline extends javax.swing.JFrame {
      * Creates new form Menuprincipal
      */
     EntityManagerFactory emFac = Persistence.createEntityManagerFactory("Restorant");
-    frmFacturav2 frmfac = null; //= new frmFacturav2();
-    frmFacturav3 frmfac3 = null;//= new frmFacturav3();
-    frmVentas frmventa = null;// new frmVentas();
-    frmFacturav6 frmfac6 = null;//= new frmFacturav6();
-    frmListadoFacturas frmlistf = null; //= new frmListadoFacturas();
+     frmListadoFacturas frmlistf = null; //= new frmListadoFacturas();
     //Formularios de Busqueda
     frmFacturaORM frmfaO = null;
     frmBuscarproductos frmbuscapro = null;// = new frmBuscarproductos();
@@ -453,36 +449,6 @@ public class MenuprincipalPedidosOnline extends javax.swing.JFrame {
         abrirFacturaOrm();
     }//GEN-LAST:event_itfacturaActionPerformed
 
-    public void abrirFactura() {
-        // TODO add your handling code here:
-        frmfac = new frmFacturav2();
-        frmfac.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        frmfac.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac.setVisible(true);
-    }
-
-    public void abrirFacturav2() {
-        frmFacturav3 frmfac3 = new frmFacturav3();
-        frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.desktopPane.add(frmfac3);
-        this.desktopPane.selectFrame(true);
-        frmfac3.setVisible(true);
-        frmfac3.setFocusable(true);
-        frmfac3.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac3.pack();
-        frmfac3.show();
-    }
-
-    public void abrirFacturav6() {
-        frmfac6 = new frmFacturav6();
-        //frmFacturav6 frmfac6 = new frmFacturav6();
-        frmfac6.setClosable(true);
-        frmfac6.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac6.pack();
-        this.desktopPane.add(frmfac6);
-        frmfac6.setVisible(true);
-    }
-
     public void abrirFacturaOrm() {
         frmfaO = new frmFacturaORM();
         //frmFacturav6 frmfac6 = new frmFacturav6();
@@ -491,56 +457,6 @@ public class MenuprincipalPedidosOnline extends javax.swing.JFrame {
         frmfaO.pack();
         this.desktopPane.add(frmfaO);
         frmfaO.setVisible(true);
-    }
-
-    public void abrirFacturav2c() {
-        frmFacturav3 frmfac3 = new frmFacturav3();
-        //frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.desktopPane.add(frmfac3);
-        //this.desktopPane.setSelectedFrame(frmfac3);
-        //frmfac3.setFocusable(true);
-        frmfac3.setClosable(true);
-        frmfac3.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmfac3.pack();
-        frmfac3.setVisible(true);
-        frmfac3.toFront();
-        frmfac3.show();
-        frmfac3.cerrarForm();
-    }
-
-    public void abrirFacturaJD() {
-        new Runnable() {
-            @Override
-            public void run() {
-                JDialog jdet = new JDialog();
-                jdet.setContentPane(new jpfacturacion1());
-                //jdet.setLocation(200, 200);
-                jdet.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-                jdet.pack();
-                jdet.setFocusableWindowState(true);
-                jdet.setModal(true);
-                jdet.setVisible(true);
-                /* if (((jpfacturacion1) jdet.getContentPane()).closefrm == 1) {
-            new Runnable() {
-                @Override
-                public void run() {
-                    imprimirOrden(((jpfacturacion1) jdet.getContentPane()).nuevafac.toString());
-                }
-            }.run();
-            if (((jpfacturacion1) jdet.getContentPane()).g) {
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        imprimirFactura(((jpfacturacion1) jdet.getContentPane()).nuevafac.toString());//Descomentar si quiere imprimir Factura.
-                    }
-                }.run();
-            }
-        }*/
-                //jdet.dispose();
-            }
-        }.run();
-
-        //******************************//
     }
 
     public void imprimirOrden(String nf) {
@@ -574,21 +490,6 @@ public class MenuprincipalPedidosOnline extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println("Error->" + e.getMessage());
         }
-    }
-
-    public void abrirVenta() {
-        if (!buscarFrm2(frmventa)) {
-            frmventa = new frmVentas();
-        }
-        frmventa.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.desktopPane.add(frmventa);
-        frmventa.setVisible(true);
-        this.desktopPane.selectFrame(true);
-        frmventa.setFocusable(true);
-        frmventa.setClosable(true);
-        frmventa.setLocation(this.desktopPane.getWidth() / 4, 0);
-        frmventa.pack();
-        frmventa.show();
     }
 
     private void itprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itprodActionPerformed
@@ -684,7 +585,7 @@ public class MenuprincipalPedidosOnline extends javax.swing.JFrame {
         // TODO add your handling code here:
         switch (evt.getKeyCode()) {
             case KeyEvent.VK_F3:
-                abrirFacturav2();
+                abrirFacturaOrm();
                 break;
             case KeyEvent.VK_ESCAPE:
                 this.dispose();

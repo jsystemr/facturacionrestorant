@@ -5,21 +5,19 @@
  */
 package com.siguasystem.modelo;
 
-import com.siguasystem.modelos.exceptions.NonexistentEntityException;
-import com.siguasystem.modelos.exceptions.PreexistingEntityException;
+import com.siguasystem.modelo.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.FlushModeType;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 /**
  *
- * @author jramos
+ * @author joramos
  */
 public class FacturaJpaController implements Serializable {
 
@@ -32,30 +30,7 @@ public class FacturaJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void saveFactura(Factura f) {
-        System.out.println("Guardando factura...");
-        // manager es el EntityManager obtenido anteriorment
-         EntityManager em = getEntityManager();
-         em.setFlushMode(FlushModeType.COMMIT);
-        try {
-            em.getTransaction().begin();
-            em.persist(f);
-            em.getTransaction().commit();
-            System.out.println("Factura Guardada...");
-        } catch (Exception e) {
-            e.printStackTrace();
-            em.getTransaction().rollback();
-        } finally {
-            if (em.isOpen()) {
-                em.close();
-            }
-        }
-    }
-
-    public void create(Factura factura) throws PreexistingEntityException, Exception {
-        if (factura.getFacturaPK() == null) {
-            factura.setFacturaPK(new FacturaPK());
-        }
+    public void create(Factura factura) {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -99,10 +74,10 @@ public class FacturaJpaController implements Serializable {
                 tipofact.getFacturaList().add(factura);
                 tipofact = em.merge(tipofact);
             }
-            /*if (cliente != null) {
+            if (cliente != null) {
                 cliente.getFacturaList().add(factura);
                 cliente = em.merge(cliente);
-            }*/
+            }
             if (empresa != null) {
                 empresa.getFacturaList().add(factura);
                 empresa = em.merge(empresa);
@@ -115,13 +90,7 @@ public class FacturaJpaController implements Serializable {
                 usuario.getFacturaList().add(factura);
                 usuario = em.merge(usuario);
             }
-            em.flush();
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findFactura(factura.getFacturaPK()) != null) {
-                throw new PreexistingEntityException("Factura " + factura + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();
@@ -134,7 +103,7 @@ public class FacturaJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Factura persistentFactura = em.find(Factura.class, factura.getFacturaPK());
+            Factura persistentFactura = em.find(Factura.class, factura.getId());
             Tiporden idordenOld = persistentFactura.getIdorden();
             Tiporden idordenNew = factura.getIdorden();
             Tipofactura tipofactOld = persistentFactura.getTipofact();
@@ -188,14 +157,14 @@ public class FacturaJpaController implements Serializable {
                 tipofactNew.getFacturaList().add(factura);
                 tipofactNew = em.merge(tipofactNew);
             }
-           /* if (clienteOld != null && !clienteOld.equals(clienteNew)) {
+            if (clienteOld != null && !clienteOld.equals(clienteNew)) {
                 clienteOld.getFacturaList().remove(factura);
                 clienteOld = em.merge(clienteOld);
             }
             if (clienteNew != null && !clienteNew.equals(clienteOld)) {
                 clienteNew.getFacturaList().add(factura);
                 clienteNew = em.merge(clienteNew);
-            }*/
+            }
             if (empresaOld != null && !empresaOld.equals(empresaNew)) {
                 empresaOld.getFacturaList().remove(factura);
                 empresaOld = em.merge(empresaOld);
@@ -224,7 +193,7 @@ public class FacturaJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                FacturaPK id = factura.getFacturaPK();
+                Integer id = factura.getId();
                 if (findFactura(id) == null) {
                     throw new NonexistentEntityException("The factura with id " + id + " no longer exists.");
                 }
@@ -237,7 +206,7 @@ public class FacturaJpaController implements Serializable {
         }
     }
 
-    public void destroy(FacturaPK id) throws NonexistentEntityException {
+    public void destroy(Integer id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -245,7 +214,7 @@ public class FacturaJpaController implements Serializable {
             Factura factura;
             try {
                 factura = em.getReference(Factura.class, id);
-                factura.getFacturaPK();
+                factura.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The factura with id " + id + " no longer exists.", enfe);
             }
@@ -260,10 +229,10 @@ public class FacturaJpaController implements Serializable {
                 tipofact = em.merge(tipofact);
             }
             Cliente cliente = factura.getCliente();
-            /*if (cliente != null) {
+            if (cliente != null) {
                 cliente.getFacturaList().remove(factura);
                 cliente = em.merge(cliente);
-            }*/
+            }
             Empresa empresa = factura.getEmpresa();
             if (empresa != null) {
                 empresa.getFacturaList().remove(factura);
@@ -312,7 +281,7 @@ public class FacturaJpaController implements Serializable {
         }
     }
 
-    public Factura findFactura(FacturaPK id) {
+    public Factura findFactura(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Factura.class, id);
@@ -333,5 +302,5 @@ public class FacturaJpaController implements Serializable {
             em.close();
         }
     }
-
+    
 }

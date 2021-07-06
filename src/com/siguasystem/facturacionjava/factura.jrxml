@@ -174,7 +174,7 @@ FROM
      INNER JOIN `tiporden` tiporden ON factura.`idorden` = tiporden.`idtiporden`
      inner join `correlativossar` correlativossar on factura.`idcorrelativo`=correlativossar.`id`	
 WHERE
-     factura.`idFactura` = $P{id}
+     factura.`id` = $P{id}
  AND correlativossar.`estado` = 1
  AND empresa.`estado` = 1]]>
 	</queryString>

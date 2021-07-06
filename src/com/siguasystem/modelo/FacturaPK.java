@@ -10,6 +10,9 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -20,6 +23,12 @@ import javax.persistence.TemporalType;
 @Embeddable
 public class FacturaPK implements  Serializable {
 
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "idFactura", nullable = false)
     private int idFactura;
@@ -32,9 +41,10 @@ public class FacturaPK implements  Serializable {
     public FacturaPK() {
     }
 
-    public FacturaPK(int idFactura, Date fecha) {
+    public FacturaPK(int idFactura, Date fecha,Integer id) {
         this.idFactura = idFactura;
         this.fecha = fecha;
+        this.id=id;
     }
 
     public int getIdFactura() {
@@ -53,6 +63,15 @@ public class FacturaPK implements  Serializable {
         this.fecha = fecha;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

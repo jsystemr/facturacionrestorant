@@ -34,6 +34,7 @@ public class frmPagofac extends javax.swing.JInternalFrame {
      * Creates new form frmPagofac
      */
     public boolean pago = false;
+    public Integer id=0;
     public int nfac;
     public Date fecha;
     public BigDecimal efectivo;
@@ -254,7 +255,7 @@ public class frmPagofac extends javax.swing.JInternalFrame {
             try {
                 efectivo = pay;
                 pago = true;
-                Factura f1 = jpfac.findFactura(fpk);
+                Factura f1 = jpfac.findFactura(id);
                 f1.setEfectivo(pay);
                 f1.setEstadofact(new Estadofact(2));
                 jpfac.edit(f1);

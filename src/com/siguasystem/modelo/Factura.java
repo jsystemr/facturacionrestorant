@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Factura.findAll", query = "SELECT f FROM Factura f")
-    , @NamedQuery(name = "Factura.findByIdFactura", query = "SELECT f FROM Factura f WHERE f.facturaPK.idFactura = :idFactura")
-    , @NamedQuery(name = "Factura.findByFecha", query = "SELECT f FROM Factura f WHERE f.facturaPK.fecha = :fecha")
+    , @NamedQuery(name = "Factura.findByIdFactura", query = "SELECT f FROM Factura f WHERE f.idFactura = :idFactura")
+    , @NamedQuery(name = "Factura.findByFecha", query = "SELECT f FROM Factura f WHERE f.fecha = :fecha")
     , @NamedQuery(name = "Factura.findByHora", query = "SELECT f FROM Factura f WHERE f.hora = :hora")
     , @NamedQuery(name = "Factura.findByEfectivo", query = "SELECT f FROM Factura f WHERE f.efectivo = :efectivo")
     , @NamedQuery(name = "Factura.findByNotas", query = "SELECT f FROM Factura f WHERE f.notas = :notas")
@@ -48,14 +48,19 @@ public class Factura implements Serializable {
     private static final long serialVersionUID = 1L;
     @Transient
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@GeneratedValue(strategy = GenerationType.AUTO)
-    //@Basic(optional = false)
-    //@Column(name = "id")
-    //private Integer id;
-    @EmbeddedId
-    protected FacturaPK facturaPK;
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
+    @Basic(optional = false)
+    @Column(name = "idFactura", nullable = false)
+    private int idFactura;
+    @Basic(optional = false)
+    @Column(name = "fecha", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
     @Column(name = "hora")
     @Temporal(TemporalType.TIME)
     private Date hora;
@@ -92,7 +97,7 @@ public class Factura implements Serializable {
     public Factura() {
     }
     
-    /*public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -100,22 +105,16 @@ public class Factura implements Serializable {
          Integer oldId = this.id;
         this.id = id;
         changeSupport.firePropertyChange("id", oldId, id);
-    }*/
+    }
 
     public Factura(FacturaPK facturaPK) {
-        this.facturaPK = facturaPK;
+        this.fecha = facturaPK.getFecha();
+        this.idFactura=facturaPK.getIdFactura();
     }
 
     public Factura(int idFactura, Date fecha) {
-        this.facturaPK = new FacturaPK(idFactura, fecha);
-    }
-
-    public FacturaPK getFacturaPK() {
-        return facturaPK;
-    }
-
-    public void setFacturaPK(FacturaPK facturaPK) {
-        this.facturaPK = facturaPK;
+       this.fecha = fecha;
+        this.idFactura=idFactura;
     }
 
     public Date getHora() {
@@ -198,6 +197,23 @@ public class Factura implements Serializable {
         this.estadofact = estadofact;
     }
 
+    public int getIdFactura() {
+        return idFactura;
+    }
+
+    public void setIdFactura(int idFactura) {
+        this.idFactura = idFactura;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    
     public Usuario getUsuario() {
         return usuario;
     }
@@ -214,13 +230,6 @@ public class Factura implements Serializable {
         this.idcorrelativo = idcorrelativo;
     }
 
-    
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (facturaPK != null ? facturaPK.hashCode() : 0);
-        return hash;
-    }
 
     @Override
     public boolean equals(Object object) {
@@ -229,15 +238,8 @@ public class Factura implements Serializable {
             return false;
         }
         Factura other = (Factura) object;
-        if ((this.facturaPK == null && other.facturaPK != null) || (this.facturaPK != null && !this.facturaPK.equals(other.facturaPK))) {
-            return false;
-        }
-        return true;
-    }
 
-    @Override
-    public String toString() {
-        return "com.siguasystem.modelo.Factura[ facturaPK=" + facturaPK + " ]";
+        return true;
     }
 
 }

@@ -17,6 +17,7 @@ import com.siguasystem.modelo.Estadofact;
 import com.siguasystem.modelo.EstadofactJpaController;
 import com.siguasystem.modelo.Factura;
 import com.siguasystem.modelo.FacturaJpaController;
+import com.siguasystem.modelo.FacturaPK;
 import com.siguasystem.modelo.Facturaorm;
 import com.siguasystem.modelo.Producto;
 import com.siguasystem.modelo.ProductoJpaController;
@@ -122,31 +123,6 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
             tamanioCol();
             lblnreg.setText("0");
             f2.setDateToToday();
-       /*  try {
-                   fr = new FileReader("conexion.dat");
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(frmFacturaORM.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            BufferedReader br = new BufferedReader(fr);
-            String linea = "";
-            int number = 0;
-            try {
-                while ((linea = br.readLine()) != null) {
-                    conexion_data[number] = linea.substring(linea.indexOf("=") + 1, linea.length());
-                    number++;
-                    if (number > 2) {
-                        break;
-                    }
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(frmFacturaORM.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            String clv = "";
-            try {
-                clv = StringEncrypt.decrypt(key, iv, StringEncrypt.encrypt(key, iv, conexion_data[2]));
-            } catch (Exception ex) {
-                Logger.getLogger(frmFacturaORM.class.getName()).log(Level.SEVERE, null, ex);
-            }*/
             Configuracion confi=jpconfig.findConfiguracion(1);
             conexion_data=confi.getConfigval().split(";");
             connectionSource = new JdbcConnectionSource(conexion_data[0], conexion_data[1],  conexion_data[2]);
@@ -725,101 +701,7 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
             }
         }
     }//GEN-LAST:event_listado3MouseClicked
-
-    public void verificaEstadofac() {
-        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-        System.out.println(fsel.getFacturaPK());
-        frmFacturav2 frmfac = new frmFacturav2(fsel.getFacturaPK());
-        frmfac.setClosable(true);
-        if (fsel.getEstadofact().getIdestadofact() == 1) {
-            frmfac.btnaddet.setEnabled(true);
-            frmfac.btnsavefac.setEnabled(true);
-            frmfac.btnprintfac.setEnabled(true);
-        } else {
-            frmfac.btnaddet.setEnabled(false);
-            frmfac.btnsavefac.setEnabled(false);
-            frmfac.btnprintfac.setEnabled(false);
-        }
-
-        frmfac.nuevafac = fsel.getFacturaPK().getIdFactura();
-        frmfac.setVisible(true);
-        //frmfac.pack();
-        //frmfac.show();
-        this.getDesktopPane().add(frmfac);
-    }
-
-    public void verificaEstadofac2() {
-        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-        System.out.println(fsel.getFacturaPK());
-        frmFacturav3 frmfac3 = new frmFacturav3(fsel.getFacturaPK());
-        frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        //frmfac3.getFocusOwner();
-        if (fsel.getEstadofact().getIdestadofact() == 1) {
-            frmfac3.btnaddet.setEnabled(true);
-            frmfac3.btnsavefac.setEnabled(true);
-            frmfac3.btnprintfac.setEnabled(true);
-        } else {
-            frmfac3.btnaddet.setEnabled(false);
-            frmfac3.btnsavefac.setEnabled(false);
-            frmfac3.btnprintfac.setEnabled(false);
-        }
-
-        frmfac3.nuevafac = fsel.getFacturaPK().getIdFactura();
-        frmfac3.txtcodcli.setText(fsel.getCliente().getIdCliente());
-        frmfac3.setVisible(true);
-        //frmfac3.pack();
-        //frmfac3.show();
-        this.getDesktopPane().add(frmfac3);
-        //cargarFacturas();
-    }
-
-    public void verificaEstadofac3() {
-        try {
-            Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-            System.out.println(fsel.getFacturaPK());
-            frmVentas frmfac3 = new frmVentas(fsel.getFacturaPK());
-            //this.getDesktopPane().updateUI();
-            frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            frmfac3.getFocusOwner();
-            if (fsel.getEstadofact().getIdestadofact() == 1) {
-                frmfac3.btnaddet.setEnabled(true);
-                frmfac3.btnsavefac.setEnabled(true);
-                frmfac3.btnprintfac.setEnabled(true);
-            } else {
-                frmfac3.btnaddet.setEnabled(false);
-                frmfac3.btnsavefac.setEnabled(false);
-                frmfac3.btnprintfac.setEnabled(false);
-            }
-
-            frmfac3.nuevafac = fsel.getFacturaPK().getIdFactura();
-            frmfac3.txtcodcli.setText(fsel.getCliente().getIdCliente());
-            frmfac3.setVisible(true);
-            frmfac3.setSelected(true);
-            //frmfac3.pack();
-            //frmfac3.show();
-            this.getDesktopPane().add(frmfac3);
-            //cargarFacturas();
-        } catch (Exception e) {
-
-        }
-
-    }
-
-    public void verificarEstadofac4() {
-        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-        JDialog jdet = new JDialog();
-        jdet.setContentPane(new jpfacturacion1(fsel.getFacturaPK()));
-        //jdet.setLocation(200, 200);
-        jdet.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        jdet.pack();
-        jdet.setFocusableWindowState(true);
-        jdet.setModal(true);
-        jdet.setVisible(true);
-        if (((jpfacturacion1) jdet.getContentPane()).closefrm == 1) {
-            finfacopen();
-        }
-    }
-
+   
     private void cbotipofacKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbotipofacKeyReleased
         //MostrarDatoscel(txtfiltro);
     }//GEN-LAST:event_cbotipofacKeyReleased
@@ -864,54 +746,11 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
         finfacopen2(1);
     }//GEN-LAST:event_txtfindActionPerformed
 
-    public void verificaEstadofac5() {
-        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-        System.out.println(fsel.getFacturaPK());
-        frmVentas frmfac3 = new frmVentas(fsel.getFacturaPK());
-        frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        if (fsel.getEstadofact().getIdestadofact() == 1) {
-            frmfac3.btnaddet.setEnabled(true);
-            frmfac3.btnsavefac.setEnabled(false);
-            frmfac3.btnprintfac.setEnabled(true);
-        } else {
-            frmfac3.btnaddet.setEnabled(false);
-            frmfac3.btnsavefac.setEnabled(false);
-            frmfac3.btnprintfac.setEnabled(false);
-        }
-        this.getDesktopPane().add(frmfac3);
-        frmfac3.nuevafac = fsel.getFacturaPK().getIdFactura();
-        frmfac3.txtcodcli.setText(fsel.getCliente().getIdCliente());
-        frmfac3.setVisible(true);
-        frmfac3.pack();
-        frmfac3.show();
-    }
-
-    public void verificaEstadofac6() {
-        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-        System.out.println(fsel.getFacturaPK());
-        frmFacturav6 frmfac3 = new frmFacturav6(fsel.getFacturaPK());
-        frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        if (fsel.getEstadofact().getIdestadofact() == 1) {
-            frmfac3.btnaddet.setEnabled(true);
-            frmfac3.btnsavefac.setEnabled(false);
-            frmfac3.btnprintfac.setEnabled(true);
-        } else {
-            frmfac3.btnaddet.setEnabled(false);
-            frmfac3.btnsavefac.setEnabled(false);
-            frmfac3.btnprintfac.setEnabled(false);
-        }
-        this.getDesktopPane().add(frmfac3);
-        frmfac3.nuevafac = fsel.getFacturaPK().getIdFactura();
-        frmfac3.txtcodcli.setText(fsel.getCliente().getIdCliente());
-        frmfac3.setVisible(true);
-        frmfac3.pack();
-        frmfac3.show();
-    }
-
     public void verificaEstadofacORM() {
-        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where idfactura=" + pselstring, Factura.class).getSingleResult();
-        System.out.println(fsel.getFacturaPK());
-        frmFacturaORM frmfac3 = new frmFacturaORM(fsel.getFacturaPK());
+        Factura fsel = (Factura) finfac.getEntityManager().createNativeQuery("select * from factura where id=" + pselstring, Factura.class).getSingleResult();
+        System.out.println(fsel);
+        FacturaPK pkfact=new FacturaPK(fsel.getIdFactura(), fsel.getFecha(),Integer.parseInt(pselstring));
+        frmFacturaORM frmfac3 = new frmFacturaORM(pkfact);
         frmfac3.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         if (fsel.getEstadofact().getIdestadofact() == 1) {
             frmfac3.btnaddet.setEnabled(true);
@@ -923,7 +762,7 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
             frmfac3.btnprintfac.setEnabled(false);
         }
         this.getDesktopPane().add(frmfac3);
-        frmfac3.nuevafac = fsel.getFacturaPK().getIdFactura();
+        frmfac3.nuevafac = fsel.getIdFactura();
         frmfac3.txtcodcli.setText(fsel.getCliente().getIdCliente());
         frmfac3.setVisible(true);
         frmfac3.pack();
@@ -1093,17 +932,17 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
         if (listado3.getRowCount() > 0 || listado.getRowCount() > 0 || listado2.getRowCount() > 0) {
             switch (tabfac.getSelectedIndex()) {
                 case 0:
-                    pselstring = listado.getModel().getValueAt(listado.getSelectedRow(), 1).toString();
+                    pselstring = listado.getModel().getValueAt(listado.getSelectedRow(), 0).toString();
                     pselstado = listado.getModel().getValueAt(listado.getSelectedRow(), 5).toString().trim();
                     pseltot = listado.getModel().getValueAt(listado.getSelectedRow(), 4).toString().trim();
                     break;
                 case 1:
-                    pselstring = listado2.getModel().getValueAt(listado2.getSelectedRow(), 1).toString();
+                    pselstring = listado2.getModel().getValueAt(listado2.getSelectedRow(), 0).toString();
                     pselstado = listado2.getModel().getValueAt(listado2.getSelectedRow(), 5).toString().trim();
                     pseltot = listado2.getModel().getValueAt(listado2.getSelectedRow(), 4).toString().trim();
                     break;
                 case 2:
-                    pselstring = listado3.getModel().getValueAt(listado3.getSelectedRow(), 1).toString();
+                    pselstring = listado3.getModel().getValueAt(listado3.getSelectedRow(), 0).toString();
                     pselstado = listado3.getModel().getValueAt(listado3.getSelectedRow(), 5).toString().trim();
                     pseltot = listado3.getModel().getValueAt(listado3.getSelectedRow(), 4).toString().trim();
                     break;
@@ -1157,8 +996,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                 double totf = 0;
                 for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                     Factura p = iterator.next();
-                    if (p.getFacturaPK() != null) {
-                        df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                    if (p != null) {
+                        df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                         totf += p.getTotalfac().doubleValue();
                     }
                 }
@@ -1258,8 +1097,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
             int i = 1;
             for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                 Factura p = iterator.next();
-                if (p.getFacturaPK() != null) {
-                    df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                if (p != null) {
+                    df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                 }
             }
             listado2.setModel(df);
@@ -1289,8 +1128,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                     double totf = 0;
                     for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                         Factura p = iterator.next();
-                        if (p.getFacturaPK() != null) {
-                            df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                        if (p!= null) {
+                            df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                             totf += p.getTotalfac().doubleValue();
                         }
                     }
@@ -1309,8 +1148,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                     int i = 1;
                     for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                         Factura p = iterator.next();
-                        if (p.getFacturaPK() != null) {
-                            df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                        if (p!= null) {
+                            df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                         }
                     }
                     listado.setModel(df);
@@ -1336,8 +1175,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                     int i = 1;
                     for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                         Factura p = iterator.next();
-                        if (p.getFacturaPK() != null) {
-                            df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                        if (p!= null) {
+                            df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                         }
                     }
                     listado2.setModel(df);
@@ -1354,8 +1193,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                     int i = 1;
                     for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                         Factura p = iterator.next();
-                        if (p.getFacturaPK() != null) {
-                            df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                        if (p != null) {
+                            df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                         }
                     }
                     listado2.setModel(df);
@@ -1388,8 +1227,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                     double totf = 0;
                     for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                         Factura p = iterator.next();
-                        if (p.getFacturaPK() != null) {
-                            df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                        if (p != null) {
+                            df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                             totf += p.getTotalfac().doubleValue();
                         }
                     }
@@ -1408,8 +1247,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
                     int i = 1;
                     for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                         Factura p = iterator.next();
-                        if (p.getFacturaPK() != null) {
-                            df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                        if (p!= null) {
+                            df.addRow(new Object[]{p.getId(), p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                         }
                     }
                     listado3.setModel(df);
@@ -1438,8 +1277,8 @@ public class frmListadoFacturas extends javax.swing.JInternalFrame implements Ac
             int i = 1;
             for (Iterator<Factura> iterator = lf.iterator(); iterator.hasNext();) {
                 Factura p = iterator.next();
-                if (p.getFacturaPK() != null) {
-                    df.addRow(new Object[]{i++, p.getFacturaPK().getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
+                if (p != null) {
+                    df.addRow(new Object[]{i++, p.getIdFactura(), p.getCliente().getNombre(), p.getIdorden().getDescri() + "/" + p.getTipofact().getDescripcion(), p.getTotalfac(), p.getEstadofact().getDescrip()});
                     toth += p.getTotalfac().doubleValue();
                     if (p.getIdorden().getIdtiporden() == 1) {
                         totco += p.getTotalfac().doubleValue();

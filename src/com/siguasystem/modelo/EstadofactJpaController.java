@@ -5,9 +5,9 @@
  */
 package com.siguasystem.modelo;
 
-import com.siguasystem.modelos.exceptions.IllegalOrphanException;
-import com.siguasystem.modelos.exceptions.NonexistentEntityException;
-import com.siguasystem.modelos.exceptions.PreexistingEntityException;
+import com.siguasystem.modelo.exceptions.IllegalOrphanException;
+import com.siguasystem.modelo.exceptions.NonexistentEntityException;
+import com.siguasystem.modelo.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -20,7 +20,7 @@ import javax.persistence.EntityManagerFactory;
 
 /**
  *
- * @author jramos
+ * @author joramos
  */
 public class EstadofactJpaController implements Serializable {
 
@@ -43,7 +43,7 @@ public class EstadofactJpaController implements Serializable {
             em.getTransaction().begin();
             List<Factura> attachedFacturaList = new ArrayList<Factura>();
             for (Factura facturaListFacturaToAttach : estadofact.getFacturaList()) {
-                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getFacturaPK());
+                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getId());
                 attachedFacturaList.add(facturaListFacturaToAttach);
             }
             estadofact.setFacturaList(attachedFacturaList);
@@ -92,7 +92,7 @@ public class EstadofactJpaController implements Serializable {
             }
             List<Factura> attachedFacturaListNew = new ArrayList<Factura>();
             for (Factura facturaListNewFacturaToAttach : facturaListNew) {
-                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getFacturaPK());
+                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getId());
                 attachedFacturaListNew.add(facturaListNewFacturaToAttach);
             }
             facturaListNew = attachedFacturaListNew;

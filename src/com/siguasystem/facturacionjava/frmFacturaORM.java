@@ -115,6 +115,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
     private Double subtot = 0.0;
     private int idcorrelativo=0;
     private int ped=0;
+    private Integer facturaid=0;
 
     private Correlativossar lcorre = new Correlativossar();
     private Correlativossar2 lcorre2 = new Correlativossar2();
@@ -265,6 +266,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
     public frmFacturaORM(FacturaPK pkf) {
         try {
             initComponents();
+            facturaid=pkf.getId();
             Configuracion confi=jpconfig.findConfiguracion(1);
             conexion_data=confi.getConfigval().split(";");
             connectionSource = new JdbcConnectionSource(conexion_data[0], conexion_data[1], conexion_data[2]);
@@ -1006,7 +1008,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
             Date date = formatfac.parse(txtfecha.getText());
 
             if (btnsavefac.getText().equals("Guardar") ) {
-                txtnfact.setValue(ultimaFactorm() + 1);
+                txtnfact.setValue(1);
             }
             if (dtf.totalarticulos() == 0) {
                 JOptionPane.showMessageDialog(this, "Intente ingresando un producto a la lista!", "La factura no tiene Detalle!", JOptionPane.WARNING_MESSAGE);
@@ -1023,7 +1025,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                     g = true;
                 } else {
                     if (nuevafac!=0) {
-                         Factura f1 = jpfac.findFactura(new FacturaPK(factura.getFacturaPK().getIdFactura(), date));
+                         Factura f1 = jpfac.findFactura(factura.getId());
                          updateFactura(date, efe, f1);
                             //Si la factura se almaceno correctamente se imprime la factura
                             btnsavefac.setEnabled(false);
@@ -1085,7 +1087,6 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
            @Override
            public void run() {
               pkfact = new FacturaPK();
-                    //factura.setFacturaPK(pkfact);
                     factura.setEfectivo(efe);
                     Tipofactura seltpf = ((Tipofactura) cbotipofac.getSelectedItem());
                     Empresa selemp = (Empresa) cbotienda.getSelectedItem();
@@ -1107,21 +1108,26 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                     }
                     factura.setTotalfac(new BigDecimal(dtf.totalarticulos()));
                     if (nuevafac == 0) {
-                        txtnfact.setValue(ultimaFactorm() + 1);
-                        factura.setFacturaPK(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
+                        txtnfact.setValue(1);
+                        factura.setIdFactura(1);
+                        factura.setFecha(date);
                         System.out.println(factura);
                         resultado.factg=factura;
                         Factura f1 = null;//jpfac.findFactura(new FacturaPK(factura.getFacturaPK().getIdFactura(), date));
                         if (f1 == null) {
                             try {
                                 //Cuando es una factura Nueva
-                                jpfac.create(resultado.factg);
+                           jpfac.create(resultado.factg);
+                           txtnfact.setValue(resultado.factg.getId());
+                           resultado.factg.setIdFactura(resultado.factg.getId());
+                           jpfac.edit(resultado.factg);
                             } catch (Exception ex) {
                                 Logger.getLogger(frmFacturaORM.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         } else {
-                            txtnfact.setValue(ultimaFactorm() + 1);
-                            factura.setFacturaPK(new FacturaPK(factura.getFacturaPK().getIdFactura(), date));
+                            txtnfact.setValue(facturaid);
+                            factura.setIdFactura(factura.getIdFactura());
+                            factura.setFecha(date);
                             System.out.println(factura);
                             resultado.factg=factura;
                             try {
@@ -1134,7 +1140,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                     //JOptionPane.showMessageDialog(rootPane, "Factura Almacenada! ->" + date);
                     for (articulo dtfac : dtf.getLParticulos()) {
                         Detallefactura dtftmp = new Detallefactura();
-                        dtftmp.setDetallefacturaPK(new DetallefacturaPK(dtfac.getId(), factura.getFacturaPK().getIdFactura(), factura.getFacturaPK().getFecha()));
+                        dtftmp.setDetallefacturaPK(new DetallefacturaPK(dtfac.getId(), factura.getId(), factura.getFecha()));
                         dtftmp.setProducto(dtfac.getCodigo());
                         dtftmp.setNomproducto(dtfac.getNombre());
                         dtftmp.setCantidad((int) dtfac.getCantidad());
@@ -1174,7 +1180,9 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
     public void updateFactura(Date date, BigDecimal efe, Factura f1) throws NumberFormatException, Exception {
         //En caso de ser modificada la factura y agregar un producto el total se calcula mejor al final
         //pkfact = new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date);
-        factura.setFacturaPK(pkfact);
+        //factura.setFacturaPK(pkfact);
+        factura.setIdFactura(pkfact.getId());
+        factura.setFecha(pkfact.getFecha());
         factura.setEfectivo(efe);
         Tipofactura seltpf = ((Tipofactura) cbotipofac.getSelectedItem());
         Empresa selemp = (Empresa) cbotienda.getSelectedItem();
@@ -1196,7 +1204,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
         //total al momento de eliminar un renglon
         for (articulo dtfac : dtf.getLParticulos()) {
             Detallefactura dtftmp = new Detallefactura();
-            dtftmp.setDetallefacturaPK(new DetallefacturaPK(dtfac.getId(), pkfact.getIdFactura(), pkfact.getFecha()));
+            dtftmp.setDetallefacturaPK(new DetallefacturaPK(dtfac.getId(), pkfact.getId(), pkfact.getFecha()));
             dtftmp.setProducto(dtfac.getCodigo());
             dtftmp.setNomproducto(dtfac.getNombre());
             dtftmp.setCantidad((int) dtfac.getCantidad());
@@ -1229,9 +1237,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
     public void guardarFacturaOpen(BigDecimal efe, Integer corden) throws ParseException, Exception, NumberFormatException, HeadlessException {
         try {
             Date date = formatfac.parse(txtfecha.getText());
-            if (btnsavefac.getText().equals("Guardar")) {
-                txtnfact.setValue(ultimaFact() + 1);
-            } 
+
             //jpfac.findFactura(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
             if (dtf.totalarticulos() == 0) {
                 JOptionPane.showMessageDialog(this, "Intente ingresando un producto a la lista!", "La factura no tiene Detalle!", JOptionPane.WARNING_MESSAGE);
@@ -1258,17 +1264,6 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                     }
                 }
             }
-            /*else {
-                if (btnsavefac.getText().equals("Guardar")) {
-                    saveFactura(date, efe);
-                    //Si la factura se almaceno correctamente se imprime la factura
-                    btnsavefac.setEnabled(false);
-                    btnprintfac.setEnabled(false);
-                    imprimirFactura();
-                } else {
-                    JOptionPane.showMessageDialog(this, "La factura con Nro." + txtnfact.getValue().toString() + " ya Existe!, Intente con otro numero!", "La factura ya existe!", JOptionPane.WARNING_MESSAGE);
-                }
-            }*/
             if (corden == 0) {
                 imprimirOrden();
             }
@@ -1528,12 +1523,12 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                 //imprimir con su fecha de vencimiento.
                 idcorrelativo=lcorre.getId();
             } else {
-                txtnfact.setValue(nuevafac);
+                txtnfact.setValue(facturaid);
                 txtnfact.setEnabled(false);
                 //Carga la factura existente
-                factura = jpfac.findFactura(pkfact);
+                factura = jpfac.findFactura(facturaid);
                 //Carga el detalle existente
-                lsdetfac = jpdfac.findDetallefacturaEntities2(new DetallefacturaPK(pkfact.getIdFactura(), pkfact.getFecha()));
+                lsdetfac = jpdfac.findDetallefacturaEntities2(new DetallefacturaPK(pkfact.getId(), pkfact.getFecha()));
                 cbotienda.setSelectedItem(factura.getEmpresa());
                 cbotipofac.setSelectedItem(factura.getTipofact());
                 cbotipoorden.setSelectedItem(factura.getIdorden());
@@ -1547,7 +1542,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                 addproTable2(lsdetfac);
             }
             cbotipofac.requestFocus();
-            Integer uf = ultimaFactorm();
+            Integer uf = ultimaFactorm()+1;
                      
             if ((lcorre.getRangofin() - lcorre.getAlernfac()) < uf) {
                 JOptionPane.showMessageDialog(this, "Los correlativos estan por agotarse actualmente tiene " + (lcorre.getRangofin() - uf) + " dispobiles", "Advertencia!", JOptionPane.WARNING_MESSAGE);
@@ -1646,10 +1641,10 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
             /// que llegaron al limite de numeracion.
             Query qsql2 = fincli.getEntityManager().createNativeQuery("SELECT * FROM correlativossar c where c.estado=1 order by fechacreacion", Correlativossar.class);
             Correlativossar cor = (Correlativossar) qsql2.getSingleResult();
-            if (f2.getFacturaPK().getIdFactura() < cor.getRangoini()) {
+            if (f2.getIdFactura() < cor.getRangoini()) {
                 x = cor.getRangoini();
             } else {
-                x = f2.getFacturaPK().getIdFactura();
+                x = f2.getIdFactura();
             }
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
@@ -1677,10 +1672,10 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
             //valida si el numero de factura inicial es menor al ultimo numero 
             // de factura realizado y asigna el numero de factura de acuerdo a 
             // los nuevo correlativos y rangos.
-            if (Integer.parseInt(resultArray[0]) <= Integer.parseInt(resultArray2[4])) {
+            if (Integer.parseInt(resultArray[7]) <= Integer.parseInt(resultArray2[4])) {
                 r = Integer.parseInt(resultArray2[4]);
             } else {
-                r = Integer.parseInt(resultArray[0]);
+                r = Integer.parseInt(resultArray[7]);
             }
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
@@ -1692,7 +1687,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
         Integer x = 0;
         try {
             //Actualizado para mejorar rendimiento tenia *
-            Query qsql = fincli.getEntityManager().createNativeQuery("select idfactura,fecha,cliente,tienda,usuario,estado,totalfac from factura c where idfactura=(select max(idfactura) from factura)", Factura.class);//qsql.setParameter("n", txtnom.getText());
+            Query qsql = fincli.getEntityManager().createNativeQuery("select idfactura from factura c where idfactura=(select max(idfactura) from factura)", Factura.class);//qsql.setParameter("n", txtnom.getText());
             qsql.setHint(QueryHints.REFRESH, HintValues.TRUE);//Actualiza
             Factura f2 = (Factura) qsql.getResultList().get(0);
             ///Verificar en la tabla correlativos cual es el ultimo numero
@@ -1700,10 +1695,10 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
             /// que llegaron al limite de numeracion.
             Query qsql2 = fincli.getEntityManager().createNativeQuery("SELECT * FROM correlativossar c where c.estado=1 order by fechacreacion", Correlativossar.class);
             Correlativossar cor = (Correlativossar) qsql2.getSingleResult();
-            if (f2.getFacturaPK().getIdFactura() <= cor.getRangoini()) {
+            if (f2.getIdFactura() <= cor.getRangoini()) {
                 x = cor.getRangoini();
             } else {
-                x = f2.getFacturaPK().getIdFactura();
+                x = f2.getIdFactura();
             }
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
@@ -1845,10 +1840,10 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
         Integer resul = 0;
         //crearFactura();
         resul=crearFactura();
-        while (resul==0) {            
+        /*while (resul==0) {            
            resul=crearFactura();
            System.out.println("" + resul);
-        }
+        }*/
     }//GEN-LAST:event_btnprintfacActionPerformed
   public static class resultado{
          public static Integer r=0;
@@ -1863,12 +1858,8 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                         //guardaroupdateFactura();
                         //JOptionPane.showMessageDialog(rootPane,"Factura->"+date.toString()+"->"+txtnfact.getValue()+"->"+LocalDate.now());
                         JDialog jdet = new JDialog();
-                        Factura existefac=jpfac.findFactura(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()),date));
-                        Integer nfa=0;
-                        nfa = ultimaFactorm() + 1;
-                        txtnfact.setValue(nfa);
                         BigDecimal totsen = new BigDecimal(txttot.getText());
-                        jdet.setContentPane(new panelPagofactura(nfa, date, totsen));
+                        jdet.setContentPane(new panelPagofactura(Integer.parseInt(txtnfact.getValue().toString()), date, totsen));
                         jdet.setLocation(200, 200);
                         jdet.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                         jdet.pack();
@@ -2090,12 +2081,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
         // TODO add your handling code here:
         try {
             Factura f1;
-            if (nuevafac == 0) {
-                Date date = formatfac.parse(txtfecha.getText());
-                f1 = jpfac.findFactura(new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date));
-            } else {
-                f1 = jpfac.findFactura(pkfact);
-            }
+            f1 = jpfac.findFactura(facturaid);
             if (f1 != null) {
                 if (f1.getEfectivo() != null) {
                     Integer id = Integer.parseInt(txtnfact.getValue().toString());

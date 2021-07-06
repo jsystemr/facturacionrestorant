@@ -5,7 +5,7 @@
  */
 package com.siguasystem.modelo;
 
-import com.siguasystem.modelos.exceptions.NonexistentEntityException;
+import com.siguasystem.modelo.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -15,12 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import org.eclipse.persistence.config.HintValues;
-import org.eclipse.persistence.config.QueryHints;
 
 /**
  *
- * @author jramos
+ * @author joramos
  */
 public class TipofacturaJpaController implements Serializable {
 
@@ -43,7 +41,7 @@ public class TipofacturaJpaController implements Serializable {
             em.getTransaction().begin();
             List<Factura> attachedFacturaList = new ArrayList<Factura>();
             for (Factura facturaListFacturaToAttach : tipofactura.getFacturaList()) {
-                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getFacturaPK());
+                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getId());
                 attachedFacturaList.add(facturaListFacturaToAttach);
             }
             tipofactura.setFacturaList(attachedFacturaList);
@@ -75,7 +73,7 @@ public class TipofacturaJpaController implements Serializable {
             List<Factura> facturaListNew = tipofactura.getFacturaList();
             List<Factura> attachedFacturaListNew = new ArrayList<Factura>();
             for (Factura facturaListNewFacturaToAttach : facturaListNew) {
-                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getFacturaPK());
+                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getId());
                 attachedFacturaListNew.add(facturaListNewFacturaToAttach);
             }
             facturaListNew = attachedFacturaListNew;
@@ -155,7 +153,6 @@ public class TipofacturaJpaController implements Serializable {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(Tipofactura.class));
             Query q = em.createQuery(cq);
-            /// q.setHint(QueryHints.REFRESH, HintValues.TRUE);//Actualiza
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
@@ -188,13 +185,4 @@ public class TipofacturaJpaController implements Serializable {
         }
     }
     
-     public List<Tipofactura> ListaTipoFac() {
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createNativeQuery("select * from tipofactura ", Tipofactura.class);
-            return q.getResultList();
-        } finally {
-            em.close();
-        }
-    }
 }

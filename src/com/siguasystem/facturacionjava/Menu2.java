@@ -126,33 +126,25 @@ public class Menu2 extends javax.swing.JFrame {
 
     private void btnfacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfacActionPerformed
         // TODO add your handling code here:
-        abrirFacturav2();
+
     }//GEN-LAST:event_btnfacActionPerformed
 
     private void btnlfacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlfacActionPerformed
         // TODO add your handling code here:
-        abrirListadoFacturas();
+       
     }//GEN-LAST:event_btnlfacActionPerformed
 
     private void btnrfacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrfacActionPerformed
         // TODO add your handling code here:
         abrirReportefac();
     }//GEN-LAST:event_btnrfacActionPerformed
- public void abrirFacturav2() {
-        frmFacturav4 fac = new frmFacturav4();
-        fac.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        fac.setVisible(true);
-    }
+
  public void abrirReportefac() {
         frmReportesv2 fac = new frmReportesv2();
         fac.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         fac.setVisible(true);
     }
- public void abrirListadoFacturas() {
-        frmListadoFacturasv2 fac = new frmListadoFacturasv2();
-        fac.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        fac.setVisible(true);
-    }
+
     /**
      * @param args the command line arguments
      */

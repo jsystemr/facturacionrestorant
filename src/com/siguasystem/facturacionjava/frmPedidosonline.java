@@ -392,10 +392,10 @@ public class frmPedidosonline extends javax.swing.JInternalFrame {
             /// que llegaron al limite de numeracion.
             Query qsql2 = jpfac.getEntityManager().createNativeQuery("SELECT * FROM correlativossar c where c.estado=1 order by fechacreacion", Correlativossar.class);
             Correlativossar cor = (Correlativossar) qsql2.getSingleResult();
-            if (f2.getFacturaPK().getIdFactura() < cor.getRangoini()) {
+            if (f2.getIdFactura() < cor.getRangoini()) {
                 x = cor.getRangoini();
             } else {
-                x = f2.getFacturaPK().getIdFactura();
+                x = f2.getIdFactura();
             }
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());

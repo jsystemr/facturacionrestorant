@@ -42,7 +42,6 @@ public class buscarClientesv2 extends javax.swing.JInternalFrame {
     private Tablabuscacli bp = new Tablabuscacli();
     private Tabladetfacli bfac = new Tabladetfacli();
     private ClienteJpaController fincli = new ClienteJpaController(emFac);//(Persistence.createEntityManagerFactory("Restorant"));
-    private frmFacturav3 factura;
     public Cliente csel;
     public Cliente cselfac;
     public buscarClientesv2() {

@@ -5,23 +5,22 @@
  */
 package com.siguasystem.modelo;
 
-import com.siguasystem.modelos.exceptions.IllegalOrphanException;
-import com.siguasystem.modelos.exceptions.NonexistentEntityException;
-import com.siguasystem.modelos.exceptions.PreexistingEntityException;
+import com.siguasystem.modelo.exceptions.IllegalOrphanException;
+import com.siguasystem.modelo.exceptions.NonexistentEntityException;
+import com.siguasystem.modelo.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 /**
  *
- * @author jramos
+ * @author joramos
  */
 public class ClienteJpaController implements Serializable {
 
@@ -44,7 +43,7 @@ public class ClienteJpaController implements Serializable {
             em.getTransaction().begin();
             List<Factura> attachedFacturaList = new ArrayList<Factura>();
             for (Factura facturaListFacturaToAttach : cliente.getFacturaList()) {
-                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getFacturaPK());
+                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getId());
                 attachedFacturaList.add(facturaListFacturaToAttach);
             }
             cliente.setFacturaList(attachedFacturaList);
@@ -70,34 +69,6 @@ public class ClienteJpaController implements Serializable {
             }
         }
     }
-    
-    public void createb(List<Cliente> clientestmp) throws PreexistingEntityException, Exception {
-        //if (getClientestmpCount() > 0) {
-            EntityManager em = null;
-            try {
-                em = getEntityManager();
-                em.getTransaction().begin();
-                int x = 0;
-                for (Iterator<Cliente> iterator = clientestmp.iterator(); iterator.hasNext();) {
-                    Cliente next = iterator.next();
-                    em.persist(next);
-                    if ((x % 1000) == 0) {
-                        em.getTransaction().commit();
-                        em.clear();
-                        em.getTransaction().begin();
-                    }
-                    x++;
-                }
-                em.getTransaction().commit();
-            } catch (Exception ex) {
-                System.out.println("Error:"+ex.getMessage());
-            } finally {
-                if (em != null) {
-                    em.close();
-                }
-            }
-       // }
-    }
 
     public void edit(Cliente cliente) throws IllegalOrphanException, NonexistentEntityException, Exception {
         EntityManager em = null;
@@ -121,7 +92,7 @@ public class ClienteJpaController implements Serializable {
             }
             List<Factura> attachedFacturaListNew = new ArrayList<Factura>();
             for (Factura facturaListNewFacturaToAttach : facturaListNew) {
-                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getFacturaPK());
+                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getId());
                 attachedFacturaListNew.add(facturaListNewFacturaToAttach);
             }
             facturaListNew = attachedFacturaListNew;
@@ -231,10 +202,6 @@ public class ClienteJpaController implements Serializable {
         } finally {
             em.close();
         }
-    }
-
-    public Object entityManagerFactory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

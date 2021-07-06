@@ -5,8 +5,8 @@
  */
 package com.siguasystem.modelo;
 
-import com.siguasystem.modelos.exceptions.NonexistentEntityException;
-import com.siguasystem.modelos.exceptions.PreexistingEntityException;
+import com.siguasystem.modelo.exceptions.NonexistentEntityException;
+import com.siguasystem.modelo.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -16,14 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import org.eclipse.persistence.config.HintValues;
-import org.eclipse.persistence.config.QueryHints;
 
 /**
  *
- * @author jramos
+ * @author joramos
  */
-
 public class TipordenJpaController implements Serializable {
 
     public TipordenJpaController(EntityManagerFactory emf) {
@@ -45,7 +42,7 @@ public class TipordenJpaController implements Serializable {
             em.getTransaction().begin();
             List<Factura> attachedFacturaList = new ArrayList<Factura>();
             for (Factura facturaListFacturaToAttach : tiporden.getFacturaList()) {
-                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getFacturaPK());
+                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getId());
                 attachedFacturaList.add(facturaListFacturaToAttach);
             }
             tiporden.setFacturaList(attachedFacturaList);
@@ -82,7 +79,7 @@ public class TipordenJpaController implements Serializable {
             List<Factura> facturaListNew = tiporden.getFacturaList();
             List<Factura> attachedFacturaListNew = new ArrayList<Factura>();
             for (Factura facturaListNewFacturaToAttach : facturaListNew) {
-                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getFacturaPK());
+                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getId());
                 attachedFacturaListNew.add(facturaListNewFacturaToAttach);
             }
             facturaListNew = attachedFacturaListNew;
@@ -162,7 +159,6 @@ public class TipordenJpaController implements Serializable {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(Tiporden.class));
             Query q = em.createQuery(cq);
-            //q.setHint(QueryHints.REFRESH, HintValues.TRUE);//Actualiza
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
@@ -190,16 +186,6 @@ public class TipordenJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
-        } finally {
-            em.close();
-        }
-    }
-    
-    public List<Tiporden> ListaTipoOrd() {
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createNativeQuery("select * from tiporden ", Tiporden.class);
-            return q.getResultList();
         } finally {
             em.close();
         }

@@ -5,9 +5,9 @@
  */
 package com.siguasystem.modelo;
 
-import com.siguasystem.modelos.exceptions.IllegalOrphanException;
-import com.siguasystem.modelos.exceptions.NonexistentEntityException;
-import com.siguasystem.modelos.exceptions.PreexistingEntityException;
+import com.siguasystem.modelo.exceptions.IllegalOrphanException;
+import com.siguasystem.modelo.exceptions.NonexistentEntityException;
+import com.siguasystem.modelo.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -17,12 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import org.eclipse.persistence.config.HintValues;
-import org.eclipse.persistence.config.QueryHints;
 
 /**
  *
- * @author jramos
+ * @author joramos
  */
 public class EmpresaJpaController implements Serializable {
 
@@ -35,8 +33,6 @@ public class EmpresaJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    
-    
     public void create(Empresa empresa) throws PreexistingEntityException, Exception {
         if (empresa.getFacturaList() == null) {
             empresa.setFacturaList(new ArrayList<Factura>());
@@ -47,12 +43,12 @@ public class EmpresaJpaController implements Serializable {
             em.getTransaction().begin();
             List<Factura> attachedFacturaList = new ArrayList<Factura>();
             for (Factura facturaListFacturaToAttach : empresa.getFacturaList()) {
-                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getFacturaPK());
+                facturaListFacturaToAttach = em.getReference(facturaListFacturaToAttach.getClass(), facturaListFacturaToAttach.getId());
                 attachedFacturaList.add(facturaListFacturaToAttach);
             }
             empresa.setFacturaList(attachedFacturaList);
             em.persist(empresa);
-          /*  for (Factura facturaListFactura : empresa.getFacturaList()) {
+            for (Factura facturaListFactura : empresa.getFacturaList()) {
                 Empresa oldEmpresaOfFacturaListFactura = facturaListFactura.getEmpresa();
                 facturaListFactura.setEmpresa(empresa);
                 facturaListFactura = em.merge(facturaListFactura);
@@ -60,7 +56,7 @@ public class EmpresaJpaController implements Serializable {
                     oldEmpresaOfFacturaListFactura.getFacturaList().remove(facturaListFactura);
                     oldEmpresaOfFacturaListFactura = em.merge(oldEmpresaOfFacturaListFactura);
                 }
-            }*/
+            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             if (findEmpresa(empresa.getIdEmpresa()) != null) {
@@ -96,7 +92,7 @@ public class EmpresaJpaController implements Serializable {
             }
             List<Factura> attachedFacturaListNew = new ArrayList<Factura>();
             for (Factura facturaListNewFacturaToAttach : facturaListNew) {
-                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getFacturaPK());
+                facturaListNewFacturaToAttach = em.getReference(facturaListNewFacturaToAttach.getClass(), facturaListNewFacturaToAttach.getId());
                 attachedFacturaListNew.add(facturaListNewFacturaToAttach);
             }
             facturaListNew = attachedFacturaListNew;
@@ -176,7 +172,6 @@ public class EmpresaJpaController implements Serializable {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(Empresa.class));
             Query q = em.createQuery(cq);
-            // q.setHint(QueryHints.REFRESH, HintValues.TRUE);//Actualiza/
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
@@ -195,7 +190,6 @@ public class EmpresaJpaController implements Serializable {
             em.close();
         }
     }
-    
 
     public int getEmpresaCount() {
         EntityManager em = getEntityManager();
@@ -205,16 +199,6 @@ public class EmpresaJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
-        } finally {
-            em.close();
-        }
-    }
-    
-    public List<Empresa> ListaEmpresa() {
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createNativeQuery("select * from Empresa ", Empresa.class);
-            return q.getResultList();
         } finally {
             em.close();
         }

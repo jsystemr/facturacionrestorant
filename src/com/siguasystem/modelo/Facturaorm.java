@@ -8,10 +8,13 @@ package com.siguasystem.modelo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,9 +29,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "factura")
 public class Facturaorm implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id", nullable = false)
+    private Integer id;
+
     private static final long serialVersionUID = 1L;
     @Column(name = "idfactura")
-    @Id
     private Integer idfactura;
     @Column(name = "fecha")
     private Date fecha;
@@ -45,22 +53,22 @@ public class Facturaorm implements Serializable {
     @Column(name = "totalfac", precision = 15, scale = 2)
     private BigDecimal totalfac;
     @JoinColumn(name = "idorden", referencedColumnName = "idtiporden")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Tiporden idorden;
     @JoinColumn(name = "tipofact", referencedColumnName = "idTipoFactura")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Tipofactura tipofact;
     @JoinColumn(name = "cliente", referencedColumnName = "idCliente", nullable = false)
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Cliente cliente;
     @JoinColumn(name = "empresa", referencedColumnName = "idEmpresa", nullable = false)
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Empresa empresa;
     @JoinColumn(name = "estadofact", referencedColumnName = "idestadofact", nullable = false)
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Estadofact estadofact;
     @JoinColumn(name = "usuario", referencedColumnName = "login", nullable = false)
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Usuario usuario;
 
     public Facturaorm() {
@@ -174,5 +182,44 @@ public class Facturaorm implements Serializable {
     public String toString() {
         return " Factura=" + getIdfactura() + " Fecha=" + getFecha() + " Cliente=" + getCliente() + " Total=" + getTotalfac();
     }
+
+    public Facturaorm(Integer id) {
+        this.id = id;
+    }
+
+    public Facturaorm(Integer id, int idFactura, String cliente, String empresa, int estadofact, String usuario) {
+        this.id = id;
+        
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Facturaorm)) {
+            return false;
+        }
+        Facturaorm other = (Facturaorm) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
 
 }

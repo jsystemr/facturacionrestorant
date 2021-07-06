@@ -35,7 +35,7 @@ public abstract class Global {
     public EntityManagerFactory emFac = Persistence.createEntityManagerFactory("Restorant");
     public static String rutarpt = "C:/facturacionjava/Reportes/";
     public static Usuario ulogin;
-    public static int admin=0;
+    public static int admin=1;
     public static String rutaActual() {
         String r="";
         File miDir = new File(".");
