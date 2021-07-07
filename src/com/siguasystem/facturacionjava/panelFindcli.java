@@ -858,7 +858,7 @@ public class panelFindcli extends javax.swing.JPanel {
             if (JOptionPane.showInternalConfirmDialog(this, "Esata seguro Eliminar el cliente", "El Cliente sera elimnado!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) 
             {       
                 try {      
-                    fincli.destroy(txtcod.getText().toString());
+                    fincli.destroy(txtidcliente.getText().toString());
                 } catch (com.siguasystem.modelo.exceptions.IllegalOrphanException ex) {
                     Logger.getLogger(panelFindcli.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (com.siguasystem.modelo.exceptions.NonexistentEntityException ex) {

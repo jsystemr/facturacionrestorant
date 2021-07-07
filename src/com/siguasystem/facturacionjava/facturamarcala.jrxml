@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="252" pageHeight="792" whenNoDataType="BlankPage" columnWidth="252" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="37cc697e-5c46-4618-a4e9-a142e09997ed">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.y" value="136"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -174,7 +174,7 @@ FROM
      INNER JOIN `tiporden` tiporden ON factura.`idorden` = tiporden.`idtiporden`
      inner join `correlativossar` correlativossar on factura.`idcorrelativo`=correlativossar.`id`	
 WHERE
-     factura.`idFactura` = $P{id}
+     factura.`id` = $P{id}
  AND correlativossar.`estado` = 1
  AND empresa.`estado` = 1]]>
 	</queryString>
@@ -408,101 +408,13 @@ WHERE
 				<text><![CDATA[Valor en Letras:]]></text>
 			</staticText>
 		</band>
-		<band height="188">
-			<textField>
-				<reportElement x="15" y="68" width="94" height="15" uuid="712e35c8-ebc5-403b-bbf5-291e7e799160"/>
-				<textElement>
-					<font fontName="Arial" size="9" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Rango Autorizado del "]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="112" y="69" width="113" height="15" uuid="35590e97-96fa-4edd-ba7f-cd0397ccf67c"/>
-				<textElement verticalAlignment="Top">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{correlativossar_formatonumero}+"-"+String.format("%08d",$F{correlativossar_rangoini})]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="56" y="83" width="170" height="15" uuid="8d2baa6a-d33c-4b15-a261-b3dbe342def6"/>
-				<textElement>
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{correlativossar_formatonumero}+"-"+String.format("%08d",$F{correlativossar_rangofin})]]></textFieldExpression>
-			</textField>
+		<band height="29">
 			<staticText>
-				<reportElement x="15" y="84" width="11" height="15" uuid="507f9495-3bf1-4109-99af-ccef6453e360"/>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="9" isBold="false"/>
-				</textElement>
-				<text><![CDATA[Al]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="1" y="146" width="224" height="20" uuid="fc0eaca7-2164-4967-8d5d-53ff5304aa8d"/>
+				<reportElement x="2" y="2" width="224" height="20" uuid="fc0eaca7-2164-4967-8d5d-53ff5304aa8d"/>
 				<textElement textAlignment="Center">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[¡Gracias por Preferirnos!]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="18" y="130" width="104" height="15" uuid="018e046e-8fe0-42bd-adea-3797bdc5c600"/>
-				<textElement>
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<text><![CDATA[Fecha Limite de Emision:]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy">
-				<reportElement x="134" y="130" width="91" height="15" uuid="0640c33c-7dc5-4804-bd2d-a9e178697fca"/>
-				<textElement>
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{correlativossar_fechafin}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="15" y="96" width="210" height="34" isPrintWhenDetailOverflows="true" uuid="7f44cf9b-374a-4146-ac21-9d144c648b20"/>
-				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["CAI:"+$F{correlativossar_cai}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="112" y="60" width="85" height="1" uuid="de852186-680c-430f-a1ee-dc4fbdd8db46"/>
-			</line>
-			<staticText>
-				<reportElement x="24" y="31" width="91" height="16" uuid="4eb997ce-27f3-4383-b510-bc5ff0013d03"/>
-				<textElement>
-					<font fontName="Arial" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[No. Orden Exenta:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="24" y="53" width="91" height="16" uuid="8a082191-e934-4411-a228-ff6b1886ef7c"/>
-				<textElement>
-					<font fontName="Arial" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[No. Registro SAG:]]></text>
-			</staticText>
-			<line>
-				<reportElement x="112" y="37" width="85" height="1" uuid="11e323ac-58a9-4217-b698-4bbdc69dd926"/>
-			</line>
-			<line>
-				<reportElement x="112" y="16" width="85" height="1" uuid="05330226-993a-41c5-a455-7680ead63952"/>
-			</line>
-			<staticText>
-				<reportElement x="24" y="1" width="91" height="30" uuid="8efe3808-9bf4-4dbc-9db8-aaf6261889d0"/>
-				<textElement>
-					<font fontName="Arial" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[No. Constancia 
-Exonerada:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="12" y="166" width="122" height="19" uuid="ce1ca232-8b4e-439b-8aa1-7de31145e7b3"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Original: Cliente
-Copia: Emisor]]></text>
 			</staticText>
 		</band>
 	</detail>

@@ -1083,10 +1083,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
 
     public void saveFactura(Date date, BigDecimal efe) throws NumberFormatException, Exception {
         //pkfact = new FacturaPK(Integer.parseInt(txtnfact.getValue().toString()), date);
-       Thread t1=new Thread(new Runnable() {
-           @Override
-           public void run() {
-              pkfact = new FacturaPK();
+                    pkfact = new FacturaPK();
                     factura.setEfectivo(efe);
                     Tipofactura seltpf = ((Tipofactura) cbotipofac.getSelectedItem());
                     Empresa selemp = (Empresa) cbotienda.getSelectedItem();
@@ -1170,11 +1167,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                   } catch (Exception ex) {
                       Logger.getLogger(frmFacturaORM.class.getName()).log(Level.SEVERE, null, ex);
                   }
-                    }
-           }
-       });
-       t1.start();
-       t1.join();
+        }    
     }
 
     public void updateFactura(Date date, BigDecimal efe, Factura f1) throws NumberFormatException, Exception {
@@ -1518,7 +1511,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
             //Obtiene el ultimo correlativo activo valido
              lcorre = pcorrela.ultimoCorrela();
             if (nuevafac == 0) {
-                txtnfact.setValue(ultimaFactorm()+1);
+                txtnfact.setValue(1);
                 //Ayuda a controlar formato de correlativo a
                 //imprimir con su fecha de vencimiento.
                 idcorrelativo=lcorre.getId();
@@ -1605,7 +1598,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
                 calcSubtotal();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error->" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null,"Error->" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("Error->" + e.getMessage());
         }
     }
@@ -2081,10 +2074,10 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
         // TODO add your handling code here:
         try {
             Factura f1;
-            f1 = jpfac.findFactura(facturaid);
+            f1 = jpfac.findFactura(resultado.factg.getId());
             if (f1 != null) {
                 if (f1.getEfectivo() != null) {
-                    Integer id = Integer.parseInt(txtnfact.getValue().toString());
+                    Integer id = resultado.factg.getId();//Integer.parseInt(txtnfact.getValue().toString());
                     if (id > 0) {
                         report.startReportprintL("" + id,f1.getTotalfac().toString());
                     }
@@ -2100,7 +2093,7 @@ public class frmFacturaORM extends javax.swing.JInternalFrame implements ActionL
     public void imprimirOrden() {
         // TODO add your handling code here:
         try {
-            Integer id = Integer.parseInt(txtnfact.getValue().toString());
+            Integer id = resultado.factg.getId();
             if (id > 0) {
                 if (jpdfac.getDetestadoCount(id) > 0) {
                     report.startOrdenCocinaprint("" + id);
